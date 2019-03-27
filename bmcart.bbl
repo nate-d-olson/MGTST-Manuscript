@@ -1,0 +1,1825 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{42}
+% BibTex style file: bmc-mathphys.bst (version 2.1), 2014-07-24
+\ifx \bisbn   \undefined \def \bisbn  #1{ISBN #1}\fi
+\ifx \binits  \undefined \def \binits#1{#1}\fi
+\ifx \bauthor  \undefined \def \bauthor#1{#1}\fi
+\ifx \batitle  \undefined \def \batitle#1{#1}\fi
+\ifx \bjtitle  \undefined \def \bjtitle#1{#1}\fi
+\ifx \bvolume  \undefined \def \bvolume#1{\textbf{#1}}\fi
+\ifx \byear  \undefined \def \byear#1{#1}\fi
+\ifx \bissue  \undefined \def \bissue#1{#1}\fi
+\ifx \bfpage  \undefined \def \bfpage#1{#1}\fi
+\ifx \blpage  \undefined \def \blpage #1{#1}\fi
+\ifx \burl  \undefined \def \burl#1{\textsf{#1}}\fi
+\ifx \doiurl  \undefined \def \doiurl#1{\textsf{#1}}\fi
+\ifx \betal  \undefined \def \betal{\textit{et al.}}\fi
+\ifx \binstitute  \undefined \def \binstitute#1{#1}\fi
+\ifx \binstitutionaled  \undefined \def \binstitutionaled#1{#1}\fi
+\ifx \bctitle  \undefined \def \bctitle#1{#1}\fi
+\ifx \beditor  \undefined \def \beditor#1{#1}\fi
+\ifx \bpublisher  \undefined \def \bpublisher#1{#1}\fi
+\ifx \bbtitle  \undefined \def \bbtitle#1{#1}\fi
+\ifx \bedition  \undefined \def \bedition#1{#1}\fi
+\ifx \bseriesno  \undefined \def \bseriesno#1{#1}\fi
+\ifx \blocation  \undefined \def \blocation#1{#1}\fi
+\ifx \bsertitle  \undefined \def \bsertitle#1{#1}\fi
+\ifx \bsnm \undefined \def \bsnm#1{#1}\fi
+\ifx \bsuffix \undefined \def \bsuffix#1{#1}\fi
+\ifx \bparticle \undefined \def \bparticle#1{#1}\fi
+\ifx \barticle \undefined \def \barticle#1{#1}\fi
+\ifx \bconfdate \undefined \def \bconfdate #1{#1}\fi
+\ifx \botherref \undefined \def \botherref #1{#1}\fi
+\ifx \url \undefined \def \url#1{\textsf{#1}}\fi
+\ifx \bchapter \undefined \def \bchapter#1{#1}\fi
+\ifx \bbook \undefined \def \bbook#1{#1}\fi
+\ifx \bcomment \undefined \def \bcomment#1{#1}\fi
+\ifx \oauthor \undefined \def \oauthor#1{#1}\fi
+\ifx \citeauthoryear \undefined \def \citeauthoryear#1{#1}\fi
+\ifx \endbibitem  \undefined \def \endbibitem {}\fi
+\ifx \bconflocation  \undefined \def \bconflocation#1{#1}\fi
+\ifx \arxivurl  \undefined \def \arxivurl#1{\textsf{#1}}\fi
+\csname PreBibitemsHook\endcsname
+
+%%% 1
+\bibitem{Goodrich2014}
+\begin{barticle}
+\bauthor{\bsnm{Goodrich}, \binits{J.K.}},
+\bauthor{\bsnm{Di~Rienzi}, \binits{S.C.}},
+\bauthor{\bsnm{Poole}, \binits{A.C.}},
+\bauthor{\bsnm{Koren}, \binits{O.}},
+\bauthor{\bsnm{Walters}, \binits{W.A.}},
+\bauthor{\bsnm{Caporaso}, \binits{J.G.}},
+\bauthor{\bsnm{Knight}, \binits{R.}},
+\bauthor{\bsnm{Ley}, \binits{R.E.}}:
+\batitle{Conducting a microbiome study}.
+\bjtitle{Cell}
+\bvolume{158}(\bissue{2}),
+\bfpage{250}--\blpage{262}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 2
+\bibitem{Amore2016}
+\begin{barticle}
+\bauthor{\bsnm{D'Amore}, \binits{R.}},
+\bauthor{\bsnm{Ijaz}, \binits{U.Z.}},
+\bauthor{\bsnm{Schirmer}, \binits{M.}},
+\bauthor{\bsnm{Kenny}, \binits{J.G.}},
+\bauthor{\bsnm{Gregory}, \binits{R.}},
+\bauthor{\bsnm{Darby}, \binits{A.C.}},
+\bauthor{\bsnm{Quince}, \binits{C.}},
+\bauthor{\bsnm{Hall}, \binits{N.}}:
+\batitle{{A comprehensive benchmarking study of protocols and sequencing
+  platforms for 16S rRNA community profiling}}.
+\bjtitle{BMC Genomics}
+\bvolume{17},
+\bfpage{1}--\blpage{40}
+(\byear{2016}).
+doi:\doiurl{10.1186/s12864-015-2194-9}
+\end{barticle}
+\endbibitem
+
+%%% 3
+\bibitem{brooks2015truth}
+\begin{barticle}
+\bauthor{\bsnm{Brooks}, \binits{J.P.}},
+\bauthor{\bsnm{Edwards}, \binits{D.J.}},
+\bauthor{\bsnm{Harwich}, \binits{M.D.}},
+\bauthor{\bsnm{Rivera}, \binits{M.C.}},
+\bauthor{\bsnm{Fettweis}, \binits{J.M.}},
+\bauthor{\bsnm{Serrano}, \binits{M.G.}},
+\bauthor{\bsnm{Reris}, \binits{R.A.}},
+\bauthor{\bsnm{Sheth}, \binits{N.U.}},
+\bauthor{\bsnm{Huang}, \binits{B.}},
+\bauthor{\bsnm{Girerd}, \binits{P.}}, \betal:
+\batitle{The truth about metagenomics: quantifying and counteracting bias in
+  16s rrna studies}.
+\bjtitle{BMC microbiology}
+\bvolume{15}(\bissue{1}),
+\bfpage{66}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 4
+\bibitem{bokulich2016mockrobiota}
+\begin{barticle}
+\bauthor{\bsnm{Bokulich}, \binits{N.A.}},
+\bauthor{\bsnm{Rideout}, \binits{J.R.}},
+\bauthor{\bsnm{Mercurio}, \binits{W.G.}},
+\bauthor{\bsnm{Shiffer}, \binits{A.}},
+\bauthor{\bsnm{Wolfe}, \binits{B.}},
+\bauthor{\bsnm{Maurice}, \binits{C.F.}},
+\bauthor{\bsnm{Dutton}, \binits{R.J.}},
+\bauthor{\bsnm{Turnbaugh}, \binits{P.J.}},
+\bauthor{\bsnm{Knight}, \binits{R.}},
+\bauthor{\bsnm{Caporaso}, \binits{J.G.}}:
+\batitle{mockrobiota: a public resource for microbiome bioinformatics
+  benchmarking}.
+\bjtitle{mSystems}
+\bvolume{1}(\bissue{5}),
+\bfpage{00062}--\blpage{16}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 5
+\bibitem{Kopylova2014}
+\begin{barticle}
+\bauthor{\bsnm{Kopylova}, \binits{E.}},
+\bauthor{\bsnm{Navas-molina}, \binits{J.A.}},
+\bauthor{\bsnm{Mercier}, \binits{C.}},
+\bauthor{\bsnm{Xu}, \binits{Z.}}:
+\batitle{{Open-Source Sequence Clustering Methods Improve the State Of the
+  Art}}.
+\bjtitle{mSystems}
+\bvolume{1}(\bissue{1}),
+\bfpage{1}--\blpage{16}
+(\byear{2014}).
+doi:\doiurl{10.1128/mSystems.00003-15.Editor}
+\end{barticle}
+\endbibitem
+
+%%% 6
+\bibitem{Huse2010}
+\begin{barticle}
+\bauthor{\bsnm{Huse}, \binits{S.M.}},
+\bauthor{\bsnm{Welch}, \binits{D.M.}},
+\bauthor{\bsnm{Morrison}, \binits{H.G.}},
+\bauthor{\bsnm{Sogin}, \binits{M.L.}}:
+\batitle{{Ironing out the wrinkles in the rare biosphere through improved OTU
+  clustering.}}
+\bjtitle{Environmental microbiology}
+\bvolume{12}(\bissue{7}),
+\bfpage{1889}--\blpage{98}
+(\byear{2010}).
+doi:\doiurl{10.1111/j.1462-2920.2010.02193.x}
+\end{barticle}
+\endbibitem
+
+%%% 7
+\bibitem{callahan2016dada2}
+\begin{barticle}
+\bauthor{\bsnm{Callahan}, \binits{B.J.}},
+\bauthor{\bsnm{McMurdie}, \binits{P.J.}},
+\bauthor{\bsnm{Rosen}, \binits{M.J.}},
+\bauthor{\bsnm{Han}, \binits{A.W.}},
+\bauthor{\bsnm{Johnson}, \binits{A.J.A.}},
+\bauthor{\bsnm{Holmes}, \binits{S.P.}}:
+\batitle{Dada2: High-resolution sample inference from illumina amplicon data}.
+\bjtitle{Nature Methods}
+\bvolume{13},
+\bfpage{581}--\blpage{583}
+(\byear{2016}).
+doi:\doiurl{10.1038/nmeth.3869}
+\end{barticle}
+\endbibitem
+
+%%% 8
+\bibitem{Costea2017}
+\begin{barticle}
+\bauthor{\bsnm{Costea}, \binits{P.I.}},
+\bauthor{\bsnm{Zeller}, \binits{G.}},
+\bauthor{\bsnm{Sunagawa}, \binits{S.}},
+\bauthor{\bsnm{Pelletier}, \binits{E.}},
+\bauthor{\bsnm{Alberti}, \binits{A.}},
+\bauthor{\bsnm{Levenez}, \binits{F.}},
+\bauthor{\bsnm{Tramontano}, \binits{M.}},
+\bauthor{\bsnm{Driessen}, \binits{M.}},
+\bauthor{\bsnm{Hercog}, \binits{R.}},
+\bauthor{\bsnm{Jung}, \binits{F.-E.}},
+\bauthor{\bsnm{Kultima}, \binits{J.R.}},
+\bauthor{\bsnm{Hayward}, \binits{M.R.}},
+\bauthor{\bsnm{Coelho}, \binits{L.P.}},
+\bauthor{\bsnm{Allen-Vercoe}, \binits{E.}},
+\bauthor{\bsnm{Bertrand}, \binits{L.}},
+\bauthor{\bsnm{Blaut}, \binits{M.}},
+\bauthor{\bsnm{Brown}, \binits{J.R.M.}},
+\bauthor{\bsnm{Carton}, \binits{T.}},
+\bauthor{\bsnm{Cools-Portier}, \binits{S.}},
+\bauthor{\bsnm{Daigneault}, \binits{M.}},
+\bauthor{\bsnm{Derrien}, \binits{M.}},
+\bauthor{\bsnm{Druesne}, \binits{A.}},
+\bauthor{\bparticle{de} \bsnm{Vos}, \binits{W.M.}},
+\bauthor{\bsnm{Finlay}, \binits{B.B.}},
+\bauthor{\bsnm{Flint}, \binits{H.J.}},
+\bauthor{\bsnm{Guarner}, \binits{F.}},
+\bauthor{\bsnm{Hattori}, \binits{M.}},
+\bauthor{\bsnm{Heilig}, \binits{H.}},
+\bauthor{\bsnm{Luna}, \binits{R.A.}},
+\bauthor{\bparticle{van} \bsnm{Hylckama~Vlieg}, \binits{J.}},
+\bauthor{\bsnm{Junick}, \binits{J.}},
+\bauthor{\bsnm{Klymiuk}, \binits{I.}},
+\bauthor{\bsnm{Langella}, \binits{P.}},
+\bauthor{\bsnm{Le~Chatelier}, \binits{E.}},
+\bauthor{\bsnm{Mai}, \binits{V.}},
+\bauthor{\bsnm{Manichanh}, \binits{C.}},
+\bauthor{\bsnm{Martin}, \binits{J.C.}},
+\bauthor{\bsnm{Mery}, \binits{C.}},
+\bauthor{\bsnm{Morita}, \binits{H.}},
+\bauthor{\bsnm{O'Toole}, \binits{P.W.}},
+\bauthor{\bsnm{Orvain}, \binits{C.}},
+\bauthor{\bsnm{Patil}, \binits{K.R.}},
+\bauthor{\bsnm{Penders}, \binits{J.}},
+\bauthor{\bsnm{Persson}, \binits{S.}},
+\bauthor{\bsnm{Pons}, \binits{N.}},
+\bauthor{\bsnm{Popova}, \binits{M.}},
+\bauthor{\bsnm{Salonen}, \binits{A.}},
+\bauthor{\bsnm{Saulnier}, \binits{D.}},
+\bauthor{\bsnm{Scott}, \binits{K.P.}},
+\bauthor{\bsnm{Singh}, \binits{B.}},
+\bauthor{\bsnm{Slezak}, \binits{K.}},
+\bauthor{\bsnm{Veiga}, \binits{P.}},
+\bauthor{\bsnm{Versalovic}, \binits{J.}},
+\bauthor{\bsnm{Zhao}, \binits{L.}},
+\bauthor{\bsnm{Zoetendal}, \binits{E.G.}},
+\bauthor{\bsnm{Ehrlich}, \binits{S.D.}},
+\bauthor{\bsnm{Dore}, \binits{J.}},
+\bauthor{\bsnm{Bork}, \binits{P.}}:
+\batitle{Towards standards for human fecal sample processing in metagenomic
+  studies}.
+\bjtitle{Nat. Biotechnol.}
+\bvolume{35},
+\bfpage{1069}
+(\byear{2017})
+\end{barticle}
+\endbibitem
+
+%%% 9
+\bibitem{Olson2012}
+\begin{barticle}
+\bauthor{\bsnm{Olson}, \binits{N.D.}},
+\bauthor{\bsnm{Morrow}, \binits{J.B.}}:
+\batitle{{DNA} extract characterization process for microbial detection methods
+  development and validation}.
+\bjtitle{BMC Res. Notes}
+\bvolume{5},
+\bfpage{668}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 10
+\bibitem{klindworth2012evaluation}
+\begin{botherref}
+\oauthor{\bsnm{Klindworth}, \binits{A.}},
+\oauthor{\bsnm{Pruesse}, \binits{E.}},
+\oauthor{\bsnm{Schweer}, \binits{T.}},
+\oauthor{\bsnm{Peplies}, \binits{J.}},
+\oauthor{\bsnm{Quast}, \binits{C.}},
+\oauthor{\bsnm{Horn}, \binits{M.}},
+\oauthor{\bsnm{Gl{\"o}ckner}, \binits{F.O.}}:
+Evaluation of general 16s ribosomal rna gene pcr primers for classical and
+  next-generation sequencing-based diversity studies.
+Nucleic acids research,
+808
+(2012)
+\end{botherref}
+\endbibitem
+
+%%% 11
+\bibitem{Gohl2016}
+\begin{botherref}
+\oauthor{\bsnm{Gohl}, \binits{D.M.}},
+\oauthor{\bsnm{Vangay}, \binits{P.}},
+\oauthor{\bsnm{Garbe}, \binits{J.}},
+\oauthor{\bsnm{MacLean}, \binits{A.}},
+\oauthor{\bsnm{Hauge}, \binits{A.}},
+\oauthor{\bsnm{Becker}, \binits{A.}},
+\oauthor{\bsnm{Gould}, \binits{T.J.}},
+\oauthor{\bsnm{Clayton}, \binits{J.B.}},
+\oauthor{\bsnm{Johnson}, \binits{T.J.}},
+\oauthor{\bsnm{Hunter}, \binits{R.}},
+\oauthor{\bsnm{Knights}, \binits{D.}},
+\oauthor{\bsnm{Beckman}, \binits{K.B.}}:
+Systematic improvement of amplicon marker gene methods for increased accuracy
+  in microbiome studies.
+Nat. Biotechnol.
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 12
+\bibitem{Pinto2012}
+\begin{barticle}
+\bauthor{\bsnm{Pinto}, \binits{A.J.}},
+\bauthor{\bsnm{Raskin}, \binits{L.}}:
+\batitle{{PCR} biases distort bacterial and archaeal community structure in
+  pyrosequencing datasets}.
+\bjtitle{PLoS One}
+\bvolume{7}(\bissue{8}),
+\bfpage{43093}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 13
+\bibitem{Hansen1998}
+\begin{barticle}
+\bauthor{\bsnm{Hansen}, \binits{M.C.}},
+\bauthor{\bsnm{Tolker-Nielsen}, \binits{T.}},
+\bauthor{\bsnm{Givskov}, \binits{M.}},
+\bauthor{\bsnm{Molin}, \binits{S.}}:
+\batitle{Biased {16S} {rDNA} {PCR} amplification caused by interference from
+  {DNA} flanking the template region}.
+\bjtitle{FEMS Microbiol. Ecol.}
+\bvolume{26}(\bissue{2}),
+\bfpage{141}--\blpage{149}
+(\byear{1998})
+\end{barticle}
+\endbibitem
+
+%%% 14
+\bibitem{McMurdie2014}
+\begin{barticle}
+\bauthor{\bsnm{McMurdie}, \binits{P.J.}},
+\bauthor{\bsnm{Holmes}, \binits{S.}}:
+\batitle{Waste not, want not: why rarefying microbiome data is inadmissible}.
+\bjtitle{PLoS Comput. Biol.}
+\bvolume{10}(\bissue{4}),
+\bfpage{1003531}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 15
+\bibitem{parsons2015using}
+\begin{barticle}
+\bauthor{\bsnm{Parsons}, \binits{J.}},
+\bauthor{\bsnm{Munro}, \binits{S.}},
+\bauthor{\bsnm{Pine}, \binits{P.S.}},
+\bauthor{\bsnm{McDaniel}, \binits{J.}},
+\bauthor{\bsnm{Mehaffey}, \binits{M.}},
+\bauthor{\bsnm{Salit}, \binits{M.}}:
+\batitle{Using mixtures of biological samples as process controls for
+  rna-sequencing experiments}.
+\bjtitle{BMC genomics}
+\bvolume{16}(\bissue{1}),
+\bfpage{708}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 16
+\bibitem{pine2011adaptable}
+\begin{barticle}
+\bauthor{\bsnm{Pine}, \binits{P.S.}},
+\bauthor{\bsnm{Rosenzweig}, \binits{B.A.}},
+\bauthor{\bsnm{Thompson}, \binits{K.L.}}:
+\batitle{An adaptable method using human mixed tissue ratiometric controls for
+  benchmarking performance on gene expression microarrays in clinical
+  laboratories}.
+\bjtitle{BMC biotechnology}
+\bvolume{11}(\bissue{1}),
+\bfpage{38}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 17
+\bibitem{thompson2005use}
+\begin{barticle}
+\bauthor{\bsnm{Thompson}, \binits{K.L.}},
+\bauthor{\bsnm{Rosenzweig}, \binits{B.A.}},
+\bauthor{\bsnm{Pine}, \binits{P.S.}},
+\bauthor{\bsnm{Retief}, \binits{J.}},
+\bauthor{\bsnm{Turpaz}, \binits{Y.}},
+\bauthor{\bsnm{Afshari}, \binits{C.A.}},
+\bauthor{\bsnm{Hamadeh}, \binits{H.K.}},
+\bauthor{\bsnm{Damore}, \binits{M.A.}},
+\bauthor{\bsnm{Boedigheimer}, \binits{M.}},
+\bauthor{\bsnm{Blomme}, \binits{E.}}, \betal:
+\batitle{Use of a mixed tissue rna design for performance assessments on
+  multiple microarray formats}.
+\bjtitle{Nucleic acids research}
+\bvolume{33}(\bissue{22}),
+\bfpage{187}--\blpage{187}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 18
+\bibitem{harro2011refinement}
+\begin{barticle}
+\bauthor{\bsnm{Harro}, \binits{C.}},
+\bauthor{\bsnm{Chakraborty}, \binits{S.}},
+\bauthor{\bsnm{Feller}, \binits{A.}},
+\bauthor{\bsnm{DeNearing}, \binits{B.}},
+\bauthor{\bsnm{Cage}, \binits{A.}},
+\bauthor{\bsnm{Ram}, \binits{M.}},
+\bauthor{\bsnm{Lundgren}, \binits{A.}},
+\bauthor{\bsnm{Svennerholm}, \binits{A.-M.}},
+\bauthor{\bsnm{Bourgeois}, \binits{A.L.}},
+\bauthor{\bsnm{Walker}, \binits{R.I.}}, \betal:
+\batitle{Refinement of a human challenge model for evaluation of
+  enterotoxigenic escherichia coli vaccines}.
+\bjtitle{Clinical and Vaccine Immunology}
+\bvolume{18}(\bissue{10}),
+\bfpage{1719}--\blpage{1727}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 19
+\bibitem{pop2016individual}
+\begin{barticle}
+\bauthor{\bsnm{Pop}, \binits{M.}},
+\bauthor{\bsnm{Paulson}, \binits{J.N.}},
+\bauthor{\bsnm{Chakraborty}, \binits{S.}},
+\bauthor{\bsnm{Astrovskaya}, \binits{I.}},
+\bauthor{\bsnm{Lindsay}, \binits{B.R.}},
+\bauthor{\bsnm{Li}, \binits{S.}},
+\bauthor{\bsnm{Bravo}, \binits{H.C.}},
+\bauthor{\bsnm{Harro}, \binits{C.}},
+\bauthor{\bsnm{Parkhill}, \binits{J.}},
+\bauthor{\bsnm{Walker}, \binits{A.W.}}, \betal:
+\batitle{Individual-specific changes in the human gut microbiota after
+  challenge with enterotoxigenic escherichia coli and subsequent ciprofloxacin
+  treatment}.
+\bjtitle{BMC genomics}
+\bvolume{17}(\bissue{1}),
+\bfpage{1}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 20
+\bibitem{kozich2013development}
+\begin{barticle}
+\bauthor{\bsnm{Kozich}, \binits{J.J.}},
+\bauthor{\bsnm{Westcott}, \binits{S.L.}},
+\bauthor{\bsnm{Baxter}, \binits{N.T.}},
+\bauthor{\bsnm{Highlander}, \binits{S.K.}},
+\bauthor{\bsnm{Schloss}, \binits{P.D.}}:
+\batitle{Development of a dual-index sequencing strategy and curation pipeline
+  for analyzing amplicon sequence data on the miseq illumina sequencing
+  platform}.
+\bjtitle{Applied and environmental microbiology}
+\bvolume{79}(\bissue{17}),
+\bfpage{5112}--\blpage{5120}
+(\byear{2013})
+\end{barticle}
+\endbibitem
+
+%%% 21
+\bibitem{Walters2016-lf}
+\begin{botherref}
+\oauthor{\bsnm{Walters}, \binits{W.}},
+\oauthor{\bsnm{Hyde}, \binits{E.R.}},
+\oauthor{\bsnm{Berg-Lyons}, \binits{D.}},
+\oauthor{\bsnm{Ackermann}, \binits{G.}},
+\oauthor{\bsnm{Humphrey}, \binits{G.}},
+\oauthor{\bsnm{Parada}, \binits{A.}},
+\oauthor{\bsnm{Gilbert}, \binits{J.A.}},
+\oauthor{\bsnm{Jansson}, \binits{J.K.}},
+\oauthor{\bsnm{Caporaso}, \binits{J.G.}},
+\oauthor{\bsnm{Fuhrman}, \binits{J.A.}},
+\oauthor{\bsnm{Apprill}, \binits{A.}},
+\oauthor{\bsnm{Knight}, \binits{R.}}:
+Improved bacterial {16S} {rRNA} gene (v4 and v4-5) and fungal internal
+  transcribed spacer marker gene primers for microbial community surveys.
+mSystems
+\textbf{1}(1)
+(2016)
+\end{botherref}
+\endbibitem
+
+%%% 22
+\bibitem{westcott2017opticlust}
+\begin{botherref}
+\oauthor{\bsnm{Westcott}, \binits{S.L.}},
+\oauthor{\bsnm{Schloss}, \binits{P.D.}}:
+Opticlust, an improved method for assigning amplicon-based sequence data to
+  operational taxonomic units.
+mSphere
+\textbf{2}(2)
+(2017)
+\end{botherref}
+\endbibitem
+
+%%% 23
+\bibitem{schloss2009introducing}
+\begin{barticle}
+\bauthor{\bsnm{Schloss}, \binits{P.D.}},
+\bauthor{\bsnm{Westcott}, \binits{S.L.}},
+\bauthor{\bsnm{Ryabin}, \binits{T.}},
+\bauthor{\bsnm{Hall}, \binits{J.R.}},
+\bauthor{\bsnm{Hartmann}, \binits{M.}},
+\bauthor{\bsnm{Hollister}, \binits{E.B.}},
+\bauthor{\bsnm{Lesniewski}, \binits{R.A.}},
+\bauthor{\bsnm{Oakley}, \binits{B.B.}},
+\bauthor{\bsnm{Parks}, \binits{D.H.}},
+\bauthor{\bsnm{Robinson}, \binits{C.J.}}, \betal:
+\batitle{Introducing mothur: open-source, platform-independent,
+  community-supported software for describing and comparing microbial
+  communities}.
+\bjtitle{Applied and environmental microbiology}
+\bvolume{75}(\bissue{23}),
+\bfpage{7537}--\blpage{7541}
+(\byear{2009})
+\end{barticle}
+\endbibitem
+
+%%% 24
+\bibitem{Rideout2014}
+\begin{barticle}
+\bauthor{\bsnm{Rideout}, \binits{J.R.}},
+\bauthor{\bsnm{He}, \binits{Y.}},
+\bauthor{\bsnm{Navas-Molina}, \binits{J.A.}},
+\bauthor{\bsnm{Walters}, \binits{W.A.}},
+\bauthor{\bsnm{Ursell}, \binits{L.K.}},
+\bauthor{\bsnm{Gibbons}, \binits{S.M.}},
+\bauthor{\bsnm{Chase}, \binits{J.}},
+\bauthor{\bsnm{McDonald}, \binits{D.}},
+\bauthor{\bsnm{Gonzalez}, \binits{A.}},
+\bauthor{\bsnm{Robbins-Pianka}, \binits{A.}},
+\bauthor{\bsnm{Clemente}, \binits{J.C.}},
+\bauthor{\bsnm{Gilbert}, \binits{J.A.}},
+\bauthor{\bsnm{Huse}, \binits{S.M.}},
+\bauthor{\bsnm{Zhou}, \binits{H.-W.}},
+\bauthor{\bsnm{Knight}, \binits{R.}},
+\bauthor{\bsnm{Caporaso}, \binits{J.G.}}:
+\batitle{Subsampled open-reference clustering creates consistent, comprehensive
+  {OTU} definitions and scales to billions of sequences}.
+\bjtitle{PeerJ}
+\bvolume{2},
+\bfpage{545}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 25
+\bibitem{Caporaso2010}
+\begin{barticle}
+\bauthor{\bsnm{Caporaso}, \binits{J.G.}},
+\bauthor{\bsnm{Kuczynski}, \binits{J.}},
+\bauthor{\bsnm{Stombaugh}, \binits{J.}},
+\bauthor{\bsnm{Bittinger}, \binits{K.}},
+\bauthor{\bsnm{Bushman}, \binits{F.D.}},
+\bauthor{\bsnm{Costello}, \binits{E.K.}},
+\bauthor{\bsnm{Fierer}, \binits{N.}},
+\bauthor{\bsnm{Pe{\~n}a}, \binits{A.G.}},
+\bauthor{\bsnm{Goodrich}, \binits{J.K.}},
+\bauthor{\bsnm{Gordon}, \binits{J.I.}},
+\bauthor{\bsnm{Huttley}, \binits{G.A.}},
+\bauthor{\bsnm{Kelley}, \binits{S.T.}},
+\bauthor{\bsnm{Knights}, \binits{D.}},
+\bauthor{\bsnm{Koenig}, \binits{J.E.}},
+\bauthor{\bsnm{Ley}, \binits{R.E.}},
+\bauthor{\bsnm{Lozupone}, \binits{C.A.}},
+\bauthor{\bsnm{McDonald}, \binits{D.}},
+\bauthor{\bsnm{Muegge}, \binits{B.D.}},
+\bauthor{\bsnm{Pirrung}, \binits{M.}},
+\bauthor{\bsnm{Reeder}, \binits{J.}},
+\bauthor{\bsnm{Sevinsky}, \binits{J.R.}},
+\bauthor{\bsnm{Turnbaugh}, \binits{P.J.}},
+\bauthor{\bsnm{Walters}, \binits{W.A.}},
+\bauthor{\bsnm{Widmann}, \binits{J.}},
+\bauthor{\bsnm{Yatsunenko}, \binits{T.}},
+\bauthor{\bsnm{Zaneveld}, \binits{J.}},
+\bauthor{\bsnm{Knight}, \binits{R.}}:
+\batitle{Qiime allows analysis of high-throughput community sequencing data}.
+\bjtitle{Nature Methods}
+\bvolume{7},
+\bfpage{335}
+(\byear{2010}).
+\bcomment{Correspondence}
+\end{barticle}
+\endbibitem
+
+%%% 26
+\bibitem{wright2014exploiting}
+\begin{barticle}
+\bauthor{\bsnm{Wright}, \binits{E.S.}},
+\bauthor{\bsnm{Yilmaz}, \binits{L.S.}},
+\bauthor{\bsnm{Ram}, \binits{S.}},
+\bauthor{\bsnm{Gasser}, \binits{J.M.}},
+\bauthor{\bsnm{Harrington}, \binits{G.W.}},
+\bauthor{\bsnm{Noguera}, \binits{D.R.}}:
+\batitle{Exploiting extension bias in polymerase chain reaction to improve
+  primer specificity in ensembles of nearly identical dna templates}.
+\bjtitle{Environmental microbiology}
+\bvolume{16}(\bissue{5}),
+\bfpage{1354}--\blpage{1365}
+(\byear{2014})
+\end{barticle}
+\endbibitem
+
+%%% 27
+\bibitem{callahan2016}
+\begin{botherref}
+\oauthor{\bsnm{Callahan}, \binits{B.}},
+\oauthor{\bsnm{Sankaran}, \binits{K.}},
+\oauthor{\bsnm{Fukuyama}, \binits{J.}},
+\oauthor{\bsnm{McMurdie}, \binits{P.}},
+\oauthor{\bsnm{Holmes}, \binits{S.}}:
+Bioconductor workflow for microbiome data analysis: from raw reads to community
+  analyses [version 2; referees: 3 approved].
+F1000Research
+\textbf{5}(1492)
+(2016).
+doi:\doiurl{10.12688/f1000research.8986.2}
+\end{botherref}
+\endbibitem
+
+%%% 28
+\bibitem{risely2017gut}
+\begin{botherref}
+\oauthor{\bsnm{Risely}, \binits{A.}},
+\oauthor{\bsnm{Waite}, \binits{D.}},
+\oauthor{\bsnm{Ujvari}, \binits{B.}},
+\oauthor{\bsnm{Klaassen}, \binits{M.}},
+\oauthor{\bsnm{Hoye}, \binits{B.}}:
+Gut microbiota of a long-distance migrant demonstrates resistance against
+  environmental microbe incursions.
+Molecular ecology
+(2017)
+\end{botherref}
+\endbibitem
+
+%%% 29
+\bibitem{baker2005external}
+\begin{barticle}
+\bauthor{\bsnm{Baker}, \binits{S.C.}},
+\bauthor{\bsnm{Bauer}, \binits{S.R.}},
+\bauthor{\bsnm{Beyer}, \binits{R.P.}},
+\bauthor{\bsnm{Brenton}, \binits{J.D.}},
+\bauthor{\bsnm{Bromley}, \binits{B.}},
+\bauthor{\bsnm{Burrill}, \binits{J.}},
+\bauthor{\bsnm{Causton}, \binits{H.}},
+\bauthor{\bsnm{Conley}, \binits{M.P.}},
+\bauthor{\bsnm{Elespuru}, \binits{R.}},
+\bauthor{\bsnm{Fero}, \binits{M.}}, \betal:
+\batitle{The external rna controls consortium: a progress report}.
+\bjtitle{Nature methods}
+\bvolume{2}(\bissue{10}),
+\bfpage{731}--\blpage{734}
+(\byear{2005})
+\end{barticle}
+\endbibitem
+
+%%% 30
+\bibitem{R}
+\begin{bbook}
+\bauthor{\bsnm{{R Core Team}}}:
+\bbtitle{R: A Language and Environment for Statistical Computing}.
+\bpublisher{R Foundation for Statistical Computing},
+\blocation{Vienna, Austria}
+(\byear{2018}).
+\bcomment{R Foundation for Statistical Computing}.
+\burl{https://www.R-project.org/}
+\end{bbook}
+\endbibitem
+
+%%% 31
+\bibitem{yang2016sensitivity}
+\begin{barticle}
+\bauthor{\bsnm{Yang}, \binits{B.}},
+\bauthor{\bsnm{Wang}, \binits{Y.}},
+\bauthor{\bsnm{Qian}, \binits{P.-Y.}}:
+\batitle{Sensitivity and correlation of hypervariable regions in 16s rrna genes
+  in phylogenetic analysis}.
+\bjtitle{BMC bioinformatics}
+\bvolume{17}(\bissue{1}),
+\bfpage{1}
+(\byear{2016})
+\end{barticle}
+\endbibitem
+
+%%% 32
+\bibitem{Rqc}
+\begin{botherref}
+\oauthor{\bsnm{Souza}, \binits{W.}},
+\oauthor{\bsnm{Carvalho}, \binits{B.}}:
+Rqc: Quality Control Tool for High-Throughput Sequencing Data.
+(2017).
+R package version 1.10.2.
+\url{https://github.com/labbcb/Rqc}
+\end{botherref}
+\endbibitem
+
+%%% 33
+\bibitem{Bioconductor}
+\begin{barticle}
+\bauthor{\bsnm{{Huber}}},
+\bauthor{\bsnm{{W.}}},
+\bauthor{\bsnm{{Carey}}},
+\bauthor{\bsnm{J.}, \binits{V.}},
+\bauthor{\bsnm{{Gentleman}}},
+\bauthor{\bsnm{{R.}}},
+\bauthor{\bsnm{{Anders}}},
+\bauthor{\bsnm{{S.}}},
+\bauthor{\bsnm{{Carlson}}},
+\bauthor{\bsnm{{M.}}},
+\bauthor{\bsnm{{Carvalho}}},
+\bauthor{\bsnm{S.}, \binits{B.}},
+\bauthor{\bsnm{{Bravo}}},
+\bauthor{\bsnm{C.}, \binits{H.}},
+\bauthor{\bsnm{{Davis}}},
+\bauthor{\bsnm{{S.}}},
+\bauthor{\bsnm{{Gatto}}},
+\bauthor{\bsnm{{L.}}},
+\bauthor{\bsnm{{Girke}}},
+\bauthor{\bsnm{{T.}}},
+\bauthor{\bsnm{{Gottardo}}},
+\bauthor{\bsnm{{R.}}},
+\bauthor{\bsnm{{Hahne}}},
+\bauthor{\bsnm{{F.}}},
+\bauthor{\bsnm{{Hansen}}},
+\bauthor{\bsnm{D.}, \binits{K.}},
+\bauthor{\bsnm{{Irizarry}}},
+\bauthor{\bsnm{A.}, \binits{R.}},
+\bauthor{\bsnm{{Lawrence}}},
+\bauthor{\bsnm{{M.}}},
+\bauthor{\bsnm{{Love}}},
+\bauthor{\bsnm{I.}, \binits{M.}},
+\bauthor{\bsnm{{MacDonald}}},
+\bauthor{\bsnm{{J.}}},
+\bauthor{\bsnm{{Obenchain}}},
+\bauthor{\bsnm{{V.}}},
+\bauthor{\bsnm{{{Ole's}}}},
+\bauthor{\bsnm{K.}, \binits{A.}},
+\bauthor{\bsnm{{{Pag`es}}}},
+\bauthor{\bsnm{{H.}}},
+\bauthor{\bsnm{{Reyes}}},
+\bauthor{\bsnm{{A.}}},
+\bauthor{\bsnm{{Shannon}}},
+\bauthor{\bsnm{{P.}}},
+\bauthor{\bsnm{{Smyth}}},
+\bauthor{\bsnm{K.}, \binits{G.}},
+\bauthor{\bsnm{{Tenenbaum}}},
+\bauthor{\bsnm{{D.}}},
+\bauthor{\bsnm{{Waldron}}},
+\bauthor{\bsnm{{L.}}},
+\bauthor{\bsnm{{Morgan}}},
+\bauthor{\bsnm{{M.}}}:
+\batitle{{O}rchestrating high-throughput genomic analysis with {B}ioconductor}.
+\bjtitle{Nature Methods}
+\bvolume{12}(\bissue{2}),
+\bfpage{115}--\blpage{121}
+(\byear{2015})
+\end{barticle}
+\endbibitem
+
+%%% 34
+\bibitem{quast2012silva}
+\begin{barticle}
+\bauthor{\bsnm{Quast}, \binits{C.}},
+\bauthor{\bsnm{Pruesse}, \binits{E.}},
+\bauthor{\bsnm{Yilmaz}, \binits{P.}},
+\bauthor{\bsnm{Gerken}, \binits{J.}},
+\bauthor{\bsnm{Schweer}, \binits{T.}},
+\bauthor{\bsnm{Yarza}, \binits{P.}},
+\bauthor{\bsnm{Peplies}, \binits{J.}},
+\bauthor{\bsnm{Gl{\"o}ckner}, \binits{F.O.}}:
+\batitle{The silva ribosomal rna gene database project: improved data
+  processing and web-based tools}.
+\bjtitle{Nucleic acids research}
+\bvolume{41}(\bissue{D1}),
+\bfpage{590}--\blpage{596}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+%%% 35
+\bibitem{edgar2011uchime}
+\begin{barticle}
+\bauthor{\bsnm{Edgar}, \binits{R.C.}},
+\bauthor{\bsnm{Haas}, \binits{B.J.}},
+\bauthor{\bsnm{Clemente}, \binits{J.C.}},
+\bauthor{\bsnm{Quince}, \binits{C.}},
+\bauthor{\bsnm{Knight}, \binits{R.}}:
+\batitle{Uchime improves sensitivity and speed of chimera detection}.
+\bjtitle{Bioinformatics}
+\bvolume{27}(\bissue{16}),
+\bfpage{2194}--\blpage{2200}
+(\byear{2011})
+\end{barticle}
+\endbibitem
+
+%%% 36
+\bibitem{wang2007naive}
+\begin{barticle}
+\bauthor{\bsnm{Wang}, \binits{Q.}},
+\bauthor{\bsnm{Garrity}, \binits{G.M.}},
+\bauthor{\bsnm{Tiedje}, \binits{J.M.}},
+\bauthor{\bsnm{Cole}, \binits{J.R.}}:
+\batitle{Naive bayesian classifier for rapid assignment of rrna sequences into
+  the new bacterial taxonomy}.
+\bjtitle{Applied and environmental microbiology}
+\bvolume{73}(\bissue{16}),
+\bfpage{5261}--\blpage{5267}
+(\byear{2007})
+\end{barticle}
+\endbibitem
+
+%%% 37
+\bibitem{aronesty2011ea}
+\begin{botherref}
+\oauthor{\bsnm{Aronesty}, \binits{E.}}:
+ea-utils: Command-line tools for processing biological sequencing data.
+Expression Analysis, Durham, NC
+(2011)
+\end{botherref}
+\endbibitem
+
+%%% 38
+\bibitem{edgar2010search}
+\begin{barticle}
+\bauthor{\bsnm{Edgar}, \binits{R.C.}}:
+\batitle{Search and clustering orders of magnitude faster than blast}.
+\bjtitle{Bioinformatics}
+\bvolume{26}(\bissue{19}),
+\bfpage{2460}--\blpage{2461}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 39
+\bibitem{desantis2006greengenes}
+\begin{barticle}
+\bauthor{\bsnm{DeSantis}, \binits{T.Z.}},
+\bauthor{\bsnm{Hugenholtz}, \binits{P.}},
+\bauthor{\bsnm{Larsen}, \binits{N.}},
+\bauthor{\bsnm{Rojas}, \binits{M.}},
+\bauthor{\bsnm{Brodie}, \binits{E.L.}},
+\bauthor{\bsnm{Keller}, \binits{K.}},
+\bauthor{\bsnm{Huber}, \binits{T.}},
+\bauthor{\bsnm{Dalevi}, \binits{D.}},
+\bauthor{\bsnm{Hu}, \binits{P.}},
+\bauthor{\bsnm{Andersen}, \binits{G.L.}}:
+\batitle{Greengenes, a chimera-checked 16s rrna gene database and workbench
+  compatible with arb}.
+\bjtitle{Applied and environmental microbiology}
+\bvolume{72}(\bissue{7}),
+\bfpage{5069}--\blpage{5072}
+(\byear{2006})
+\end{barticle}
+\endbibitem
+
+%%% 40
+\bibitem{benjamini1995controlling}
+\begin{botherref}
+\oauthor{\bsnm{Benjamini}, \binits{Y.}},
+\oauthor{\bsnm{Hochberg}, \binits{Y.}}:
+Controlling the false discovery rate: a practical and powerful approach to
+  multiple testing.
+Journal of the royal statistical society. Series B (Methodological),
+289--300
+(1995)
+\end{botherref}
+\endbibitem
+
+%%% 41
+\bibitem{Robinson2010}
+\begin{barticle}
+\bauthor{\bsnm{Robinson}, \binits{M.D.}},
+\bauthor{\bsnm{McCarthy}, \binits{D.J.}},
+\bauthor{\bsnm{Smyth}, \binits{G.K.}}:
+\batitle{edger: a bioconductor package for differential expression analysis of
+  digital gene expression data}.
+\bjtitle{Bioinformatics}
+\bvolume{26}(\bissue{1}),
+\bfpage{139}--\blpage{140}
+(\byear{2010})
+\end{barticle}
+\endbibitem
+
+%%% 42
+\bibitem{McCarthy2012}
+\begin{barticle}
+\bauthor{\bsnm{McCarthy}, \binits{D.J.}},
+\bauthor{\bsnm{Chen}, \binits{Y.}},
+\bauthor{\bsnm{Smyth}, \binits{G.K.}}:
+\batitle{Differential expression analysis of multifactor {RNA-Seq} experiments
+  with respect to biological variation}.
+\bjtitle{Nucleic Acids Res.}
+\bvolume{40}(\bissue{10}),
+\bfpage{4288}--\blpage{4297}
+(\byear{2012})
+\end{barticle}
+\endbibitem
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Conducting a microbiome study</p></title>
+  <aug>
+    <au><snm>Goodrich</snm><fnm>JK</fnm></au>
+    <au><snm>Di Rienzi</snm><fnm>SC</fnm></au>
+    <au><snm>Poole</snm><fnm>AC</fnm></au>
+    <au><snm>Koren</snm><fnm>O</fnm></au>
+    <au><snm>Walters</snm><fnm>WA</fnm></au>
+    <au><snm>Caporaso</snm><fnm>JG</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+    <au><snm>Ley</snm><fnm>RE</fnm></au>
+  </aug>
+  <source>Cell</source>
+  <publisher>Elsevier</publisher>
+  <pubdate>2014</pubdate>
+  <volume>158</volume>
+  <issue>2</issue>
+  <fpage>250</fpage>
+  <lpage>-262</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>{A comprehensive benchmarking study of protocols and sequencing
+  platforms for 16S rRNA community profiling}</p></title>
+  <aug>
+    <au><snm>D'Amore</snm><fnm>R</fnm></au>
+    <au><snm>Ijaz</snm><fnm>UZ</fnm></au>
+    <au><snm>Schirmer</snm><fnm>M</fnm></au>
+    <au><snm>Kenny</snm><fnm>JG</fnm></au>
+    <au><snm>Gregory</snm><fnm>R</fnm></au>
+    <au><snm>Darby</snm><fnm>AC</fnm></au>
+    <au><snm>Quince</snm><fnm>C</fnm></au>
+    <au><snm>Hall</snm><fnm>N</fnm></au>
+  </aug>
+  <source>BMC Genomics</source>
+  <publisher>BMC Genomics</publisher>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+  <fpage>1</fpage>
+  <lpage>-40</lpage>
+  <url>http://dx.doi.org/10.1186/s12864-015-2194-9</url>
+</bibl>
+
+<bibl id="B3">
+  <title><p>The truth about metagenomics: quantifying and counteracting bias in
+  16S rRNA studies</p></title>
+  <aug>
+    <au><snm>Brooks</snm><fnm>JP</fnm></au>
+    <au><snm>Edwards</snm><fnm>DJ</fnm></au>
+    <au><snm>Harwich</snm><fnm>MD</fnm></au>
+    <au><snm>Rivera</snm><fnm>MC</fnm></au>
+    <au><snm>Fettweis</snm><fnm>JM</fnm></au>
+    <au><snm>Serrano</snm><fnm>MG</fnm></au>
+    <au><snm>Reris</snm><fnm>RA</fnm></au>
+    <au><snm>Sheth</snm><fnm>NU</fnm></au>
+    <au><snm>Huang</snm><fnm>B</fnm></au>
+    <au><snm>Girerd</snm><fnm>P</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>BMC microbiology</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2015</pubdate>
+  <volume>15</volume>
+  <issue>1</issue>
+  <fpage>66</fpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>mockrobiota: a public resource for microbiome bioinformatics
+  benchmarking</p></title>
+  <aug>
+    <au><snm>Bokulich</snm><fnm>NA</fnm></au>
+    <au><snm>Rideout</snm><fnm>JR</fnm></au>
+    <au><snm>Mercurio</snm><fnm>WG</fnm></au>
+    <au><snm>Shiffer</snm><fnm>A</fnm></au>
+    <au><snm>Wolfe</snm><fnm>B</fnm></au>
+    <au><snm>Maurice</snm><fnm>CF</fnm></au>
+    <au><snm>Dutton</snm><fnm>RJ</fnm></au>
+    <au><snm>Turnbaugh</snm><fnm>PJ</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+    <au><snm>Caporaso</snm><fnm>JG</fnm></au>
+  </aug>
+  <source>mSystems</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2016</pubdate>
+  <volume>1</volume>
+  <issue>5</issue>
+  <fpage>e00062</fpage>
+  <lpage>-16</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>{Open-Source Sequence Clustering Methods Improve the State Of the
+  Art}</p></title>
+  <aug>
+    <au><snm>Kopylova</snm><fnm>E</fnm></au>
+    <au><snm>Navas molina</snm><fnm>JA</fnm></au>
+    <au><snm>Mercier</snm><fnm>C</fnm></au>
+    <au><snm>Xu</snm><fnm>Z</fnm></au>
+  </aug>
+  <source>mSystems</source>
+  <pubdate>2014</pubdate>
+  <volume>1</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+  <lpage>-16</lpage>
+</bibl>
+
+<bibl id="B6">
+  <title><p>{Ironing out the wrinkles in the rare biosphere through improved
+  OTU clustering.}</p></title>
+  <aug>
+    <au><snm>Huse</snm><fnm>SM</fnm></au>
+    <au><snm>Welch</snm><fnm>DM</fnm></au>
+    <au><snm>Morrison</snm><fnm>HG</fnm></au>
+    <au><snm>Sogin</snm><fnm>ML</fnm></au>
+  </aug>
+  <source>Environmental microbiology</source>
+  <pubdate>2010</pubdate>
+  <volume>12</volume>
+  <issue>7</issue>
+  <fpage>1889</fpage>
+  <lpage>-98</lpage>
+  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2909393&tool=pmcentrez&rendertype=abstract</url>
+</bibl>
+
+<bibl id="B7">
+  <title><p>DADA2: High-resolution sample inference from Illumina amplicon
+  data</p></title>
+  <aug>
+    <au><snm>Callahan</snm><fnm>BJ</fnm></au>
+    <au><snm>McMurdie</snm><fnm>PJ</fnm></au>
+    <au><snm>Rosen</snm><fnm>MJ</fnm></au>
+    <au><snm>Han</snm><fnm>AW</fnm></au>
+    <au><snm>Johnson</snm><fnm>AJA</fnm></au>
+    <au><snm>Holmes</snm><fnm>SP</fnm></au>
+  </aug>
+  <source>Nature Methods</source>
+  <pubdate>2016</pubdate>
+  <volume>13</volume>
+  <fpage>581</fpage>
+  <lpage>583</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Towards standards for human fecal sample processing in metagenomic
+  studies</p></title>
+  <aug>
+    <au><snm>Costea</snm><fnm>PI</fnm></au>
+    <au><snm>Zeller</snm><fnm>G</fnm></au>
+    <au><snm>Sunagawa</snm><fnm>S</fnm></au>
+    <au><snm>Pelletier</snm><fnm>E</fnm></au>
+    <au><snm>Alberti</snm><fnm>A</fnm></au>
+    <au><snm>Levenez</snm><fnm>F</fnm></au>
+    <au><snm>Tramontano</snm><fnm>M</fnm></au>
+    <au><snm>Driessen</snm><fnm>M</fnm></au>
+    <au><snm>Hercog</snm><fnm>R</fnm></au>
+    <au><snm>Jung</snm><fnm>FE</fnm></au>
+    <au><snm>Kultima</snm><fnm>JR</fnm></au>
+    <au><snm>Hayward</snm><fnm>MR</fnm></au>
+    <au><snm>Coelho</snm><fnm>LP</fnm></au>
+    <au><snm>Allen Vercoe</snm><fnm>E</fnm></au>
+    <au><snm>Bertrand</snm><fnm>L</fnm></au>
+    <au><snm>Blaut</snm><fnm>M</fnm></au>
+    <au><snm>Brown</snm><fnm>JRM</fnm></au>
+    <au><snm>Carton</snm><fnm>T</fnm></au>
+    <au><snm>Cools Portier</snm><fnm>S</fnm></au>
+    <au><snm>Daigneault</snm><fnm>M</fnm></au>
+    <au><snm>Derrien</snm><fnm>M</fnm></au>
+    <au><snm>Druesne</snm><fnm>A</fnm></au>
+    <au><snm>Vos</snm><fnm>WM</fnm></au>
+    <au><snm>Finlay</snm><fnm>BB</fnm></au>
+    <au><snm>Flint</snm><fnm>HJ</fnm></au>
+    <au><snm>Guarner</snm><fnm>F</fnm></au>
+    <au><snm>Hattori</snm><fnm>M</fnm></au>
+    <au><snm>Heilig</snm><fnm>H</fnm></au>
+    <au><snm>Luna</snm><fnm>RA</fnm></au>
+    <au><snm>Hylckama Vlieg</snm><fnm>J</fnm></au>
+    <au><snm>Junick</snm><fnm>J</fnm></au>
+    <au><snm>Klymiuk</snm><fnm>I</fnm></au>
+    <au><snm>Langella</snm><fnm>P</fnm></au>
+    <au><snm>Le Chatelier</snm><fnm>E</fnm></au>
+    <au><snm>Mai</snm><fnm>V</fnm></au>
+    <au><snm>Manichanh</snm><fnm>C</fnm></au>
+    <au><snm>Martin</snm><fnm>JC</fnm></au>
+    <au><snm>Mery</snm><fnm>C</fnm></au>
+    <au><snm>Morita</snm><fnm>H</fnm></au>
+    <au><snm>O'Toole</snm><fnm>PW</fnm></au>
+    <au><snm>Orvain</snm><fnm>C</fnm></au>
+    <au><snm>Patil</snm><fnm>KR</fnm></au>
+    <au><snm>Penders</snm><fnm>J</fnm></au>
+    <au><snm>Persson</snm><fnm>S</fnm></au>
+    <au><snm>Pons</snm><fnm>N</fnm></au>
+    <au><snm>Popova</snm><fnm>M</fnm></au>
+    <au><snm>Salonen</snm><fnm>A</fnm></au>
+    <au><snm>Saulnier</snm><fnm>D</fnm></au>
+    <au><snm>Scott</snm><fnm>KP</fnm></au>
+    <au><snm>Singh</snm><fnm>B</fnm></au>
+    <au><snm>Slezak</snm><fnm>K</fnm></au>
+    <au><snm>Veiga</snm><fnm>P</fnm></au>
+    <au><snm>Versalovic</snm><fnm>J</fnm></au>
+    <au><snm>Zhao</snm><fnm>L</fnm></au>
+    <au><snm>Zoetendal</snm><fnm>EG</fnm></au>
+    <au><snm>Ehrlich</snm><fnm>SD</fnm></au>
+    <au><snm>Dore</snm><fnm>J</fnm></au>
+    <au><snm>Bork</snm><fnm>P</fnm></au>
+  </aug>
+  <source>Nat. Biotechnol.</source>
+  <publisher>Nature Publishing Group, a division of Macmillan Publishers
+  Limited. All Rights Reserved.</publisher>
+  <pubdate>2017</pubdate>
+  <volume>35</volume>
+  <fpage>1069</fpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>{DNA} extract characterization process for microbial detection
+  methods development and validation</p></title>
+  <aug>
+    <au><snm>Olson</snm><fnm>ND</fnm></au>
+    <au><snm>Morrow</snm><fnm>JB</fnm></au>
+  </aug>
+  <source>BMC Res. Notes</source>
+  <pubdate>2012</pubdate>
+  <volume>5</volume>
+  <fpage>668</fpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Evaluation of general 16S ribosomal RNA gene PCR primers for
+  classical and next-generation sequencing-based diversity studies</p></title>
+  <aug>
+    <au><snm>Klindworth</snm><fnm>A</fnm></au>
+    <au><snm>Pruesse</snm><fnm>E</fnm></au>
+    <au><snm>Schweer</snm><fnm>T</fnm></au>
+    <au><snm>Peplies</snm><fnm>J</fnm></au>
+    <au><snm>Quast</snm><fnm>C</fnm></au>
+    <au><snm>Horn</snm><fnm>M</fnm></au>
+    <au><snm>Gl{\"o}ckner</snm><fnm>FO</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2012</pubdate>
+  <fpage>gks808</fpage>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Systematic improvement of amplicon marker gene methods for
+  increased accuracy in microbiome studies</p></title>
+  <aug>
+    <au><snm>Gohl</snm><fnm>DM</fnm></au>
+    <au><snm>Vangay</snm><fnm>P</fnm></au>
+    <au><snm>Garbe</snm><fnm>J</fnm></au>
+    <au><snm>MacLean</snm><fnm>A</fnm></au>
+    <au><snm>Hauge</snm><fnm>A</fnm></au>
+    <au><snm>Becker</snm><fnm>A</fnm></au>
+    <au><snm>Gould</snm><fnm>TJ</fnm></au>
+    <au><snm>Clayton</snm><fnm>JB</fnm></au>
+    <au><snm>Johnson</snm><fnm>TJ</fnm></au>
+    <au><snm>Hunter</snm><fnm>R</fnm></au>
+    <au><snm>Knights</snm><fnm>D</fnm></au>
+    <au><snm>Beckman</snm><fnm>KB</fnm></au>
+  </aug>
+  <source>Nat. Biotechnol.</source>
+  <pubdate>2016</pubdate>
+</bibl>
+
+<bibl id="B12">
+  <title><p>{PCR} biases distort bacterial and archaeal community structure in
+  pyrosequencing datasets</p></title>
+  <aug>
+    <au><snm>Pinto</snm><fnm>AJ</fnm></au>
+    <au><snm>Raskin</snm><fnm>L</fnm></au>
+  </aug>
+  <source>PLoS One</source>
+  <pubdate>2012</pubdate>
+  <volume>7</volume>
+  <issue>8</issue>
+  <fpage>e43093</fpage>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Biased {16S} {rDNA} {PCR} amplification caused by interference from
+  {DNA} flanking the template region</p></title>
+  <aug>
+    <au><snm>Hansen</snm><fnm>MC</fnm></au>
+    <au><snm>Tolker Nielsen</snm><fnm>T</fnm></au>
+    <au><snm>Givskov</snm><fnm>M</fnm></au>
+    <au><snm>Molin</snm><fnm>S</fnm></au>
+  </aug>
+  <source>FEMS Microbiol. Ecol.</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>1998</pubdate>
+  <volume>26</volume>
+  <issue>2</issue>
+  <fpage>141</fpage>
+  <lpage>-149</lpage>
+</bibl>
+
+<bibl id="B14">
+  <title><p>Waste not, want not: why rarefying microbiome data is
+  inadmissible</p></title>
+  <aug>
+    <au><snm>McMurdie</snm><fnm>PJ</fnm></au>
+    <au><snm>Holmes</snm><fnm>S</fnm></au>
+  </aug>
+  <source>PLoS Comput. Biol.</source>
+  <pubdate>2014</pubdate>
+  <volume>10</volume>
+  <issue>4</issue>
+  <fpage>e1003531</fpage>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Using mixtures of biological samples as process controls for
+  RNA-sequencing experiments</p></title>
+  <aug>
+    <au><snm>Parsons</snm><fnm>J</fnm></au>
+    <au><snm>Munro</snm><fnm>S</fnm></au>
+    <au><snm>Pine</snm><fnm>PS</fnm></au>
+    <au><snm>McDaniel</snm><fnm>J</fnm></au>
+    <au><snm>Mehaffey</snm><fnm>M</fnm></au>
+    <au><snm>Salit</snm><fnm>M</fnm></au>
+  </aug>
+  <source>BMC genomics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2015</pubdate>
+  <volume>16</volume>
+  <issue>1</issue>
+  <fpage>708</fpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>An adaptable method using human mixed tissue ratiometric controls
+  for benchmarking performance on gene expression microarrays in clinical
+  laboratories</p></title>
+  <aug>
+    <au><snm>Pine</snm><fnm>PS</fnm></au>
+    <au><snm>Rosenzweig</snm><fnm>BA</fnm></au>
+    <au><snm>Thompson</snm><fnm>KL</fnm></au>
+  </aug>
+  <source>BMC biotechnology</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2011</pubdate>
+  <volume>11</volume>
+  <issue>1</issue>
+  <fpage>38</fpage>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Use of a mixed tissue RNA design for performance assessments on
+  multiple microarray formats</p></title>
+  <aug>
+    <au><snm>Thompson</snm><fnm>KL</fnm></au>
+    <au><snm>Rosenzweig</snm><fnm>BA</fnm></au>
+    <au><snm>Pine</snm><fnm>PS</fnm></au>
+    <au><snm>Retief</snm><fnm>J</fnm></au>
+    <au><snm>Turpaz</snm><fnm>Y</fnm></au>
+    <au><snm>Afshari</snm><fnm>CA</fnm></au>
+    <au><snm>Hamadeh</snm><fnm>HK</fnm></au>
+    <au><snm>Damore</snm><fnm>MA</fnm></au>
+    <au><snm>Boedigheimer</snm><fnm>M</fnm></au>
+    <au><snm>Blomme</snm><fnm>E</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2005</pubdate>
+  <volume>33</volume>
+  <issue>22</issue>
+  <fpage>e187</fpage>
+  <lpage>-e187</lpage>
+</bibl>
+
+<bibl id="B18">
+  <title><p>Refinement of a human challenge model for evaluation of
+  enterotoxigenic Escherichia coli vaccines</p></title>
+  <aug>
+    <au><snm>Harro</snm><fnm>C</fnm></au>
+    <au><snm>Chakraborty</snm><fnm>S</fnm></au>
+    <au><snm>Feller</snm><fnm>A</fnm></au>
+    <au><snm>DeNearing</snm><fnm>B</fnm></au>
+    <au><snm>Cage</snm><fnm>A</fnm></au>
+    <au><snm>Ram</snm><fnm>M</fnm></au>
+    <au><snm>Lundgren</snm><fnm>A</fnm></au>
+    <au><snm>Svennerholm</snm><fnm>AM</fnm></au>
+    <au><snm>Bourgeois</snm><fnm>AL</fnm></au>
+    <au><snm>Walker</snm><fnm>RI</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Clinical and Vaccine Immunology</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2011</pubdate>
+  <volume>18</volume>
+  <issue>10</issue>
+  <fpage>1719</fpage>
+  <lpage>-1727</lpage>
+</bibl>
+
+<bibl id="B19">
+  <title><p>Individual-specific changes in the human gut microbiota after
+  challenge with enterotoxigenic Escherichia coli and subsequent ciprofloxacin
+  treatment</p></title>
+  <aug>
+    <au><snm>Pop</snm><fnm>M</fnm></au>
+    <au><snm>Paulson</snm><fnm>JN</fnm></au>
+    <au><snm>Chakraborty</snm><fnm>S</fnm></au>
+    <au><snm>Astrovskaya</snm><fnm>I</fnm></au>
+    <au><snm>Lindsay</snm><fnm>BR</fnm></au>
+    <au><snm>Li</snm><fnm>S</fnm></au>
+    <au><snm>Bravo</snm><fnm>HC</fnm></au>
+    <au><snm>Harro</snm><fnm>C</fnm></au>
+    <au><snm>Parkhill</snm><fnm>J</fnm></au>
+    <au><snm>Walker</snm><fnm>AW</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>BMC genomics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+</bibl>
+
+<bibl id="B20">
+  <title><p>Development of a dual-index sequencing strategy and curation
+  pipeline for analyzing amplicon sequence data on the MiSeq Illumina
+  sequencing platform</p></title>
+  <aug>
+    <au><snm>Kozich</snm><fnm>JJ</fnm></au>
+    <au><snm>Westcott</snm><fnm>SL</fnm></au>
+    <au><snm>Baxter</snm><fnm>NT</fnm></au>
+    <au><snm>Highlander</snm><fnm>SK</fnm></au>
+    <au><snm>Schloss</snm><fnm>PD</fnm></au>
+  </aug>
+  <source>Applied and environmental microbiology</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2013</pubdate>
+  <volume>79</volume>
+  <issue>17</issue>
+  <fpage>5112</fpage>
+  <lpage>-5120</lpage>
+</bibl>
+
+<bibl id="B21">
+  <title><p>Improved Bacterial {16S} {rRNA} Gene (V4 and V4-5) and Fungal
+  Internal Transcribed Spacer Marker Gene Primers for Microbial Community
+  Surveys</p></title>
+  <aug>
+    <au><snm>Walters</snm><fnm>W</fnm></au>
+    <au><snm>Hyde</snm><fnm>ER</fnm></au>
+    <au><snm>Berg Lyons</snm><fnm>D</fnm></au>
+    <au><snm>Ackermann</snm><fnm>G</fnm></au>
+    <au><snm>Humphrey</snm><fnm>G</fnm></au>
+    <au><snm>Parada</snm><fnm>A</fnm></au>
+    <au><snm>Gilbert</snm><fnm>JA</fnm></au>
+    <au><snm>Jansson</snm><fnm>JK</fnm></au>
+    <au><snm>Caporaso</snm><fnm>JG</fnm></au>
+    <au><snm>Fuhrman</snm><fnm>JA</fnm></au>
+    <au><snm>Apprill</snm><fnm>A</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+  </aug>
+  <source>mSystems</source>
+  <pubdate>2016</pubdate>
+  <volume>1</volume>
+  <issue>1</issue>
+</bibl>
+
+<bibl id="B22">
+  <title><p>OptiClust, an Improved Method for Assigning Amplicon-Based Sequence
+  Data to Operational Taxonomic Units</p></title>
+  <aug>
+    <au><snm>Westcott</snm><fnm>SL</fnm></au>
+    <au><snm>Schloss</snm><fnm>PD</fnm></au>
+  </aug>
+  <source>mSphere</source>
+  <pubdate>2017</pubdate>
+  <volume>2</volume>
+  <issue>2</issue>
+</bibl>
+
+<bibl id="B23">
+  <title><p>Introducing mothur: open-source, platform-independent,
+  community-supported software for describing and comparing microbial
+  communities</p></title>
+  <aug>
+    <au><snm>Schloss</snm><fnm>PD</fnm></au>
+    <au><snm>Westcott</snm><fnm>SL</fnm></au>
+    <au><snm>Ryabin</snm><fnm>T</fnm></au>
+    <au><snm>Hall</snm><fnm>JR</fnm></au>
+    <au><snm>Hartmann</snm><fnm>M</fnm></au>
+    <au><snm>Hollister</snm><fnm>EB</fnm></au>
+    <au><snm>Lesniewski</snm><fnm>RA</fnm></au>
+    <au><snm>Oakley</snm><fnm>BB</fnm></au>
+    <au><snm>Parks</snm><fnm>DH</fnm></au>
+    <au><snm>Robinson</snm><fnm>CJ</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Applied and environmental microbiology</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2009</pubdate>
+  <volume>75</volume>
+  <issue>23</issue>
+  <fpage>7537</fpage>
+  <lpage>-7541</lpage>
+</bibl>
+
+<bibl id="B24">
+  <title><p>Subsampled open-reference clustering creates consistent,
+  comprehensive {OTU} definitions and scales to billions of
+  sequences</p></title>
+  <aug>
+    <au><snm>Rideout</snm><fnm>JR</fnm></au>
+    <au><snm>He</snm><fnm>Y</fnm></au>
+    <au><snm>Navas Molina</snm><fnm>JA</fnm></au>
+    <au><snm>Walters</snm><fnm>WA</fnm></au>
+    <au><snm>Ursell</snm><fnm>LK</fnm></au>
+    <au><snm>Gibbons</snm><fnm>SM</fnm></au>
+    <au><snm>Chase</snm><fnm>J</fnm></au>
+    <au><snm>McDonald</snm><fnm>D</fnm></au>
+    <au><snm>Gonzalez</snm><fnm>A</fnm></au>
+    <au><snm>Robbins Pianka</snm><fnm>A</fnm></au>
+    <au><snm>Clemente</snm><fnm>JC</fnm></au>
+    <au><snm>Gilbert</snm><fnm>JA</fnm></au>
+    <au><snm>Huse</snm><fnm>SM</fnm></au>
+    <au><snm>Zhou</snm><fnm>HW</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+    <au><snm>Caporaso</snm><fnm>JG</fnm></au>
+  </aug>
+  <source>PeerJ</source>
+  <pubdate>2014</pubdate>
+  <volume>2</volume>
+  <fpage>e545</fpage>
+</bibl>
+
+<bibl id="B25">
+  <title><p>QIIME allows analysis of high-throughput community sequencing
+  data</p></title>
+  <aug>
+    <au><snm>Caporaso</snm><fnm>JG</fnm></au>
+    <au><snm>Kuczynski</snm><fnm>J</fnm></au>
+    <au><snm>Stombaugh</snm><fnm>J</fnm></au>
+    <au><snm>Bittinger</snm><fnm>K</fnm></au>
+    <au><snm>Bushman</snm><fnm>FD</fnm></au>
+    <au><snm>Costello</snm><fnm>EK</fnm></au>
+    <au><snm>Fierer</snm><fnm>N</fnm></au>
+    <au><snm>Pe{\~n}a</snm><fnm>AG</fnm></au>
+    <au><snm>Goodrich</snm><fnm>JK</fnm></au>
+    <au><snm>Gordon</snm><fnm>JI</fnm></au>
+    <au><snm>Huttley</snm><fnm>GA</fnm></au>
+    <au><snm>Kelley</snm><fnm>ST</fnm></au>
+    <au><snm>Knights</snm><fnm>D</fnm></au>
+    <au><snm>Koenig</snm><fnm>JE</fnm></au>
+    <au><snm>Ley</snm><fnm>RE</fnm></au>
+    <au><snm>Lozupone</snm><fnm>CA</fnm></au>
+    <au><snm>McDonald</snm><fnm>D</fnm></au>
+    <au><snm>Muegge</snm><fnm>BD</fnm></au>
+    <au><snm>Pirrung</snm><fnm>M</fnm></au>
+    <au><snm>Reeder</snm><fnm>J</fnm></au>
+    <au><snm>Sevinsky</snm><fnm>JR</fnm></au>
+    <au><snm>Turnbaugh</snm><fnm>PJ</fnm></au>
+    <au><snm>Walters</snm><fnm>WA</fnm></au>
+    <au><snm>Widmann</snm><fnm>J</fnm></au>
+    <au><snm>Yatsunenko</snm><fnm>T</fnm></au>
+    <au><snm>Zaneveld</snm><fnm>J</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Nature Methods</source>
+  <publisher>Nature Publishing Group SN -</publisher>
+  <pubdate>2010</pubdate>
+  <volume>7</volume>
+  <fpage>335</fpage>
+  <url>http://dx.doi.org/10.1038/nmeth.f.303</url>
+  <note>Correspondence</note>
+</bibl>
+
+<bibl id="B26">
+  <title><p>Exploiting extension bias in polymerase chain reaction to improve
+  primer specificity in ensembles of nearly identical DNA templates</p></title>
+  <aug>
+    <au><snm>Wright</snm><fnm>ES</fnm></au>
+    <au><snm>Yilmaz</snm><fnm>LS</fnm></au>
+    <au><snm>Ram</snm><fnm>S</fnm></au>
+    <au><snm>Gasser</snm><fnm>JM</fnm></au>
+    <au><snm>Harrington</snm><fnm>GW</fnm></au>
+    <au><snm>Noguera</snm><fnm>DR</fnm></au>
+  </aug>
+  <source>Environmental microbiology</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2014</pubdate>
+  <volume>16</volume>
+  <issue>5</issue>
+  <fpage>1354</fpage>
+  <lpage>-1365</lpage>
+</bibl>
+
+<bibl id="B27">
+  <title><p>Bioconductor Workflow for Microbiome Data Analysis: from raw reads
+  to community analyses [version 2; referees: 3 approved]</p></title>
+  <aug>
+    <au><snm>Callahan</snm><fnm>BJ</fnm></au>
+    <au><snm>Sankaran</snm><fnm>K</fnm></au>
+    <au><snm>Fukuyama</snm><fnm>JA</fnm></au>
+    <au><snm>McMurdie</snm><fnm>PJ</fnm></au>
+    <au><snm>Holmes</snm><fnm>SP</fnm></au>
+  </aug>
+  <source>F1000Research</source>
+  <pubdate>2016</pubdate>
+  <volume>5</volume>
+  <issue>1492</issue>
+</bibl>
+
+<bibl id="B28">
+  <title><p>Gut microbiota of a long-distance migrant demonstrates resistance
+  against environmental microbe incursions</p></title>
+  <aug>
+    <au><snm>Risely</snm><fnm>A</fnm></au>
+    <au><snm>Waite</snm><fnm>D</fnm></au>
+    <au><snm>Ujvari</snm><fnm>B</fnm></au>
+    <au><snm>Klaassen</snm><fnm>M</fnm></au>
+    <au><snm>Hoye</snm><fnm>B</fnm></au>
+  </aug>
+  <source>Molecular ecology</source>
+  <publisher>Wiley Online Library</publisher>
+  <pubdate>2017</pubdate>
+</bibl>
+
+<bibl id="B29">
+  <title><p>The external RNA controls consortium: a progress report</p></title>
+  <aug>
+    <au><snm>Baker</snm><fnm>SC</fnm></au>
+    <au><snm>Bauer</snm><fnm>SR</fnm></au>
+    <au><snm>Beyer</snm><fnm>RP</fnm></au>
+    <au><snm>Brenton</snm><fnm>JD</fnm></au>
+    <au><snm>Bromley</snm><fnm>B</fnm></au>
+    <au><snm>Burrill</snm><fnm>J</fnm></au>
+    <au><snm>Causton</snm><fnm>H</fnm></au>
+    <au><snm>Conley</snm><fnm>MP</fnm></au>
+    <au><snm>Elespuru</snm><fnm>R</fnm></au>
+    <au><snm>Fero</snm><fnm>M</fnm></au>
+    <au><cnm>others</cnm></au>
+  </aug>
+  <source>Nature methods</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2005</pubdate>
+  <volume>2</volume>
+  <issue>10</issue>
+  <fpage>731</fpage>
+  <lpage>-734</lpage>
+</bibl>
+
+<bibl id="B30">
+  <title><p>R: A Language and Environment for Statistical Computing</p></title>
+  <aug>
+    <au><cnm>{R Core Team}</cnm></au>
+  </aug>
+  <publisher>Vienna, Austria</publisher>
+  <pubdate>2018</pubdate>
+  <url>https://www.R-project.org/</url>
+</bibl>
+
+<bibl id="B31">
+  <title><p>Sensitivity and correlation of hypervariable regions in 16S rRNA
+  genes in phylogenetic analysis</p></title>
+  <aug>
+    <au><snm>Yang</snm><fnm>B</fnm></au>
+    <au><snm>Wang</snm><fnm>Y</fnm></au>
+    <au><snm>Qian</snm><fnm>PY</fnm></au>
+  </aug>
+  <source>BMC bioinformatics</source>
+  <publisher>BioMed Central</publisher>
+  <pubdate>2016</pubdate>
+  <volume>17</volume>
+  <issue>1</issue>
+  <fpage>1</fpage>
+</bibl>
+
+<bibl id="B32">
+  <title><p>Rqc: Quality Control Tool for High-Throughput Sequencing
+  Data</p></title>
+  <aug>
+    <au><snm>Souza</snm><fnm>W</fnm></au>
+    <au><snm>Carvalho</snm><fnm>B</fnm></au>
+  </aug>
+  <pubdate>2017</pubdate>
+  <url>https://github.com/labbcb/Rqc</url>
+  <note>R package version 1.10.2</note>
+</bibl>
+
+<bibl id="B33">
+  <title><p>{O}rchestrating high-throughput genomic analysis with
+  {B}ioconductor</p></title>
+  <aug>
+    <au><cnm>{Huber}</cnm></au>
+    <au><cnm>{W.}</cnm></au>
+    <au><cnm>{Carey}</cnm></au>
+    <au><snm>J.</snm><fnm>V.</fnm></au>
+    <au><cnm>{Gentleman}</cnm></au>
+    <au><cnm>{R.}</cnm></au>
+    <au><cnm>{Anders}</cnm></au>
+    <au><cnm>{S.}</cnm></au>
+    <au><cnm>{Carlson}</cnm></au>
+    <au><cnm>{M.}</cnm></au>
+    <au><cnm>{Carvalho}</cnm></au>
+    <au><snm>S.</snm><fnm>B.</fnm></au>
+    <au><cnm>{Bravo}</cnm></au>
+    <au><snm>C.</snm><fnm>H.</fnm></au>
+    <au><cnm>{Davis}</cnm></au>
+    <au><cnm>{S.}</cnm></au>
+    <au><cnm>{Gatto}</cnm></au>
+    <au><cnm>{L.}</cnm></au>
+    <au><cnm>{Girke}</cnm></au>
+    <au><cnm>{T.}</cnm></au>
+    <au><cnm>{Gottardo}</cnm></au>
+    <au><cnm>{R.}</cnm></au>
+    <au><cnm>{Hahne}</cnm></au>
+    <au><cnm>{F.}</cnm></au>
+    <au><cnm>{Hansen}</cnm></au>
+    <au><snm>D.</snm><fnm>K.</fnm></au>
+    <au><cnm>{Irizarry}</cnm></au>
+    <au><snm>A.</snm><fnm>R.</fnm></au>
+    <au><cnm>{Lawrence}</cnm></au>
+    <au><cnm>{M.}</cnm></au>
+    <au><cnm>{Love}</cnm></au>
+    <au><snm>I.</snm><fnm>M.</fnm></au>
+    <au><cnm>{MacDonald}</cnm></au>
+    <au><cnm>{J.}</cnm></au>
+    <au><cnm>{Obenchain}</cnm></au>
+    <au><cnm>{V.}</cnm></au>
+    <au><cnm>{{Ole's}}</cnm></au>
+    <au><snm>K.</snm><fnm>A.</fnm></au>
+    <au><cnm>{{Pag`es}}</cnm></au>
+    <au><cnm>{H.}</cnm></au>
+    <au><cnm>{Reyes}</cnm></au>
+    <au><cnm>{A.}</cnm></au>
+    <au><cnm>{Shannon}</cnm></au>
+    <au><cnm>{P.}</cnm></au>
+    <au><cnm>{Smyth}</cnm></au>
+    <au><snm>K.</snm><fnm>G.</fnm></au>
+    <au><cnm>{Tenenbaum}</cnm></au>
+    <au><cnm>{D.}</cnm></au>
+    <au><cnm>{Waldron}</cnm></au>
+    <au><cnm>{L.}</cnm></au>
+    <au><cnm>{Morgan}</cnm></au>
+    <au><cnm>{M.}</cnm></au>
+  </aug>
+  <source>Nature Methods</source>
+  <pubdate>2015</pubdate>
+  <volume>12</volume>
+  <issue>2</issue>
+  <fpage>115</fpage>
+  <lpage>-121</lpage>
+  <url>http://www.nature.com/nmeth/journal/v12/n2/full/nmeth.3252.html</url>
+</bibl>
+
+<bibl id="B34">
+  <title><p>The SILVA ribosomal RNA gene database project: improved data
+  processing and web-based tools</p></title>
+  <aug>
+    <au><snm>Quast</snm><fnm>C</fnm></au>
+    <au><snm>Pruesse</snm><fnm>E</fnm></au>
+    <au><snm>Yilmaz</snm><fnm>P</fnm></au>
+    <au><snm>Gerken</snm><fnm>J</fnm></au>
+    <au><snm>Schweer</snm><fnm>T</fnm></au>
+    <au><snm>Yarza</snm><fnm>P</fnm></au>
+    <au><snm>Peplies</snm><fnm>J</fnm></au>
+    <au><snm>Gl{\"o}ckner</snm><fnm>FO</fnm></au>
+  </aug>
+  <source>Nucleic acids research</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2012</pubdate>
+  <volume>41</volume>
+  <issue>D1</issue>
+  <fpage>D590</fpage>
+  <lpage>-D596</lpage>
+</bibl>
+
+<bibl id="B35">
+  <title><p>UCHIME improves sensitivity and speed of chimera
+  detection</p></title>
+  <aug>
+    <au><snm>Edgar</snm><fnm>RC</fnm></au>
+    <au><snm>Haas</snm><fnm>BJ</fnm></au>
+    <au><snm>Clemente</snm><fnm>JC</fnm></au>
+    <au><snm>Quince</snm><fnm>C</fnm></au>
+    <au><snm>Knight</snm><fnm>R</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford Univ Press</publisher>
+  <pubdate>2011</pubdate>
+  <volume>27</volume>
+  <issue>16</issue>
+  <fpage>2194</fpage>
+  <lpage>-2200</lpage>
+</bibl>
+
+<bibl id="B36">
+  <title><p>Naive Bayesian classifier for rapid assignment of rRNA sequences
+  into the new bacterial taxonomy</p></title>
+  <aug>
+    <au><snm>Wang</snm><fnm>Q</fnm></au>
+    <au><snm>Garrity</snm><fnm>GM</fnm></au>
+    <au><snm>Tiedje</snm><fnm>JM</fnm></au>
+    <au><snm>Cole</snm><fnm>JR</fnm></au>
+  </aug>
+  <source>Applied and environmental microbiology</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2007</pubdate>
+  <volume>73</volume>
+  <issue>16</issue>
+  <fpage>5261</fpage>
+  <lpage>-5267</lpage>
+</bibl>
+
+<bibl id="B37">
+  <title><p>ea-utils: Command-line tools for processing biological sequencing
+  data</p></title>
+  <aug>
+    <au><snm>Aronesty</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Expression Analysis, Durham, NC</source>
+  <pubdate>2011</pubdate>
+</bibl>
+
+<bibl id="B38">
+  <title><p>Search and clustering orders of magnitude faster than
+  BLAST</p></title>
+  <aug>
+    <au><snm>Edgar</snm><fnm>RC</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <publisher>Oxford University Press</publisher>
+  <pubdate>2010</pubdate>
+  <volume>26</volume>
+  <issue>19</issue>
+  <fpage>2460</fpage>
+  <lpage>-2461</lpage>
+</bibl>
+
+<bibl id="B39">
+  <title><p>Greengenes, a chimera-checked 16S rRNA gene database and workbench
+  compatible with ARB</p></title>
+  <aug>
+    <au><snm>DeSantis</snm><fnm>TZ</fnm></au>
+    <au><snm>Hugenholtz</snm><fnm>P</fnm></au>
+    <au><snm>Larsen</snm><fnm>N</fnm></au>
+    <au><snm>Rojas</snm><fnm>M</fnm></au>
+    <au><snm>Brodie</snm><fnm>EL</fnm></au>
+    <au><snm>Keller</snm><fnm>K</fnm></au>
+    <au><snm>Huber</snm><fnm>T</fnm></au>
+    <au><snm>Dalevi</snm><fnm>D</fnm></au>
+    <au><snm>Hu</snm><fnm>P</fnm></au>
+    <au><snm>Andersen</snm><fnm>GL</fnm></au>
+  </aug>
+  <source>Applied and environmental microbiology</source>
+  <publisher>Am Soc Microbiol</publisher>
+  <pubdate>2006</pubdate>
+  <volume>72</volume>
+  <issue>7</issue>
+  <fpage>5069</fpage>
+  <lpage>-5072</lpage>
+</bibl>
+
+<bibl id="B40">
+  <title><p>Controlling the false discovery rate: a practical and powerful
+  approach to multiple testing</p></title>
+  <aug>
+    <au><snm>Benjamini</snm><fnm>Y</fnm></au>
+    <au><snm>Hochberg</snm><fnm>Y</fnm></au>
+  </aug>
+  <source>Journal of the royal statistical society. Series B
+  (Methodological)</source>
+  <publisher>JSTOR</publisher>
+  <pubdate>1995</pubdate>
+  <fpage>289</fpage>
+  <lpage>-300</lpage>
+</bibl>
+
+<bibl id="B41">
+  <title><p>edgeR: a Bioconductor package for differential expression analysis
+  of digital gene expression data</p></title>
+  <aug>
+    <au><snm>Robinson</snm><fnm>MD</fnm></au>
+    <au><snm>McCarthy</snm><fnm>DJ</fnm></au>
+    <au><snm>Smyth</snm><fnm>GK</fnm></au>
+  </aug>
+  <source>Bioinformatics</source>
+  <pubdate>2010</pubdate>
+  <volume>26</volume>
+  <issue>1</issue>
+  <fpage>139</fpage>
+  <lpage>-140</lpage>
+</bibl>
+
+<bibl id="B42">
+  <title><p>Differential expression analysis of multifactor {RNA-Seq}
+  experiments with respect to biological variation</p></title>
+  <aug>
+    <au><snm>McCarthy</snm><fnm>DJ</fnm></au>
+    <au><snm>Chen</snm><fnm>Y</fnm></au>
+    <au><snm>Smyth</snm><fnm>GK</fnm></au>
+  </aug>
+  <source>Nucleic Acids Res.</source>
+  <pubdate>2012</pubdate>
+  <volume>40</volume>
+  <issue>10</issue>
+  <fpage>4288</fpage>
+  <lpage>-4297</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment
