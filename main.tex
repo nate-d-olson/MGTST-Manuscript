@@ -467,34 +467,48 @@ forward and reverse reads. Forward reads go from position 0 to 300 and
 reverse reads from 464 to 164.}
 \end{figure}
 
-\paragraph{Mixture Design}
-Using mixtures of environmental samples, expected values for use in assessment can be obtained using information from unmixed samples and how the samples were mixed.
-Our mixture dataset follows a
-two-sample titration mixture design, where DNA collected from five vaccine trial participants before and
-after exposure to pathogenic \emph{Escherichia coli}  was mixed following a \(log_2\) dilution
-series (Fig. \ref{fig:countExperimentalDesign}).
+\paragraph{Two-Sample Titration Series}
+Using mixtures of environmental samples, expected feature abundance values can be obtained using information from unmixed samples and the mixture design.
+Our mixture dataset follows a two-sample titration mixture design, where DNA collected from five vaccine trial participants before and
+after exposure to pathogenic \emph{Escherichia coli}  was mixed following a \(log_2\) dilution series (Fig. \ref{fig:countExperimentalDesign}).
+
+For our two-sample titration mixture design, the expected feature
+relative abundance is calculated using equation \eqref{eq:mixEq},
+where \(\theta_i\), is the proportion of POST DNA in titration \(i\),
+\(q_{ij}\) is the relative abundance of feature \(j\) in titration
+\(i\), and the relative abundance of feature \(j\) in the unmixed PRE
+and POST samples is \(q_{pre,j}\) and \(q_{post,j}\).
+
+\begin{equation}
+  q_{ij} = \theta_i q_{post,j} + (1 - \theta_i) q_{pre,j}
+  \label{eq:mixEq}
+\end{equation}
 
 \paragraph{Sequencing}
-We first characterize the number of reads per sample and base quality
-score distribution. The number of reads per sample and distribution of
-base quality scores by position was consistent across subjects (Fig.
-\ref{fig:qaPlots}). Two barcoded experimental samples had less than
-35,000 reads. The rest of the samples with less than 35,000 reads were
-no template PCR controls (NTC). Excluding one failed reaction with 2,700
-reads and NTCs, there were \(8.9548\times 10^{4}\) (3195-152267)
-sequences per sample, median and range. Forward reads had consistently
-higher base quality scores relative to the reverse reads with a narrow
-overlap region with high base quality scores for both forward and
-reverse reads (Fig. \ref{fig:qaPlots}B).
+To evaluate the overall sequencing dataset quality and check for subject
+specific differences we characterized the number of reads per sample and
+base quality score distribution. The number of reads per sample and
+distribution of base quality scores by position was consistent across subjects (Fig. \ref{fig:qaPlots}). Two barcoded experimental samples had less than
+35,000 reads and are likely the product of failed PCRs.
+Therefore, these samples were excluded from downstream analysis.
+The rest of the samples with less than 35,000 reads were no template PCR
+controls (NTC). Excluding one failed reaction with 2,700 reads and NTCs, there
+were \(8.9548\times 10^{4}\) (3195-152267) sequences per sample, median and
+range. Forward reads had consistently higher base quality scores relative to
+the reverse reads with a narrow overlap region with high base quality scores
+for both forward and reverse reads (Fig. \ref{fig:qaPlots}B).
+No subject specific differences in read quality were observed.
 
 \subsubsection*{Titration Series Validation and Correction}
 
 To validate the two-sample titration dataset for use in abundance
-assessment we evaluated two assumptions about the titrations. The first assumption was that the
-samples were mixed volumetrically in a \(log_2\) dilution series
-according to the mixture design. To validate the sample volumetric mixing exogenous
-DNA (ERCC plasmids) were spiked into the unmixed samples before mixing and quantified
-using qPCR. The second assumption was that the unmixed PRE and POST samples
+assessment we evaluated two assumptions about the titrations.
+The first assumption was that the samples were mixed volumetrically in a
+\(log_2\) dilution series according to the mixture design. To validate the
+sample volumetric mixing exogenous DNA (ERCC plasmids) were spiked into the
+unmixed samples before mixing and quantified
+using qPCR (Fig. \ref{fig:titrationValidation}).
+The second assumption was that the unmixed PRE and POST samples
 have the same proportion of prokaryotic DNA. The stool samples used to
 generate the mixtures have both eukaryotic (primarily human) DNA and
 prokaryotic DNA. If the proportion of prokaryotic DNA differs between
@@ -502,7 +516,7 @@ the unmixed samples, then the amount of DNA from the unmixed samples in
 a titration targeted by 16S rRNA gene sequencing is not consistent with
 the mixture design. To evaluate if the PRE and POST samples had the same
 proportion of prokaryotic DNA total prokaryotic DNA in the titrations
-samples were quantified using a qPCR assay targeting the 16S rRNA gene.
+samples were quantified using a qPCR assay targeting the 16S rRNA gene (Fig. \ref{fig:titrationValidation}).
 
 
 \paragraph*{Volumetric Mixing Validation}
@@ -510,7 +524,7 @@ samples were quantified using a qPCR assay targeting the 16S rRNA gene.
 Titration series volumetric mixing was validated using qPCR to quantify exogenous
 DNA (ERCC plasmids) spiked into the POST samples prior to mixing.
 The expectation is that the ERCC plasmid copy number will change at a rate consistent
-with the change in proportion of POST along  the titration series (Fig. \ref{fig:countExperimentalDesign}B).
+with the change in proportion of POST along the titration series (Fig. \ref{fig:countExperimentalDesign}B and \ref{fig:titrationValidation}).
 For our \(log_2\) two-sample-titration mixture design the expected slope of the
 regression line between titration factor and Ct is 1, corresponding to a
 doubling in template DNA every PCR cycle. The qPCR assay
@@ -521,10 +535,7 @@ titration series volumetric mixing (Table \ref{tab:erccTable}).The qPCR assays t
 ERCCs spiked into the POST samples had \(R^2\) values and slope
 estimates close to 1 (Table \ref{tab:erccTable}). Slope estimates less
 than one were attributed to assay standard curve efficiency less than 1
-(Table \ref{tab:erccTable}). ERCCs were also spiked into PRE samples but were not used
-to validate volumetric mixing as PRE sample proportion differences were
-too small for qPCR quantification. The expected difference for
-the entire range of PRE concentrations is 1 \(C_t\). When considering the
+(Table \ref{tab:erccTable}). When considering the
 quantitative limitations of the qPCR assay these results confirm that
 the unmixed samples were volumetrically mixed according to the
 two-sample titration mixture design.
@@ -553,24 +564,23 @@ E01JH0038 & 035 & Ac03459892-a1 & 65 & 0.9984 & 86.69 & 0.95 & 0.94\\
 \centering
 \includegraphics{bacPlot-1.pdf}
 \caption{\label{fig:bacPlot}Prokaryotic DNA concentration (ng/ul) across
-titrations measured using a 16S rRNA qPCR assay. \(R^2\) and p-values are shown linear models fit to prokaryotic DNA concentration versus proportion post DNA for each individual.
-Red lines indicate negative slope estimates and blue lines positive slope estimates.
+titrations measured using a 16S rRNA qPCR assay. \(R^2\) and p-values are linear models fit to prokaryotic DNA concentration versus proportion post DNA for each individual.
+Red and blue lines indicate negative and positive slope estimates respectively.
 p-value indicates significant difference from the expected slope of 0.
 The grey regions indicate the linear model 95\% confidence interval.
 Multiple test correction was performed using the Benjamini-Hochberg
 method. One of the E01JH0004 PCR replicates for titration 3
-(\(\theta=0.125\)) was identified as an outlier, with a prokaryotic DNA concentration of
-0.003 ng/ul, and was excluded from the linear model. The linear model slope
-was still significantly different from 0 when the outlier was included.}
+(\(\theta=0.125\)) was identified as an outlier, with a prokaryotic DNA
+concentration of 0.003 ng/ul, and was excluded from the linear model.
+The linear model slope was still significantly different from 0 when the
+outlier was included.}
 \end{figure}
 
 Observed changes in prokaryotic DNA concentration across titrations
 indicate the proportion of prokaryotic DNA from the unmixed PRE and POST
 samples in a titration is inconsistent with the mixture design (Fig.
 \ref{fig:bacPlot}). A qPCR assay targeting the 16S rRNA gene was used to
-quantify the concentration of prokaryotic DNA in the titrations. An
-in-house standard curve with concentrations of 20 ng/ul, 2ng/ul, and 0.2
-ng/ul was used, with efficiency 91.49, and \(R^2\) 0.999. If the
+quantify the concentration of prokaryotic DNA in the titrations. If the
 proportion of prokaryotic DNA is the same between PRE and POST samples
 the slope of the concentration estimates across the two-sample titration
 would be 0. For subjects where the proportion of prokaryotic DNA is
@@ -583,19 +593,18 @@ E01JH0004 and E01JH0017 and higher for E01JH0016 and E01JH0038.
 
 \paragraph*{Correcting for Deviations from Mixture Design}
 
-Human stool sample DNA extracts vary in the proportion of eukaryotic
-(primarily human) and prokaryotic DNA in the sample. To account for
-differences in the proportion of prokaryotic DNA in PRE and POST samples
-(Fig. \ref{fig:bacPlot}) we inferred the proportion of POST sample
-prokaryotic DNA in a titration, \(\theta\), using the 16S rRNA
-sequencing data (Fig. \ref{fig:thetaHat}). Overall the relationship
+Our titration validation results identified differences in the proportion of prokaryotic DNA in PRE and POST samples (Fig. \ref{fig:bacPlot}).
+Therefore our expected values used in measurement assessment need to account for differences in the proportion of prokaryotic DNA from unmixed samples.
+To account for differences in prokaryotic DNA proportion we inferred
+the proportion of POST sample prokaryotic DNA in a titration, \(\theta\), using
+the 16S rRNA sequencing data (Fig. \ref{fig:thetaHat}). Overall the relationship
 between the inferred and mixture design \(\theta\) values were
 consistent across pipelines but not subject whereas the \(\theta\)
 estimate 95\% CI varied by both subject and pipeline. For study subjects
 E01JH0004, E01JH0011, and E01JH0016 the inferred and mixture design
 \(\theta\) values were in agreement, in contrast to study subjects
 E01JH0017 and E01JH0038. For E01JH0017 the inferred values were
-consistently less than the mixture design values. Whereas for E01JH0038
+consistently less than the mixture design values. For E01JH0038
 the inferred values were consistently greater than the mixture design
 values. These results were consistent with the qPCR prokaryotic DNA
 concentration results with significantly positive slopes for E01JH0004
@@ -612,34 +621,21 @@ interval. Grey bars indicate expected \(\theta\) values based on mixture design.
 Points above grey bars indicate the titrations with a high proportion of prokaryotic DNA from the POST sample than expected. Points below grey bars indicate titrations with high proportion of prokaryotic DNA from the PRE sample.}
 \end{figure}
 
-
+%% make sure introduce count table earlier
 \subsection*{Assessment Framework}
 We developed a framework to assess count tables generated from different bioinformatic pipelines using our two-sample titration dataset as input.
-The framework assesses the qualitative and quantitative characteristics of a count table.
-The qualitative assessment provides insight into how much confidence a user can have in the presence or absence of a feature, whereas the quantitative assessment characterizes feature abundance values.
+The framework assesses count talbe qualitative and quantitative characteristics.
+The qualitative assessment provides insight into how much confidence a user can have in the presence or absence of a feature, whereas the quantitative assessment evaluates feature abundance values.
 
 \subsubsection*{Qualitative assessment}
 The purpose of the qualitative assessment is to show how well pipelines are able to differentiate true biological sequences from measurement process artifacts.
 Inadequate processing of artifacts can result in false positive features (features present in the count table that are not present in the sequenced sample) and false negative features (features missing from the count table that are present in the biological sample.)
 Our qualitative assessment methods seek to characterize the frequency of artifacts in a count table by estimating the proportion of titration-specific and unmixed-specific features (Fig. \ref{fig:featureDefinitions}) that cannot be explained by sampling alone.
 We can combine the artifactual feature proportion assessment results with sparsity estimates to determine whether the artifacts are primarily false positives or negatives.
+%% Make sure these definitions are consistent with rest of text
+Here we will define a false positive as a feature present in a titration but not observed in the unmixed samples, titration-specific, and false negative as features observed in unmixed samples but not the titrations, unmixed-specific.
 
 \paragraph{Artifactual Feature Proportion}
-
-\begin{figure}
-\centering
-\includegraphics{qualPlot-1.pdf}
-\caption{\label{fig:qualPlot}Distribution of (A) observed count values for
-titration-specific features and (B) expected count values for
-unmixed-specific features by pipeline and individual. The orange
-horizontal dashed line indicates a count value of 1. (C) Proportion of
-unmix-specific features and (D) titration-specific features with an
-adjusted p-value \textless{} 0.05 for the Bayesian hypothesis test and
-binomial test respectively. We failed to accept the null hypothesis when
-the p-value \textless{} 0.05, indicating that the discrepancy between
-the feature only being observed in the titrations or unmixed samples
-cannot be explained by sampling alone.}
-\end{figure}
 
 The artifact proportion assessment evaluates whether features only observed in
 unmixed samples or titrations could be explained by sampling alone.
@@ -653,9 +649,13 @@ appropriately filtered or correctly assigned to a feature by the
 bioinformatic pipeline.
 False positive and negative features can result in artificially inflated or deflated diversity estimates.
 
+%% Add diagram
+
 \paragraph{Sparsity}
 ADD TEXT
 Fraction of 0s in a count table
+
+%% Add diagram
 
 \subsubsection*{Quantitative Assessment}
 Our quantitative assessment uses error, bias, and variance metrics to evaluate count table abundance values.
@@ -664,11 +664,17 @@ The error metrics are used to evaluate overall pipeline quantitative performance
 The bias and variance metrics characterize feature-level performance.
 They provide insight into overall trends, for example if relative abundance or log fold change estimates are systematically skewed or have a large deviation from the expected value.
 
+\begin{figure}
+\centering
+\includegraphics{quant_metrics.png}
+\caption{\label{fig:quantMetrics} Quantitative metrics diagram.}
+\end{figure}
+
 \paragraph*{Relative Abundance Assessment}
-ADD TEXT
+ADD TEXT - metric definitions
 
 \paragraph*{Differential Abundance Assessment}
-ADD TEXT
+ADD TEXT - metric definitions
 
 \subsection*{Count Table Assessment Demonstration}
 Next, we assessed the qualitative and quantitative nature of 16S rRNA
@@ -762,6 +768,22 @@ differences.
 \subsubsection*{Qualitative Assessment}
 
 \paragraph{Artifactual Feature Proportion}
+
+\begin{figure}
+\centering
+\includegraphics{qualPlot-1.pdf}
+\caption{\label{fig:qualPlot}Distribution of (A) observed count values for
+titration-specific features and (B) expected count values for
+unmixed-specific features by pipeline and individual. The orange
+horizontal dashed line indicates a count value of 1. (C) Proportion of
+unmix-specific features and (D) titration-specific features with an
+adjusted p-value \textless{} 0.05 for the Bayesian hypothesis test and
+binomial test respectively. We failed to accept the null hypothesis when
+the p-value \textless{} 0.05, indicating that the discrepancy between
+the feature only being observed in the titrations or unmixed samples
+cannot be explained by sampling alone.}
+\end{figure}
+
 ADD TEXT
 
 \paragraph{Sparsity}
@@ -1084,8 +1106,12 @@ computational components of the measurement process.
 \section*{Methods}
 
 \subsection*{Assessment Dataset Development}
+ADD INTRO/ TRANSITION TEXT
+
 \subsubsection*{Titration Series Dataset}
-\paragraph*{Mixture Design}
+ADD INTRO/ TRANSITION TEXT
+
+\paragraph*{Two-Sample Titration Series}
 Samples collected at multiple timepoints during a Enterotoxigenic
 \emph{E. coli} (ETEC) vaccine trial \cite{harro2011refinement} were
 used to generate a two-sample titration dataset for assessing the 16S
@@ -1101,38 +1127,24 @@ exposure to ETEC with the highest \emph{E. coli} concentration for each
 subject (Fig. \ref{fig:countExperimentalDesign}A). Due to limited sample
 availability, for E01JH0016 the timepoint with the second highest
 \emph{E. coli} concentration was used as the POST sample. Independent
-titration series were generated for each subject, where POST samples
+titration series were generated for each subject. POST samples
 were titrated into PRE samples with POST proportions of 1/2, 1/4, 1/8,
 1/16, 1/32, 1/1,024, and 1/32,768 (Fig.
 \ref{fig:countExperimentalDesign}B). Unmixed (PRE and POST) sample DNA
 concentration was measured using NanoDrop ND-1000 (Thermo Fisher
 Scientific Inc.~Waltham, MA USA). Unmixed samples were diluted to 12.5
-\(ng/\mu L\) in tris-EDTA buffer before mixing.
+\(ng/\mu L\) in tris-EDTA buffer before mixing. The resulting titration series was composed of 45 samples, seven titrations and two unmixed samples for each of the five subjects.
 
-For our two-sample titration mixture design, the expected feature
-relative abundance can be calculated using equation \eqref{eq:mixEq},
-where \(\theta_i\), is the proportion of POST DNA in titration \(i\),
-\(q_{ij}\) is the relative abundance of feature \(j\) in titration
-\(i\), and the relative abundance of feature \(j\) in the unmixed PRE
-and POST samples is \(q_{pre,j}\) and \(q_{post,j}\).
-
-\begin{equation}
-  q_{ij} = \theta_i q_{post,j} + (1 - \theta_i) q_{pre,j}
-  \label{eq:mixEq}
-\end{equation}
 
 \paragraph*{Sequencing}
-
-The 45 samples (seven titrations and two unmixed samples for each of
-five subjects) were processed using the Illumina 16S library protocol
+The 45 samples were processed using the Illumina 16S library protocol
 (16S Metagenomic Sequencing Library Preparation, posted date 11/27/2013,
 downloaded from \url{https://support.illumina.com}). This protocol
-specifies an initial 16S rRNA gene PCR, followed by a sample indexing
-PCR, normalization, and sequencing.
+specifies an initial PCR of the 16S rRNA gene, followed by a sample indexing
+PCR, sample concentration normalization, and sequencing.
 
-A total of 192 16S rRNA PCR assays were run including four replicates
-per sample and 12 no-template controls, using Kapa HiFi HotStart
-ReadyMix reagents (KAPA Biosystems, Inc.~Wilmington, MA). The initial
+A total of 192 16S rRNA PCR assays were sequenced across two 96-well plates including four PCR replicates
+per sample and 12 no-template controls. The initial
 PCR assay targeted the V3-V5 region of the 16S rRNA gene, Bakt\_341F and
 Bakt\_806R \cite{klindworth2012evaluation}. The V3-V5 region is 464
 base pairs (bp) long, with forward and reverse reads overlapping by 136
@@ -1141,8 +1153,9 @@ bp, using 2 X 300 bp paired-end sequencing \cite{yang2016sensitivity} (
 overhang adapter sequences for library preparation (forward primer 5'-
 TCG TCG GCA GCG TCA GAT GTG TAT AAG AGA CAG CCT ACG GGN GGC WGC AG - 3'
 and reverse primer 5'- GTC TCG TGG GCT CGG AGA TGT GTA TAA GAG ACA GGA
-CTA CHV GGG TAT CTA ATC C - 3'). For quality control, the PCR product
-was verified using agarose gel electrophoresis to check amplicon size.
+CTA CHV GGG TAT CTA ATC C - 3'). Kapa HiFi HotStart
+ReadyMix reagents (KAPA Biosystems, Inc.~Wilmington, MA) was used to PCR the 16S rRNA gene. The PCR product amplicon size
+was verified using agarose gel electrophoresis.
 Concentration measurements were made after the initial 16S rRNA PCR, the
 indexing PCR, and normalization steps. DNA concentration was measured
 using the QuantIT Picogreen dsDNA Kit (Cat \# P7589, ThermoFisher
@@ -1163,11 +1176,15 @@ ThermoFisher, Waltham, MA USA). Due to the low pooled amplicon library
 DNA concentration, a modified protocol for low concentration libraries
 was used. The library was run on an Illumina MiSeq, and base calls were
 made using Illumina Real Time Analysis Software version 1.18.54.
+The sequence data was deposited in the NCBI SRA archive under Bioproject
+PRJNA480312. Individual SRA run accession numbers and metadata in Supplemental Table.
+
 Sequencing data quality control metrics for the 384 fastq sequence files
 (192 samples with forward and reverse reads) were computed using the
-Bioconductor \texttt{Rqc} package \cite{Rqc, Bioconductor}. The
-sequence data was deposited in the NCBI SRA archive under Bioproject
-PRJNA480312. Individual SRA run accession numbers and metadata in Supplemental Table.
+Bioconductor \texttt{Rqc} package \cite{Rqc, Bioconductor}.
+
+
+ADD TEXT??
 
 \subsubsection*{Titration Series Validation and Correction}
 ADD TEXT
@@ -1180,9 +1197,10 @@ ADD TEXT
 \end{figure}
 
 qPCR was used to validate volumetric mixing and check for differences in
-the proportion of prokaryotic DNA across titrations (Fig. \ref{fig:titrationValidation}). To ensure the
-two-sample titrations were volumetrically mixed according to the mixture
-design, independent ERCC plasmids were spiked into the unmixed PRE and
+the proportion of prokaryotic DNA across titrations
+(Fig. \ref{fig:titrationValidation}). To ensure the two-sample titrations
+were volumetrically mixed according to the mixture design,
+independent ERCC plasmids were spiked into the unmixed PRE and
 POST samples \cite{baker2005external} (NIST SRM SRM 2374) (Table
 \ref{tab:erccTable}). The ERCC plasmids were resuspended in 100
 \(\mu L\) tris-EDTA buffer and 2 \(\mu L\) of resuspended plasmids was
@@ -1193,14 +1211,20 @@ using TaqMan gene expression assays (FAM-MGB, Catalog \# 4448892,
 ThermoFisher) specific to each ERCC plasmid and TaqMan Universal
 MasterMix II (Catalog \# 4440040, ThermoFisher Waltham, MA USA).
 qPCR assays were perfomed in triplicate using the QuantStudio
-Real-Time qPCR (ThermoFisher).
+Real-Time qPCR (ThermoFisher). ERCCs were also spiked into PRE
+samples but were not used to validate volumetric mixing as PRE sample
+proportion differences were too small for qPCR quantification.
+The expected difference for the entire range of PRE concentrations
+is 1 \(C_t\).
 
 \paragraph*{Prokaryotic DNA Proportion Validation}
 To check for differences in the proportion of bacterial DNA in the PRE
 and POST samples, bacterial DNA concentration in the titrations was quantified
 using the Femto Bacterial DNA quantification kit (Zymo Research, Irvine
 CA). All samples were run in triplicate along with an in-house \emph{E.
-coli} DNA \(log_{10}\) dilution standard curve. qPCR assays were
+coli} DNA \(log_{10}\) dilution standard curve. Three concentrations were used
+for the in-house standard, 20 ng/ul, 2ng/ul, and 0.2 ng/ul,
+with 91.49 efficiency and 0.999 \(R^2\). qPCR assays were
 performed using the QuantStudio Real-Time qPCR (ThermoFisher).
 Amplification data and Ct values were exported as tsv files using
 QuantStudio™ Design and Analysis Software v1.4.1. Statistical analysis
@@ -1224,32 +1248,25 @@ using a negative binomial model.
 
 To fit the model and prevent uninformative and low abundance features
 from biasing \(\theta\) estimates, only features meeting the following
-criteria were used. Features included in the model were observed in at
-least 14 of the 28 total titration PCR replicates (4 replicates per 7
-titrations), demonstrated greater than 2-fold difference in relative
-abundance between the PRE and POST samples, and were present in either
-all four or none of the PRE and POST PCR replicates.
+criteria were used. To improve feature level model fit, features had to be observed in at least 14 of the 28 total titration PCR replicates (4 replicates per 7 titrations.)
+To increase confidence in PRE and POST abundance estimates the features were present in either all four or none of the PRE and POST PCR replicates.
+Finally, to eliminate uninformative features with no change in abundance across titrations only features with greater than 2-fold difference in relative abundance between the PRE and POST samples were used.
 
 16S rRNA sequencing count data is known to have a non-normal
 mean-variance relationship resulting in poor model fit for standard
 linear regression \cite{McMurdie2014}. Generalized linear models
 provide an alternative to standard least-squares regression. The above
 model is additive and therefore \(\theta_i\) cannot be directly inferred
-in log-space. To address this issue, we fit the model using a standard
-least-squares regression then obtained non-parametric 95 \% confidence
-intervals for the \(\theta\) estimates by bootstrapping with 1000
-replicates.
+in log-space. To address this limitation, we fit a model to \eqref{eq:thetaInf}
+using standard least-squares regression and obtained non-parametric 95 \%
+confidence intervals for the \(\theta\) estimates by bootstrapping with 1000
+replicates. Bootstrapping was performed by resampling informative features, defined above, by subject.
 
 \subsection*{Assessment Framework}
 To assess the qualitative and quantitative performance of marker-gene survey analysis methods we developed a framework utilizing our two-sample titration dataset. Qualitative assessment evaluates feature presense-absence. The quantitative assessment evaluates the relative and differential abundance estimates.
 
 \subsubsection*{Qualitative Assessment}
 \paragraph{Artifactual Feature Proportion}
-ADD TEXT
-
-\paragraph{Sparsity}
-ADD TEXT
-
 \begin{figure}
 \centering
 \includegraphics{feature_definitions.png}
@@ -1279,7 +1296,7 @@ proportion is non-zero, and the test always fails. Therefore, we
 formulated a Bayesian hypothesis test for \emph{titration-specific}
 features.
 
-A Bayesian hypothesis test was used to evaluate if the true feature
+The Bayesian hypothesis test evaluated if the true feature
 proportion is less than the minimum detected proportion. The Bayesian
 hypothesis test was formulated using equation \eqref{eq:bht}. Which, when
 assuming equal priors, \(P(\pi < \pi_{min}) = P(\pi \geq \pi_{min})\),
@@ -1309,24 +1326,18 @@ p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
   \label{eq:bht2}
 \end{equation}
 
+\paragraph{Sparsity}
+ADD TEXT
+
+
 \subsubsection*{Quantitative Assessment}
-
-\paragraph{Relative Abundance Assessment}
-ADD TEXT
-
-\paragraph{Differential Abundance Assessment}
-ADD TEXT
-
-\begin{figure}
-\centering
-\includegraphics{quant_metrics.png}
-\caption{\label{fig:quantMetrics} Quantitative metrics diagram.}
-\end{figure}
-
-
 For quantitative assessment, we compared observed relative abundance and
 log fold-changes to expected values derived from the titration
-experimental design. Feature average relative abundance across PCR
+experimental design.
+
+\paragraph{Relative Abundance Assessment}
+
+Feature average relative abundance across PCR
 replicates was calculated using a negative binomial model, and used as
 observed relative abundance values (\(obs\)) for the relative abundance
 assessment. Average relative abundance values were used to reduce PCR
@@ -1334,7 +1345,6 @@ replicate outliers from biasing the assessment results. Equation
 \eqref{eq:mixEq} and inferred \(\theta\) values were used to calculate the
 expected relative abundance values (\(exp\)). Relative abundance error
 rate is defined as \(|exp - obs|/exp\).
-
 We developed bias and variance metrics to assess feature performance.
 The feature-level bias and variance metrics were defined as the median
 error rate and robust coefficient of variation (\(RCOV=IQR/median\))
@@ -1344,6 +1354,8 @@ random effect. Extreme feature-level error rate bias and variance metric
 outliers were observed, these outliers were excluded from the mixed
 effects model to minimize biases due to poor model fit and were
 characterized independently.
+
+\paragraph{Differential Abundance Assessment}
 
 Log fold-change between samples in the titration series including PRE
 and POST were compared to the expected log fold-change values to assess
