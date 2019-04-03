@@ -623,9 +623,14 @@ Points above grey bars indicate the titrations with a high proportion of prokary
 
 %% make sure introduce count table earlier
 \subsection*{Assessment Framework}
-We developed a framework to assess count tables generated from different bioinformatic pipelines using our two-sample titration dataset as input.
-The framework assesses count talbe qualitative and quantitative characteristics.
-The qualitative assessment provides insight into how much confidence a user can have in the presence or absence of a feature, whereas the quantitative assessment evaluates feature abundance values.
+We developed a framework to qualitative and quantitative nature of 16S rRNA
+measurement process by evaluating count tables generated from different bioinformatic pipelines using our two-sample titration dataset as input.
+The framework assesses count table qualitative and quantitative characteristics.
+The qualitative assessment provides insight into how much confidence a user can have in the presence or absence of a feature, whereas the quantitative assessment evaluates feature abundance values. For the qualitative assessment, we analyzed the relative abundance of features
+only observed in the unmixed samples or titrations. These features are
+not expected given the titration experimental design. The quantitative
+assessment evaluated relative and differential abundance estimates.
+
 
 \subsubsection*{Qualitative assessment}
 The purpose of the qualitative assessment is to show how well pipelines are able to differentiate true biological sequences from measurement process artifacts.
@@ -671,19 +676,27 @@ They provide insight into overall trends, for example if relative abundance or l
 \end{figure}
 
 \paragraph*{Relative Abundance Assessment}
-ADD TEXT - metric definitions
+The PRE and POST
+estimated relative abundance and \(\theta\) values were used to
+calculate titration and relative abundance error rates. Relative
+abundance error rate is defined as \(|exp - obs|/exp\), where \(exp\)
+and \(obs\) is the expected and observed relative abundance.
+Only features observed in all PRE and POST PCR replicates
+and PRE and POST specific features were included in the analysis (Table
+\ref{tab:relAbuErrorTbl}). PRE and POST specific features were defined
+as present in all four of the PRE or POST PCR replicates, respectively,
+but none of the PCR replicates for the other unmixed samples. There is
+lower confidence in PRE or POST feature relative abundance when the
+feature is not observed in all 4 PCR replicates, therefore these features
+are not used in the assessment.
+
 
 \paragraph*{Differential Abundance Assessment}
 ADD TEXT - metric definitions
 
 \subsection*{Count Table Assessment Demonstration}
-Next, we assessed the qualitative and quantitative nature of 16S rRNA
-measurement process using our two-sample titration dataset. For the
-qualitative assessment, we analyzed the relative abundance of features
-only observed in the unmixed samples or titrations. These features are
-not expected given the titration experimental design. The quantitative
-assessment evaluated relative and differential abundance estimates.
-
+Next, we demonstrate our assessment framework on count tables generated using
+three different bioinformatic pipelines; DADA2, a denoising sequence inference pipeline; QIIME, an open-reference clustering pipeline; and Mothur, a de-novo clustering pipeline. To provide insight into how the three count tables are quantitatively different we will first provide high level summary statistics. Next we will compare the results from applying our assessment framework to three count tables.
 
 \paragraph{Count Table Characteristics}
 \begin{table}
@@ -723,31 +736,21 @@ taxonomic assignment set overlap for all genera (C) and the upper
 quartile genera by relative abundance for each pipeline (D). Intersection size is the number of features observed in the pipeline combination indicated on the x-axis. For example in C, 39 genera are observed in all three pipelines and 88 are observed in only QIIME and not Mothur or DADA2.}
 \end{figure}
 
-The resulting count tables generated using the four bioinformatic
-pipelines were characterized for number of features, sparsity, and
-filter rate (Table \ref{tab:pipeQA}, Figs. \ref{fig:readsVfeats}B). The
+The count tables generated using the three bioinformatic pipelines vary in pre-processing and feature inference methods. These differences are refected in the count table number of features, total abundance, and filter rate (Table \ref{tab:pipeQA}, Figs. \ref{fig:readsVfeats}B). The
 pipelines evaluated employ different approaches for handling low quality
-reads resulting in large differences in drop-out rate and the fraction
+reads resulting in large differences in filter rate and the fraction
 of raw sequences not included in the count table (Table
-\ref{tab:pipeQA}). QIIME pipeline has the highest drop-out rate and
+\ref{tab:pipeQA}). QIIME pipeline has the highest filter rate and
 number of features per sample but fewer total features than Mothur. The
 targeted amplicon region has a relatively small overlap region, 136 bp
 for 300 bp paired-end reads, compared to other commonly used amplicons
-\cite{kozich2013development, Walters2016-lf}. The high drop-out rate is
+\cite{kozich2013development, Walters2016-lf}. The high filter rate is
 due to low basecall accuracy at the ends of the reads especially the
 reverse reads resulting in a high proportion of unsuccessfully merged
 reads pairs (Fig. \ref{fig:qaPlots}B). Furthermore, increasing the
-drop-out rate, QIIME excludes singletons, features only observed once in
+filter rate, QIIME excludes singletons, features only observed once in
 the dataset, to remove potential sequencing artifacts from the dataset.
-QIIME and DADA2 pipelines were similarly sparse (the fraction of zero
-values in count tables) despite differences in the number of features
-and drop-out rate. The expectation is that this mixture dataset will be
-less sparse relative to other datasets. This is due to the redundant
-nature of the samples where the 35 titration samples are derived
-directly from the 10 unmixed samples, along with four PCR replicates for
-each sample. With sparsity greater than 0.9 for the three pipelines it
-is unlikely that any of the pipelines successfully filtered out a
-majority of the sequencing artifacts.
+
 
 Dataset taxonomic assignments also varied by pipeline (Fig.
 \ref{fig:pipeTaxa}). Phylum and order relative abundance is similar
@@ -784,11 +787,6 @@ the feature only being observed in the titrations or unmixed samples
 cannot be explained by sampling alone.}
 \end{figure}
 
-ADD TEXT
-
-\paragraph{Sparsity}
-ADD TEXT
-
 Unmixed- and titration-specific features were observed for all pipelines
 (titration-specific: Fig. \ref{fig:qualPlot}A, unmixed-specific: Fig.
 \ref{fig:qualPlot}B).
@@ -808,6 +806,19 @@ not be explained by sampling alone compared to the other pipelines (Fig.
 number of observed features inconsistent with the titration experiment
 design, while the same phenomenon is significantly reduced in the other
 pipelines.
+
+\paragraph{Sparsity}
+Interestingly despite the differences in total abundance and number of features
+the count tables generated using the three bioinformatic pipelines were
+similarly sparse (Table \ref{tab:pipeQA}).
+The expectation is that this mixture dataset will be
+less sparse relative to other datasets. This is due to the redundant
+nature of the samples where the 35 titration samples are derived
+directly from the 10 unmixed samples, along with four PCR replicates for
+each sample. With sparsity greater than 0.9 for the three pipelines it
+is unlikely that any of the pipelines successfully filtered out a
+majority of the sequencing artifacts.
+
 
 \subsubsection*{Quantitative Assessment}
 
@@ -864,11 +875,7 @@ Metric & Pipeline & E01JH0004 & E01JH0011 & E01JH0016 & E01JH0017 & E01JH0038\\
 \paragraph{Relative Abundance Assessment}
 We evaluated the consistency of
 the observed and expected relative abundance estimates for a feature and
-titration as well as feature-level bias and variance. The PRE and POST
-estimated relative abundance and \(\theta\) values were used to
-calculate titration and relative abundance error rates. Relative
-abundance error rate is defined as \(|exp - obs|/exp\), where \(exp\)
-and \(obs\) is the expected and observed relative abundance. To control
+titration as well as feature-level bias and variance. To control
 for biases in feature inference, the three pipelines were compared to an
 unclustered dataset. The unclustered count table was generated using the
 40,000 most abundant features from Mothur's initial preprocessing (see
@@ -876,33 +883,17 @@ Methods for details). Unclustered pipeline \(\theta\) estimates were
 used to calculate the error rates for all pipelines to prevent
 over-fitting. Only features observed in all PRE and POST PCR replicates
 and PRE and POST specific features were included in the analysis (Table
-\ref{tab:relAbuErrorTbl}). PRE and POST specific features were defined
-as present in all four of the PRE or POST PCR replicates, respectively,
-but none of the PCR replicates for the other unmixed samples. There is
-lower confidence in PRE or POST feature relative abundance when the
-feature is not observed in all 4 PCR replicates, therefore these features
-were not included in the analysis. Overall, agreement between inferred
+\ref{tab:relAbuErrorTbl}). Overall, agreement between inferred
 and observed relative abundance was high for all individuals and
 bioinformatic pipelines (Fig. \ref{fig:relAbuError}A). The error rate
 distribution was similarly consistent across pipelines, including long
 tails (Fig. \ref{fig:relAbuError}B)
 
-To assess quantitative accuracy, we compared the feature-level relative
-abundance error rate bias (median error rate, Fig.
-\ref{fig:relAbuErrorMetrics}A) and variance (\(RCOV=(IQR)/|median|\)
-Fig. \ref{fig:relAbuErrorMetrics}B) across pipelines and individuals
+To assess quantitative accuracy we compared the feature-level relative
+abundance error rate bias  and variance across pipelines and individuals
 using mixed effects models. Large bias and variance metric values were
-observed for all pipelines (Table \ref{tab:relAbuErrorTbl}). Features
-with large bias and variance metrics, \(1.5\times IQR\) from the median,
-were deemed outliers. To prevent these outlier features from biasing the
-comparison, they were not used to fit the mixed effects model. Multiple
-comparisons test (Tukey) was used to test for significant differences in
-feature-level bias and variance between pipelines. A one-sided
-alternative hypothesis was used to determine which pipelines had smaller
-feature-level error rate. The Mothur, DADA2, and QIIME feature-level
-biases were all significantly different from each other
-(\(p < 1\times 10^{-8}\)). DADA2 had the lowest mean feature-level bias
-(0.2), followed by Mothur (0.28), with QIIME having the highest bias
+observed for all pipelines (Table \ref{tab:relAbuErrorTbl}). Feature-level relative abundance error rate bias (median error rate, Fig.
+\ref{fig:relAbuErrorMetrics}A) was significant different between pipeline but not statistically significant differences was observed for the variance metric, (\(RCOV=(IQR)/|median|\), Fig. \ref{fig:relAbuErrorMetrics}B) across pipeline. The Mothur, DADA2, and QIIME feature-level biases were all significantly different from each other (\(p < 1\times 10^{-8}\)). DADA2 had the lowest mean feature-level bias (0.2), followed by Mothur (0.28), with QIIME having the highest bias
 (0.33) (\ref{fig:relAbuErrorMetrics}B). Large variance metric values
 were observed for all individuals and pipelines (Table
 \ref{tab:relAbuErrorTbl}). The feature-level variance was not
@@ -934,6 +925,7 @@ the median were excluded from the figure to prevent extreme metric
 values from obscuring metric value visual comparisons.}
 \end{figure}
 
+%% Move to discussion?
 The agreement between log-fold change estimates and expected values were
 individual specific and consistent across pipelines (Fig.
 \ref{fig:logFCerror}A). The individual specific effect was attributed to
@@ -1186,6 +1178,72 @@ Bioconductor \texttt{Rqc} package \cite{Rqc, Bioconductor}.
 
 ADD TEXT??
 
+\paragraph*{Bioinformatic Pipelines}
+
+Sequence data were processed using four bioinformatic pipelines: a
+\emph{de-novo} clustering method - Mothur
+\cite{schloss2009introducing}, an open-reference clustering method -
+QIIME \cite{Caporaso2010}, and a sequence inference method - DADA2
+\cite{callahan2016dada2}, and unclustered sequences as a control. The
+code used to run the bioinformatic pipelines is available at
+\url{https://github.com/nate-d-olson/mgtst_pipelines}.
+
+The Mothur pipeline follows the developer's MiSeq SOP
+\cite{schloss2009introducing, kozich2013development}. The pipeline was
+run using Mothur version 1.37 (\url{http://www.mothur.org/}). We
+sequenced a larger 16S rRNA region, with smaller overlap between the
+forward and reverse reads, than the 16S rRNA region the SOP was
+designed. Pipeline parameters modified to account for difference in
+overlap are noted for individual steps below. The Makefile and scripts
+used to run the Mothur pipeline are available
+\url{https://github.com/nate-d-olson/mgtst_pipelines/blob/master/code/mothur}.
+The Mothur pipeline includes an initial preprocessing step where the
+forward and reverse reads are trimmed and filtered using base quality
+scores and were merged into single contigs for each read pair. The
+following parameters were used for the initial contig filtering, no
+ambiguous bases, max contig length of 500 bp, and max homopolymer length
+of 8 bases. For the initial read filtering and merging step, low-quality
+reads were identified and filtered from the dataset based on the
+presence of ambiguous bases, failure to align to the SILVA reference
+database (V119, \url{https://www.arb-silva.de/}) \cite{quast2012silva},
+and identification as chimeras. Prior to alignment, the SILVA reference
+multiple sequence alignment was trimmed to the V3-V5 region, positions
+6,388 and 25,316. Chimera filtering was performed using UChime (version
+v4.2.40) without a reference database \cite{edgar2011uchime}. OTU
+clustering was performed using the OptiClust algorithm with a clustering
+threshold of 0.97 \cite{westcott2017opticlust}. The RDP classifier
+implemented in Mothur was used for taxonomic classification against the
+Mothur provided version of the RDP v9 training set
+\cite{wang2007naive}.
+
+The QIIME open-reference clustering pipeline for paired-end Illumina
+data was performed according to the online tutorial (Illumina Overview
+Tutorial (an IPython Notebook): open reference OTU picking and core
+diversity analyses, \url{http://qiime.org/tutorials/}) using QIIME
+version 1.9.1 \cite{Caporaso2010}. Briefly, the QIIME pipeline uses
+fastq-join (version 1.3.1) to merge paired-end reads
+\cite{aronesty2011ea} and the Usearch algorithm \cite{edgar2010search}
+with Greengenes database version 13.8 with a 97\% similarity threshold
+\cite{desantis2006greengenes} was used for open-reference clustering.
+
+DADA2, an R native pipeline was also used to process the sequencing data
+\cite{callahan2016dada2}. The pipeline includes a sequence inference
+step and taxonomic classification using the DADA2 implementation of the
+RDP naïve Bayesian classifier \cite{wang2007naive} and the SILVA
+database V123 provided by the DADA2 developers
+\cite[\url{https://benjjneb.github.io/dada2/training.html}]{quast2012silva}.
+
+The unclustered pipeline was based on the Mothur \emph{de-novo}
+clustering pipeline, where the paired-end reads were merged, filtered,
+and then dereplicated. Reads were aligned to the reference Silva
+alignment (V119, \url{https://www.arb-silva.de/}), and reads failing
+alignment were excluded from the dataset. Taxonomic classification of
+the unclustered sequences was performed using the same RDP classifier
+implemented in Mothur used for the \emph{de-novo} pipeline. To limit the
+size of the dataset the most abundant 40,000 OTUs (comparable to the
+Mothur dataset), across all samples, were used as the unclustered
+dataset.
+
 \subsubsection*{Titration Series Validation and Correction}
 ADD TEXT
 
@@ -1393,89 +1451,45 @@ greater than 5.
 
 
 \subsection*{Count Table Assessment Demonstration}
-\paragraph*{Bioinformatic Pipelines}
+Demonstrate framework by comparing the qualitative and quantitative assessment results across the three pipelines.
 
-Sequence data were processed using four bioinformatic pipelines: a
-\emph{de-novo} clustering method - Mothur
-\cite{schloss2009introducing}, an open-reference clustering method -
-QIIME \cite{Caporaso2010}, and a sequence inference method - DADA2
-\cite{callahan2016dada2}, and unclustered sequences as a control. The
-code used to run the bioinformatic pipelines is available at
-\url{https://github.com/nate-d-olson/mgtst_pipelines}.
+\subsubsection{Count Table Characteristics - TODO}
+Count tables summarized for
+- number of features
+- total abundance
+- filter rate
+- taxonomic composition
 
-The Mothur pipeline follows the developer's MiSeq SOP
-\cite{schloss2009introducing, kozich2013development}. The pipeline was
-run using Mothur version 1.37 (\url{http://www.mothur.org/}). We
-sequenced a larger 16S rRNA region, with smaller overlap between the
-forward and reverse reads, than the 16S rRNA region the SOP was
-designed. Pipeline parameters modified to account for difference in
-overlap are noted for individual steps below. The Makefile and scripts
-used to run the Mothur pipeline are available
-\url{https://github.com/nate-d-olson/mgtst_pipelines/blob/master/code/mothur}.
-The Mothur pipeline includes an initial preprocessing step where the
-forward and reverse reads are trimmed and filtered using base quality
-scores and were merged into single contigs for each read pair. The
-following parameters were used for the initial contig filtering, no
-ambiguous bases, max contig length of 500 bp, and max homopolymer length
-of 8 bases. For the initial read filtering and merging step, low-quality
-reads were identified and filtered from the dataset based on the
-presence of ambiguous bases, failure to align to the SILVA reference
-database (V119, \url{https://www.arb-silva.de/}) \cite{quast2012silva},
-and identification as chimeras. Prior to alignment, the SILVA reference
-multiple sequence alignment was trimmed to the V3-V5 region, positions
-6,388 and 25,316. Chimera filtering was performed using UChime (version
-v4.2.40) without a reference database \cite{edgar2011uchime}. OTU
-clustering was performed using the OptiClust algorithm with a clustering
-threshold of 0.97 \cite{westcott2017opticlust}. The RDP classifier
-implemented in Mothur was used for taxonomic classification against the
-Mothur provided version of the RDP v9 training set
-\cite{wang2007naive}.
-
-The QIIME open-reference clustering pipeline for paired-end Illumina
-data was performed according to the online tutorial (Illumina Overview
-Tutorial (an IPython Notebook): open reference OTU picking and core
-diversity analyses, \url{http://qiime.org/tutorials/}) using QIIME
-version 1.9.1 \cite{Caporaso2010}. Briefly, the QIIME pipeline uses
-fastq-join (version 1.3.1) to merge paired-end reads
-\cite{aronesty2011ea} and the Usearch algorithm \cite{edgar2010search}
-with Greengenes database version 13.8 with a 97\% similarity threshold
-\cite{desantis2006greengenes} was used for open-reference clustering.
-
-DADA2, an R native pipeline was also used to process the sequencing data
-\cite{callahan2016dada2}. The pipeline includes a sequence inference
-step and taxonomic classification using the DADA2 implementation of the
-RDP naïve Bayesian classifier \cite{wang2007naive} and the SILVA
-database V123 provided by the DADA2 developers
-\cite[\url{https://benjjneb.github.io/dada2/training.html}]{quast2012silva}.
-
-The unclustered pipeline was based on the Mothur \emph{de-novo}
-clustering pipeline, where the paired-end reads were merged, filtered,
-and then dereplicated. Reads were aligned to the reference Silva
-alignment (V119, \url{https://www.arb-silva.de/}), and reads failing
-alignment were excluded from the dataset. Taxonomic classification of
-the unclustered sequences was performed using the same RDP classifier
-implemented in Mothur used for the \emph{de-novo} pipeline. To limit the
-size of the dataset the most abundant 40,000 OTUs (comparable to the
-Mothur dataset), across all samples, were used as the unclustered
-dataset.
-
-\subsubsection{Count Table Characteristics}
-ADD TEXT
-
-\subsubsection{Qualitative Assessment}
-\paragraph{Artifactual Feature Proportion}
-ADD TEXT
-
-\paragraph{Sparsity}
-ADD TEXT
+\subsubsection{Qualitative Assessment - TODO}
+- comparison of observed and expected abundance for titration- and unmixed-specific features
+- compared proportion of titration- and unmixed-specific features with abundance values that could not be explained by sampling alone
+- qualitatitve comparison of sparsity values
 
 \subsubsection{Quantitative Assessment}
+Mixed-effects models were used to compare relative and differential abundance bias and variance metric distributions across the three pipelines.
 
-\paragraph{Relative Abundance Assessment}
-ADD TEXT
+Need to replace with equation or better describe in the text.
+\begin{verbatim*}
+Example mixed effect model in R
 
-\paragraph{Differential Abundance Assessment}
-ADD TEXT
+error_fit <- nlme::lme(median_error ~ pipe, random =  ~ 1 | biosample_id, data = error_fit_dat)
+\end{verbatim*}
+
+Features with large bias and variance metrics, \(1.5\times IQR\) from the median,
+were deemed outliers. To prevent these outlier features from biasing the
+comparison, they were not used to fit the mixed effects model. Multiple
+comparisons test (Tukey) was used to test for significant differences in
+feature-level bias and variance between pipelines. A one-sided
+alternative hypothesis was used to determine which pipelines had smaller
+feature-level error rate.
+
+Need to replace with equation or better describe in the text.
+\begin{verbatim*}
+Example post-hoc test in R
+
+error_post_hoc <- glht(error_fit, linfct = mcp(pipe = "Tukey"), alternative = "greater")
+\end{verbatim*}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
