@@ -426,6 +426,7 @@ new and existing bioinformatic pipelines.
 
 \section*{Results}
 \subsection*{Assessment Dataset Development}
+
 \begin{figure}
 \centering
 \includegraphics{experimentalDesign.pdf}
@@ -449,7 +450,8 @@ titrations + 2 unmixed samples times 5 subjects. Four replicate PCRs
 were performed for each of the 45 samples resulting in 190 PCRs.}
 \end{figure}
 
-\subsubsection{Titration Series Dataset}
+\subsubsection*{Titration Series Dataset}
+
 \begin{figure}
 \centering
 \includegraphics{qaPlots-1.pdf}
@@ -466,7 +468,7 @@ forward and reverse reads. Forward reads go from position 0 to 300 and
 reverse reads from 464 to 164.}
 \end{figure}
 
-\paragraph{Two-Sample Titration Series}
+\paragraph*{Two-Sample Titration Series}
 Using mixtures of environmental samples, expected feature abundance values can be obtained using information from unmixed samples and the mixture design.
 Our mixture dataset follows a two-sample titration mixture design, where DNA collected from five vaccine trial participants before and
 after exposure to pathogenic \emph{Escherichia coli}  was mixed following a \(log_2\) dilution series (Fig. \ref{fig:countExperimentalDesign}).
@@ -483,7 +485,7 @@ and POST samples is \(q_{pre,j}\) and \(q_{post,j}\).
   \label{eq:mixEq}
 \end{equation}
 
-\paragraph{Sequencing}
+\paragraph*{Sequencing}
 To evaluate the overall sequencing dataset quality and check for subject
 specific differences we characterized the number of reads per sample and
 base quality score distribution. The number of reads per sample and
@@ -1322,7 +1324,7 @@ replicates. Bootstrapping was performed by resampling informative features, defi
 To assess the qualitative and quantitative performance of marker-gene survey analysis methods we developed a framework utilizing our two-sample titration dataset. Qualitative assessment evaluates feature presense-absence. The quantitative assessment evaluates the relative and differential abundance estimates.
 
 \subsubsection*{Qualitative Assessment}
-\paragraph{Artifactual Feature Proportion}
+\paragraph*{Artifactual Feature Proportion}
 \begin{figure}
 \centering
 \includegraphics{feature_definitions.png}
@@ -1382,7 +1384,7 @@ p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
   \label{eq:bht2}
 \end{equation}
 
-\paragraph{Sparsity}
+\paragraph*{Sparsity}
 ADD TEXT
 
 
@@ -1391,7 +1393,7 @@ For quantitative assessment, we compared observed relative abundance and
 log fold-changes to expected values derived from the titration
 experimental design.
 
-\paragraph{Relative Abundance Assessment}
+\paragraph*{Relative Abundance Assessment}
 
 Feature average relative abundance across PCR
 replicates was calculated using a negative binomial model, and used as
@@ -1411,7 +1413,7 @@ outliers were observed, these outliers were excluded from the mixed
 effects model to minimize biases due to poor model fit and were
 characterized independently.
 
-\paragraph{Differential Abundance Assessment}
+\paragraph*{Differential Abundance Assessment}
 
 Log fold-change between samples in the titration series including PRE
 and POST were compared to the expected log fold-change values to assess
@@ -1451,19 +1453,19 @@ greater than 5.
 \subsection*{Count Table Assessment Demonstration}
 Demonstrate framework by comparing the qualitative and quantitative assessment results across the three pipelines.
 
-\subsubsection{Count Table Characteristics - TODO}
+\subsubsection*{Count Table Characteristics - TODO}
 Count tables summarized for
 - number of features
 - total abundance
 - filter rate
 - taxonomic composition
 
-\subsubsection{Qualitative Assessment - TODO}
+\subsubsection*{Qualitative Assessment - TODO}
 - comparison of observed and expected abundance for titration- and unmixed-specific features
 - compared proportion of titration- and unmixed-specific features with abundance values that could not be explained by sampling alone
 - qualitatitve comparison of sparsity values
 
-\subsubsection{Quantitative Assessment}
+\subsubsection*{Quantitative Assessment}
 Mixed-effects models were used to compare relative and differential abundance bias and variance metric distributions across the three pipelines.
 
 Need to replace with equation or better describe in the text.
