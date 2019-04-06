@@ -345,7 +345,7 @@ community is significantly higher than the expected number
 \cite{Kopylova2014}. The higher than expected number of features is
 often attributed to sequencing and PCR artifacts as well as reagent
 contaminants \cite{brooks2015truth, Huse2010}. A notable exception to
-this are count tables generated inference method,
+this are count tables generated using feature inference methods, 
 such as DADA2 \cite{callahan2016dada2}. Sequence
 inference methods aim to reduce the number of features from sequence artifacts.
 While mock communities have an expected number of features and
@@ -359,7 +359,7 @@ Results from relative abundance estimates using mock communities generated from
 mixtures of single organism DNA have shown taxonomic specific effects
 where individual taxa are under or over represented in a sample. For
 example, Gram-negative bacteria have higher extraction efficiency
-compared to Gram-positive bacteria and thus likely over represented
+compared to Gram-positive bacteria, and thus likely over represented 
 in count tables\cite{Costea2017, Olson2012}.
 Mismatches in the primer binding sites are also responsible for
 taxonomic specific biases
@@ -392,41 +392,41 @@ samples were previously used to evaluate gene expression measurements
 %%% Moved from Discussion revise for flow
 
 We demonstrated our novel assessment approach by evaluating count tables
-generated using different bioinformatic pipelines, QIIME, Mothur, and
-DADA2. The Mothur pipeline uses \emph{de novo} clustering for feature
+generated using three different bioinformatic pipelines, QIIME, Mothur, and
+DADA2. Mothur uses \emph{de novo} clustering for feature
 inference \cite{westcott2017opticlust, schloss2009introducing}.
-Pairwise distances used in clustering are calculated using a multiple
-sequence alignment. The quality filtered paired-end reads are merged
-into contigs. The pipeline then aligns contigs to a reference multiple
-sequence alignment and removes uninformative positions in the multiple
-sequence alignment. The QIIME pipeline uses open-reference clustering
+Pairwise distances used in clustering are calculated from a multiple
+sequence alignment. Quality filtered paired-end reads are merged
+into contigs, then aligned to a reference multiple
+sequence alignment, followed by the removal of uninformative positions. 
+The QIIME pipeline uses open-reference clustering
 where merged paired-end reads are first assigned to reference cluster
-centers \cite{Rideout2014, Caporaso2010}. Next QIIME clusters
+centers \cite{Rideout2014, Caporaso2010}. Next, QIIME clusters
 unassigned reads \emph{de novo}. Unlike Mothur, the QIIME clustering
 method uses pairwise sequence distances calculated from pairwise
 sequence alignments. As a result, the QIIME pairwise distances are
-calculated using the full \textasciitilde{}436 bp sequences whereas
-Mothur pairwise distances were calculated using a 270 bp multiple
-sequence alignment. The DADA2 pipeline uses a probability model and
+calculated using the full amplicon sequence, whereas
+Mothur pairwise distances are calculated using multiple
+sequence alignment with only informative positions. 
+The DADA2 pipeline uses a probability model and
 maximization expectation algorithm for feature inference
 \cite{callahan2016dada2}. Unlike distance-based clustering methods
 employed by the Mothur and QIIME pipelines, DADA2 parameters determine
 if low abundance sequences are grouped with a higher abundance sequence.
-As a control, we compared our quantitative assessment results for the
-three pipelines to a count table of unclustered features. The
-unclustered features were generated using the Mothur pipeline
-preprocessing methods.
 
-In the present study, present a framework for assessing computational methods used to analyze
-16S rRNA marker-gene-survey data. The framework is comprised of a 16S rRNA two-sample titration dataset along with metrics to quantitatively and qualitatively assess marker-gene-survey computational methods.
-The two-sample titration dataset was generated using mixtures human stool sample DNA extracts.
-To demonstrated using the assessment framework we evaluated three bioinformatic pipelines.
-The quantitative results were similar across pipelines, but the qualitative results varied by pipeline.
-Both the dataset and metrics developed in this study publicly
-available and can be used to evaluate and optimize new and existing bioinformatic pipelines.
+In the present study, present a framework for assessing computational methods used to
+analyze 16S rRNA marker-gene-survey data. The framework is comprised of a 16S rRNA 
+two-sample titration dataset along with metrics to quantitatively and qualitatively assess 
+marker-gene-survey computational methods. The two-sample titration dataset was generated using mixtures human stool sample DNA extracts. To demonstrated using the assessment 
+framework we evaluated three bioinformatic pipelines. The quantitative results were similar
+across pipelines, but the qualitative results varied by pipeline. Both the dataset and
+metrics developed in this study publicly available and can be used to evaluate and optimize
+new and existing bioinformatic pipelines.
+
 
 \section*{Results}
 \subsection*{Assessment Dataset Development}
+
 \begin{figure}
 \centering
 \includegraphics{experimentalDesign.pdf}
@@ -450,7 +450,8 @@ titrations + 2 unmixed samples times 5 subjects. Four replicate PCRs
 were performed for each of the 45 samples resulting in 190 PCRs.}
 \end{figure}
 
-\subsubsection{Titration Series Dataset}
+\subsubsection*{Titration Series Dataset}
+
 \begin{figure}
 \centering
 \includegraphics{qaPlots-1.pdf}
@@ -467,7 +468,7 @@ forward and reverse reads. Forward reads go from position 0 to 300 and
 reverse reads from 464 to 164.}
 \end{figure}
 
-\paragraph{Two-Sample Titration Series}
+\paragraph*{Two-Sample Titration Series}
 Using mixtures of environmental samples, expected feature abundance values can be obtained using information from unmixed samples and the mixture design.
 Our mixture dataset follows a two-sample titration mixture design, where DNA collected from five vaccine trial participants before and
 after exposure to pathogenic \emph{Escherichia coli}  was mixed following a \(log_2\) dilution series (Fig. \ref{fig:countExperimentalDesign}).
@@ -484,7 +485,7 @@ and POST samples is \(q_{pre,j}\) and \(q_{post,j}\).
   \label{eq:mixEq}
 \end{equation}
 
-\paragraph{Sequencing}
+\paragraph*{Sequencing}
 To evaluate the overall sequencing dataset quality and check for subject
 specific differences we characterized the number of reads per sample and
 base quality score distribution. The number of reads per sample and
@@ -800,8 +801,7 @@ features that could not be explained by sampling alone varied by
 bioinformatic pipeline. DADA2 had the highest proportion of
 unmixed-specific features not explained by sampling whereas QIIME had
 the lowest proportion. Consistent with the distribution of observed
-counts for titration-specific features, more of the DADA2 features could
-not be explained by sampling alone compared to the other pipelines (Fig.
+counts for titration-specific features (Fig.
 \ref{fig:qualPlot}D). Overall, the DADA2 count table had the largest
 number of observed features inconsistent with the titration experiment
 design, while the same phenomenon is significantly reduced in the other
@@ -1324,7 +1324,7 @@ replicates. Bootstrapping was performed by resampling informative features, defi
 To assess the qualitative and quantitative performance of marker-gene survey analysis methods we developed a framework utilizing our two-sample titration dataset. Qualitative assessment evaluates feature presense-absence. The quantitative assessment evaluates the relative and differential abundance estimates.
 
 \subsubsection*{Qualitative Assessment}
-\paragraph{Artifactual Feature Proportion}
+\paragraph*{Artifactual Feature Proportion}
 \begin{figure}
 \centering
 \includegraphics{feature_definitions.png}
@@ -1384,7 +1384,7 @@ p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
   \label{eq:bht2}
 \end{equation}
 
-\paragraph{Sparsity}
+\paragraph*{Sparsity}
 ADD TEXT
 
 
@@ -1393,7 +1393,7 @@ For quantitative assessment, we compared observed relative abundance and
 log fold-changes to expected values derived from the titration
 experimental design.
 
-\paragraph{Relative Abundance Assessment}
+\paragraph*{Relative Abundance Assessment}
 
 Feature average relative abundance across PCR
 replicates was calculated using a negative binomial model, and used as
@@ -1413,7 +1413,7 @@ outliers were observed, these outliers were excluded from the mixed
 effects model to minimize biases due to poor model fit and were
 characterized independently.
 
-\paragraph{Differential Abundance Assessment}
+\paragraph*{Differential Abundance Assessment}
 
 Log fold-change between samples in the titration series including PRE
 and POST were compared to the expected log fold-change values to assess
@@ -1453,19 +1453,19 @@ greater than 5.
 \subsection*{Count Table Assessment Demonstration}
 Demonstrate framework by comparing the qualitative and quantitative assessment results across the three pipelines.
 
-\subsubsection{Count Table Characteristics - TODO}
+\subsubsection*{Count Table Characteristics - TODO}
 Count tables summarized for
 - number of features
 - total abundance
 - filter rate
 - taxonomic composition
 
-\subsubsection{Qualitative Assessment - TODO}
+\subsubsection*{Qualitative Assessment - TODO}
 - comparison of observed and expected abundance for titration- and unmixed-specific features
 - compared proportion of titration- and unmixed-specific features with abundance values that could not be explained by sampling alone
 - qualitatitve comparison of sparsity values
 
-\subsubsection{Quantitative Assessment}
+\subsubsection*{Quantitative Assessment}
 Mixed-effects models were used to compare relative and differential abundance bias and variance metric distributions across the three pipelines.
 
 Need to replace with equation or better describe in the text.
