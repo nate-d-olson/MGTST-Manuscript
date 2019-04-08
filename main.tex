@@ -488,7 +488,7 @@ Throughout the rest of the manuscript samples collected prior to and after \emph
 \end{equation}
 
 \subsubsection*{Qualitative Assessment}
-
+()
 The qualitative assessment shows how well pipelines differentiate true biological sequences from measurement process artifacts.
 Inadequate processing of artifacts results in false positive and false negative features. 
 Where false positives are features in a count table that are not present in the sequenced sample and false negative features are biological sequences in a sample not represented in the count table.
@@ -836,7 +836,7 @@ majority of the sequencing artifacts. Both unmixed- and titration-specific
 features that can and cannot be explained by sampling alone contribute 
 to sparsity. Though the differences in the artifactual feature proportion 
 provide insight into how the pipelines treat sequencing artifacts. 
-%% Not sure where to include the interpretion of the AFP and sparsity results - either here or the discussion
+%% Not sure where to include the interpretation of the AFP and sparsity results - either here or the discussion
 
 
 \subsubsection*{Quantitative Assessment}
@@ -1385,46 +1385,28 @@ To assess the qualitative and quantitative performance of marker-gene survey ana
 
 \subsubsection*{Qualitative Assessment}
 \paragraph*{Artifactual Feature Proportion}
+Our qualitative measurement assessment evaluated features only observed in un-mixed samples (PRE or POST) or only in titrations. 
+The former we will refer to as unmixed-specific features and the latter we will refer to as titration-specific features (Fig. \ref{fig:assessmentFramework}B). 
+\emph{Unmixed-} and \emph{titration-specific} features can arise from errors in the PCR/sequencing, feature inference processes, or due to differences in sampling depth.
 
-Our qualitative measurement assessment evaluated features only observed
-in unmixed samples (PRE or POST), \emph{unmixed-specific}, or
-titrations, \emph{titration-specific} (Fig.
-\ref{fig:assessmentFramework}B. \emph{Unmixed-} or
-\emph{titration-specific} features are due to differences in sampling
-depth (number of sequences) between the unmixed samples and titrations,
-artifacts of the feature inference process, or PCR/sequencing artifacts.
-Measurement process artifacts should be considered false positives or
-negatives. Hypothesis tests were used to determine if differences in
-sampling depth could account for \emph{unmixed-specific} and
-\emph{titration-specific} features. p-values were adjusted for multiple
-comparisons using the Benjamini \& Hochberg method
-\cite{benjamini1995controlling}. For \emph{unmixed-specific} features,
-the binomial test was used to evaluate if true feature relative
-abundance is less than the expected relative abundance. A binomial test
-could not be used to evaluate \emph{titration-specific} features, as the
-hypothesis would be formulated as such. Given observed counts and the
-titration total feature abundance, the true feature relative abundance
-is equal to 0. As non-zero counts were observed, the true feature
-proportion is non-zero, and the test always fails. Therefore, we
-formulated a Bayesian hypothesis test for \emph{titration-specific}
-features.
-
-The Bayesian hypothesis test evaluated if the true feature
-proportion is less than the minimum detected proportion. The Bayesian
-hypothesis test was formulated using equation \eqref{eq:bht}. Which, when
-assuming equal priors, \(P(\pi < \pi_{min}) = P(\pi \geq \pi_{min})\),
-reduces to \eqref{eq:bht2}. For equations \eqref{eq:bht} and \eqref{eq:bht2}
-\(\pi\) is the true feature proportion, \(\pi_{min}\) is the minimum
-detected proportion, \(C\) is the expected feature counts, and
-\(C_{obs}\) is the observed feature counts. Simulation was used to
-generate possible values of \(C\), assuming \(C\) has a binomial
-distribution given the observed sample total feature abundance, and a
-uniform probability distribution for \(\pi\) between 0 and 1.
-\(\pi_{min}\) was calculated using the mixture equation \eqref{eq:mixEq}
-where \(q_{pre,j}\) and \(q_{post,j}\) are \(min(\textbf{Q}_{pre})\) and
-\(min(\textbf{Q}_{post})\) across all features for a subject and
-pipeline. Our assumption is that \(\pi\) is less than \(\pi_{min}\) for
-features not observed in unmixed samples due to random sampling.
+Hypothesis tests were used to determine if random sampling alone, here sequencing depth, could account for \emph{unmixed-} and \emph{titration-specific} features. 
+p-values were adjusted for multiple comparisons using the Benjamini \& Hochberg method \cite{benjamini1995controlling}.
+For \emph{unmixed-specific} features, a binomial test was used to evaluate if true feature relative abundance is less than the expected relative abundance. 
+The binomial test was infeasible for \emph{titration-specific} features. 
+Because the count table abundance values for these features was 0 in the unmixed samples,
+their estimated likelihood of occurrence $\pi_{min}$ is equal to 0, 
+and thus, the binomial test fails. 
+Therefore, we formulated a Bayesian hypothesis test for \emph{titration-specific} features detailed by equation \eqref{eq:bht}. 
+This Bayesian approach was used to  evaluate if the true feature proportion is less than the minimum detected proportion. 
+Note that when assuming equal priors, $P(\pi < \pi_{min}) = P(\pi > \pi_{min})$,
+\eqref{eq:bht} reduces to \eqref{eq:bht2}. 
+$\pi$ is the true feature proportion, $\pi_{min}$ is the minimum detected proportion, 
+$C$ is the expected feature counts, and $C_{obs}$ is the observed feature counts.
+Count values for $C$ were simulated using a beta prior (with varying alpha and beta values) for $\pi > \pi_{min}$ and a uniform distribution for $\pi < \pi_{min}$. 
+Higher values of alpha and beta will skew the prior right and left respectively. Consequently, the results of the Bayesian hypothesis tests \eqref{eq:bht2} were largely unaffected by beta distribution parameterization. 
+$\pi_{min}$ was calculated using the mixture equation \eqref{eq:mixEq} where $q_{pre,j}$ and $q_{post,j}$ are $min(\textbf{Q}_{pre})$ and $min(\textbf{Q}_{post})$ across all features for a subject and pipeline. 
+Our assumption is that $\pi$ is less than $\pi_{min}$ for features not observed in unmixed samples. 
+Artifacts not be explained by sequencing alone are likely errors in the sequence measurement and inference processes, and thus, false positives or negatives.
 
 \begin{equation}
   \begin{split}
@@ -1435,7 +1417,7 @@ features not observed in unmixed samples due to random sampling.
 \end{equation}
 
 \begin{equation}
-p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
+    p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
   \label{eq:bht2}
 \end{equation}
 
