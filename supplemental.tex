@@ -1,0 +1,248 @@
+
+
+\documentclass[12pt]{article}
+\usepackage{amsthm,amsmath}
+\usepackage{lmodern}
+\usepackage{booktabs,longtable,multirow}
+\usepackage{threeparttable}
+\usepackage{pdflscape}
+\usepackage{makecell}
+
+\title{Supplemental Material - Assessing 16S marker gene survey data analysis methods using mixtures of human stool sample DNA extracts.}
+\author{Nathan D. Olson
+}
+
+\begin{document}
+\maketitle
+
+\section{Titration Series Validation and Correction}
+\begin{figure}
+\centering
+\includegraphics{titration_validation.png}
+\caption{\label{fig:titrationValidation} Titration-series validation methods. (A) ERCCs were spiked into unmixed PRE and POST DNA. Unmixed DNA is composed of prokaryotic and eukaryotic DNA. The proportion of prokarytic DNA differs between PRE and POST resulting in the proportion of measureable PRE and POST DNA (prokarytic DNA) in the titrations differing from the mixture design. (B) Results from qPCR quantification of the ERCCs was used to validate volumetric mixing. (C) 16S rRNA qPCR is used to validate the prokaryotic DNA proportion. For B and C expectation is indicated in grey. Deviations from expectation along with explanations are indicated in black for B and yellow and green for C.}
+\end{figure}
+
+\paragraph*{Volumetric Mixing Validation}
+Titration series volumetric mixing was validated using qPCR to quantify exogenous
+DNA (ERCC plasmids) spiked into the POST samples prior to mixing.
+The expectation is that the ERCC plasmid copy number will change at a rate consistent
+with the change in proportion of POST along the titration series
+(Fig. \ref{fig:countExperimentalDesign}B and \ref{fig:titrationValidation}).
+For our \(log_2\) two-sample-titration mixture design the expected slope of the
+regression line between titration factor and Ct is 1, corresponding to a
+doubling in template DNA every PCR cycle. The qPCR assay
+standard curves had a high level of precision with \(R^2\) values close
+to 1 and amplification efficiencies between 0.84 and 0.9 for all
+standard curves indicating the assays were suitable for validating the
+titration series volumetric mixing (Table \ref{tab:erccTable}). The qPCR assays targeting the
+ERCCs spiked into the POST samples had \(R^2\) values and slope
+estimates close to 1 (Table \ref{tab:erccTable}). Slope estimates less
+than one were attributed to assay standard curve efficiency less than 1
+(Table \ref{tab:erccTable}). When considering the
+quantitative limitations of the qPCR assay these results confirm that
+the unmixed samples were volumetrically mixed according to the
+two-sample titration mixture design.
+
+\begin{table}
+
+\caption{\label{tab:erccTable}ERCC Spike-in qPCR assay information and summary statistics.
+ERCC is the ERCC identifier for the ERCC spike-in, Assay is TaqMan assay, and Length
+and GC are the size and GC content of the qPCR amplicon.  The Std. $R^2$ and Efficiency
+(E) statistics were computed for the standard curves. $R^2$ and slope for titration qPCR results for the titration series.}
+\centering
+\begin{tabular}[t]{lllrrrrr}
+\toprule
+Subject & ERCC & Assay & Length & Std. $R^2$ & E & $R^2$ & Slope\\
+\midrule
+E01JH0004 & 012 & Ac03459877-a1 & 77 & 0.9996 & 86.19 & 0.98 & 0.92\\
+E01JH0011 & 157 & Ac03459958-a1 & 71 & 0.9995 & 87.46 & 0.95 & 0.90\\
+E01JH0016 & 108 & Ac03460028-a1 & 74 & 0.9991 & 87.33 & 0.95 & 0.84\\
+E01JH0017 & 002 & Ac03459872-a1 & 69 & 0.9968 & 85.80 & 0.89 & 0.93\\
+E01JH0038 & 035 & Ac03459892-a1 & 65 & 0.9984 & 86.69 & 0.95 & 0.94\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{figure}
+\centering
+\includegraphics{bacPlot-1.pdf}
+\caption{\label{fig:bacPlot}Prokaryotic DNA concentration (ng/ul) across
+titrations measured using a 16S rRNA qPCR assay. \(R^2\) and p-values are linear
+models fit to prokaryotic DNA concentration versus proportion post DNA for each individual.
+Red and blue lines indicate negative and positive slope estimates respectively.
+p-value indicates significant difference from the expected slope of 0.
+The grey regions indicate the linear model 95\% confidence interval.
+Multiple test correction was performed using the Benjamini-Hochberg
+method. One of the E01JH0004 PCR replicates for titration 3
+(\(\theta=0.125\)) was identified as an outlier, with a prokaryotic DNA
+concentration of 0.003 ng/ul, and was excluded from the linear model.
+The linear model slope was still significantly different from 0 when the
+outlier was included.}
+\end{figure}
+
+\paragraph*{Prokaryotic DNA Proportion Validation}
+Observed changes in prokaryotic DNA concentration across titrations
+indicate the proportion of prokaryotic DNA from the unmixed PRE and POST
+samples in a titration is inconsistent with the mixture design (Fig.
+\ref{fig:bacPlot}). A qPCR assay targeting the 16S rRNA gene was used to
+quantify the concentration of prokaryotic DNA in the titrations. If the
+proportion of prokaryotic DNA is the same between PRE and POST samples
+the slope of the concentration estimates across the two-sample titration
+would be 0. For subjects where the proportion of prokaryotic DNA is
+higher in the PRE samples, the slope will be negative, and positive when
+the proportion is higher for POST samples. The slope estimates are
+significantly different from 0 for all subjects excluding E01JH0011
+(Fig. \ref{fig:bacPlot}). These results indicate that the proportion of
+prokaryotic DNA is lower in POST when compared to the PRE samples for
+E01JH0004 and E01JH0017 and higher for E01JH0016 and E01JH0038.
+
+\paragraph*{Correcting for Deviations from Mixture Design}
+%% Incorporate into text - only present unclustered
+% The unclustered count table was generated using the
+% 40,000 most abundant features from Mothur's initial pre-processing (see
+% Methods for details).
+% Unclustered pipeline \(\theta\) estimates were
+% used to calculate the error rates for all pipelines to prevent
+% over-fitting.
+
+
+Our titration validation results identified differences in the
+proportion of prokaryotic DNA in PRE and POST samples (Fig. \ref{fig:bacPlot}).
+Therefore our expected values used in measurement assessment need to account
+for differences in the proportion of prokaryotic DNA from unmixed samples.
+To account for differences in prokaryotic DNA proportion we inferred
+the proportion of POST sample prokaryotic DNA in a titration, \(\theta\), using
+the 16S rRNA sequencing data (Fig. \ref{fig:thetaHat}). Overall the relationship
+between the inferred and mixture design \(\theta\) values were
+consistent across pipelines but not subject whereas the \(\theta\)
+estimate 95\% CI varied by both subject and pipeline. For study subjects
+E01JH0004, E01JH0011, and E01JH0016 the inferred and mixture design
+\(\theta\) values were in agreement, in contrast to study subjects
+E01JH0017 and E01JH0038. For E01JH0017 the inferred values were
+consistently less than the mixture design values. For E01JH0038
+the inferred values were consistently greater than the mixture design
+values. These results were consistent with the qPCR prokaryotic DNA
+concentration results with significantly positive slopes for E01JH0004
+and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
+\ref{fig:bacPlot}).
+
+\begin{figure}
+\centering
+\includegraphics{thetaHat-1.pdf}
+\caption{\label{fig:thetaHat}Theta estimates (\(\hat{\theta}\)) by titration, biological
+replicate, and bioinformatic pipeline. Points indicate mean
+of 1000 bootstrap \(\theta\) estimates and error bars 95\% confidence
+interval. Grey bars indicate expected \(\theta\) values based on mixture design.
+Points above grey bars indicate the titrations with a high proportion of prokaryotic DNA
+from the POST sample than expected. Points below grey bars indicate titrations
+with high proportion of prokaryotic DNA from the PRE sample.}
+\end{figure}
+
+\section{Assessment Dataset Correction}
+\begin{figure}
+\centering
+\includegraphics{qaPlots-1.pdf}
+\caption{\label{fig:qaPlots}Sequence data set characteristics. (A)
+Distribution in the number of raw reads generated per barcoded sample (Library Size)
+by individual. Boxplots summarize data distribution with horizontal bar
+as median, boxes indicating interquartile range, whiskers
+\(\pm 1.5\times IQR\), and black points outliers. The dashed horizontal
+line indicates overall median library size. Excluding one PCR replicate
+from subject E01JH0016 titration 5 that had only 3,195 reads. (B)
+Smoothing spline of the base quality score (BQS) across the amplicon by
+subject. Vertical lines indicate approximate overlap region between
+forward and reverse reads. Forward reads go from position 0 to 300 and
+reverse reads from 464 to 164.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{sample_div.pdf}
+\caption{\label{fig:sampleDiversity} Diversity metrics for PRE and POST samples by individual. 
+Alpha (A) and Beta (B) diversity was calculated using the DADA2 count table. 
+Beta-Diversity was calculated using Bray-Curtis diversity metric and principal components analysis was used for ordination. The same color and shape scale was used for plots A and B.}
+\end{figure}
+
+\section{Count Table Assessment Demonstration}
+\begin{figure}
+\centering
+\includegraphics{readsVfeats-1.pdf}
+\caption{\label{fig:readsVfeats}Relationship between the number of reads and
+features per sample by bioinformatic pipeline. (A) Scatter plot of
+observed features versus total abundance per sample. (B) Observed
+feature distribution by pipeline and individual. Excluding one PCR
+replicate from subject E01JH0016 titration 5 with only 3,195 reads, and
+the Mothur E01JH0017 titration 4 (all four PCR replicates), with 1,777
+observed features.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{pipeTaxa-1.pdf}
+\caption{\label{fig:pipeTaxa} Comparison of dataset taxonomic composition
+across pipelines. Phylum (A) and Order (B) relative abundance by
+pipeline. Taxonomic groups with less than 1\% total relative abundance
+were grouped together and indicated as other. Pipeline genus-level
+taxonomic assignment set overlap for all genera (C) and the upper
+quartile genera by relative abundance for each pipeline (D). Intersection size is
+the number of features observed in the pipeline combination indicated on the x-axis.
+For example in C, 39 genera are observed in all three pipelines and
+88 are observed in only QIIME and not Mothur or DADA2.}
+\end{figure}
+
+\section{Count Table Assessment}
+\subsection{Quant Results}
+\begin{table}
+\caption{\label{tab:relAbuErrorTbl}Maximum feature-level error rate bias (median error rate) and variance (robust COV) by pipeline and individual.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llrrrrr}
+\toprule
+Metric & Pipeline & E01JH0004 & E01JH0011 & E01JH0016 & E01JH0017 & E01JH0038\\
+\midrule
+ & DADA2 & 2.37 & 2.55 & 17.03 & 4.34 & 0.66\\
+\cmidrule{2-7}
+ & Mothur & 5.30 & 6.76 & 19.24 & 4.15 & 1.93\\
+\cmidrule{2-7}
+ & QIIME & 3.99 & 6.43 & 8.83 & 4.80 & 1.09\\
+\cmidrule{2-7}
+\multirow{-4}{*}{\raggedright\arraybackslash Bias} & Unclustered & 6.45 & 7.24 & 16.85 & 4.37 & 1.91\\
+\cmidrule{1-7}
+ & DADA2 & 4.60 & 8.96 & 7.36 & 5.91 & 6.71\\
+\cmidrule{2-7}
+ & Mothur & 4.71 & 7.35 & 3.71 & 5.70 & 8.01\\
+\cmidrule{2-7}
+ & QIIME & 4.40 & 22.57 & 4.46 & 17.10 & 7.91\\
+\cmidrule{2-7}
+\multirow{-4}{*}{\raggedright\arraybackslash Variance} & Unclustered & 7.06 & 10.30 & 16.94 & 8.07 & 6.00\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{figure}
+\centering
+\includegraphics{logFCerror-1.pdf}
+\caption{\label{fig:logFCerror} Differential abundance quantitative assessment. (A) Linear model of the relationship between
+estimated and expected log fold-change relative abundance between titrations for PRE-specific and
+PRE-dominant features by pipeline and individual, line color indicates
+pipelines. Dashed grey line indicates expected 1-to-1 relationship
+between the estimated and expected log fold-change. (B) Log fold-change
+error (\textbar{}exp-est\textbar{}) distribution by pipeline and
+individual.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{logFcErrorMetrics-1.pdf}
+\caption{\label{fig:logFcErrorMetrics}Feature-level differential abundance assessment.
+Log-fold change error
+bias (A) and variance (B) metric distribution by subject and pipeline.
+The bias (\(1 - slope\)) and variance (\(R^2\)) metrics are derived from
+the linear model fit to the estimated and expected log fold-change
+values for individual features. Boxplot outliers, \(1.5\times IQR\) from
+the median were excluded from the figure to prevent extreme metric
+values from obscuring metric value visual comparisons.}
+\end{figure}
+
+\end{document}
