@@ -742,12 +742,34 @@ significantly different between pipelines: Mothur = 0.83, QIIME = 0.71
 and DADA2 = 1 (Fig. \ref{fig:relAbuErrorMetrics}B).
 
 \paragraph{Differential Abundance Assessment}
+\begin{figure}
+\centering
+\includegraphics{logFCerror-1.pdf}
+\caption{\label{fig:logFCerror} Differential abundance quantitative assessment. (A) Linear model of the relationship between
+estimated and expected log fold-change relative abundance between titrations for PRE-specific and
+PRE-dominant features by pipeline and individual, line color indicates
+pipelines. Dashed grey line indicates expected 1-to-1 relationship
+between the estimated and expected log fold-change. (B) Log fold-change
+error (\textbar{}exp-est\textbar{}) distribution by pipeline and
+individual.}
+\end{figure}
 
-%% Note diff abundance figures moved to supplemental
+\begin{figure}
+\centering
+\includegraphics{logFcErrorMetrics-1.pdf}
+\caption{\label{fig:logFcErrorMetrics}Feature-level differential abundance assessment.Log-fold change error
+bias (A) and variance (B) metric distribution by subject and pipeline.
+The bias (\(1 - slope\)) and variance (\(R^2\)) metrics are derived from
+the linear model fit to the estimated and expected log fold-change
+values for individual features. Boxplot outliers, \(1.5\times IQR\) from
+the median were excluded from the figure to prevent extreme metric
+values from obscuring metric value visual comparisons.}
+\end{figure}
 
-%% Some of this text should be moved to the discussion and maybe supplemental material
+%% Move to discussion?
 The agreement between log-fold change estimates and expected values were
-individual specific and consistent across pipelines (Fig. S9A). The individual specific effect was attributed to
+individual specific and consistent across pipelines (Fig.
+\ref{fig:logFCerror}A). The individual specific effect was attributed to
 the fact that unlike relative abundance assessment, the inferred
 \(\theta\) values were not used to calculate expected values. Inferred
 \(\theta\) values were not used to calculate the expected values because
@@ -765,7 +787,7 @@ pipelines.
 
 
 The log fold-change error distribution was consistent across pipelines
-(Fig. S9B). There was a long tail of high error
+(Fig. \ref{fig:logFCerror}B). There was a long tail of high error
 features in the error distribution for all pipelines and individuals.
 The log fold-change estimates responsible for the long tail could not be
 attributed to specific titration comparisons. Additionally, we compared
@@ -781,7 +803,7 @@ expected values for individual features indicated that the long tails
 were attributed to feature specific performance.
 
 Feature-level log fold-change bias and variance metrics were used to
-compare pipeline performance (Fig. S10). Similar to
+compare pipeline performance (Fig. \ref{fig:logFCerror}). Similar to
 relative abundance, feature-level bias and variance metrics are defined
 as the \(1 - slope\) and \(R^2\) for linear models of the estimated and
 expected log fold-change for individual features and all titration
@@ -795,8 +817,8 @@ fold-change estimates and expected values across titration comparisons.
 To compare bias and variance metrics across pipelines, mixed-effects
 models were used. The log fold-change bias and variance metrics were not
 significantly different between pipelines (Bias: F = 0, 2.51, p = 0.99,
-0.08, Fig. S10B, Variance: F = 47.39, 0.23, p = 0, 0.8, Fig.
-S10C).
+0.08, \ref{fig:logFCerror}B, Variance: F = 47.39, 0.23, p = 0, 0.8, Fig.
+\ref{fig:logFCerror}C).
 
 
 \section*{Discussion}
