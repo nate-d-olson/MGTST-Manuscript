@@ -1,0 +1,72 @@
+---
+title: "Titration Validation Diagram Plots"
+author: "Nate Olson"
+date: "4/14/2019"
+output: html_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+ercc_diag_df <- tribble(
+      ~Example,     ~Titration, ~Ct,
+      "Expected",         1, 1,
+      "Expected",         2, 2,
+      "Expected",         3, 4,
+      "Too much pre",     1, 1,
+      "Too much pre",     2, 1.5,
+      "Too much pre",     3, 2.5,
+      "Too much post",    1, 1,
+      "Too much post",    2, 2.5,
+      "Too much post",    3, 5.5,
+)
+```
+
+```{r}
+ggplot(ercc_diag_df) + 
+      geom_path(aes(x = Titration, y = Ct, group = Example), 
+                linetype = 2, color = "grey60") + 
+      geom_point(aes(x = Titration, y = Ct, color = Example), 
+                 shape = 21, size = 5, fill = "white") + 
+      geom_point(aes(x = Titration, y = Ct, color = Example))+
+      theme_classic() +
+      scale_x_continuous(breaks = c(1,2,3), labels = c(1,2,3))
+```
+
+```{r}
+ggsave("~/Projects/MGTST-Manuscript/ercc_diag_plot.pdf", height = 3, width = 4, useDingbats=FALSE)
+```
+
+## Prok DNA Plot
+
+```{r}
+prok_diag_df <- tribble(
+      ~Example,     ~Titration, ~`[DNA]`,
+      "Expected",         1, 1,
+      "Expected",         2, 1,
+      "Expected",         3, 1,
+      "PRE > POST",     1, 1,
+      "PRE > POST",     2, 0.75,
+      "PRE > POST",     3, 0.5,
+      "POST > PRE",    1, 1,
+      "POST > PRE",    2, 1.25,
+      "POST > PRE",    3, 1.5,
+)
+```
+
+```{r}
+ggplot(prok_diag_df) + 
+      geom_path(aes(x = Titration, y = `[DNA]`, group = Example), 
+                linetype = 2, color = "grey60") + 
+      geom_point(aes(x = Titration, y = `[DNA]`, color = Example), 
+                 shape = 21, size = 5, fill = "white") + 
+      geom_point(aes(x = Titration, y = `[DNA]`, color = Example)) +
+      theme_classic() +
+      scale_x_continuous(breaks = c(1,2,3), labels = c(1,2,3))
+```
+
+```{r}
+ggsave("~/Projects/MGTST-Manuscript/prok_diag_plot.pdf", height = 3, width = 4, useDingbats=FALSE)
+```
