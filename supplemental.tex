@@ -91,8 +91,8 @@ replicates. Bootstrapping was performed by resampling informative features, defi
 
 \begin{figure}
 \centering
-\includegraphics[width=0.9\linewidth]{titration_validation.png}
-\caption{\label{fig:titrationValidation} Titration-series validation methods. (A) ERCCs were spiked into unmixed PRE and POST DNA. Unmixed DNA is composed of prokaryotic and eukaryotic DNA. The proportion of prokarytic DNA differs between PRE and POST resulting in the proportion of measureable PRE and POST DNA (prokarytic DNA) in the titrations differing from the mixture design. (B) Results from qPCR quantification of the ERCCs was used to validate volumetric mixing. (C) 16S rRNA qPCR is used to validate the prokaryotic DNA proportion. For B and C expectation is indicated in grey. Deviations from expectation along with explanations are indicated in black for B and yellow and green for C.}
+\includegraphics[width=0.9\linewidth]{titration_validation.pdf}
+\caption{\label{fig:titrationValidation} Titration-series validation methods. (A) ERCCs were spiked into unmixed PRE and POST DNA. Unmixed DNA is composed of prokaryotic and eukaryotic DNA. Unmixed DNA used to generate two-sample titration series. The proportion of prokarytic DNA differs between PRE and POST resulting in the proportion of measureable PRE and POST DNA (prokarytic DNA) in the titrations differing from the mixture design. (B) Results from qPCR quantification of the ERCCs was used to validate volumetric mixing. (C) 16S rRNA qPCR is used to validate the prokaryotic DNA proportion. For B and C expectation is indicated in grey. Deviations from expectation along with explanations are indicated in light grey for B and orange and green for C.}
 \end{figure}
 
 \paragraph*{Volumetric Mixing Validation}
@@ -218,7 +218,7 @@ and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{bayes_beta.png}
-\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indcates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error alone (respectively).}
+\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indcates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error (respectively).}
 \end{figure}
 
 \section*{Bayesian Hypothesis Test - beta priors}
@@ -275,6 +275,21 @@ Metric & Pipeline & E01JH0004 & E01JH0011 & E01JH0016 & E01JH0017 & E01JH0038\\
  & QIIME & 4.40 & 22.57 & 4.46 & 17.10 & 7.91\\
 \cmidrule{2-7}
 \multirow{-4}{*}{\raggedright\arraybackslash Variance} & Unclustered & 7.06 & 10.30 & 16.94 & 8.07 & 6.00\\
+\bottomrule
+\end{tabular}}
+\end{table}
+
+\begin{table}
+\caption{\label{tab:TAandUSsummary}Summary of abundance of titration-specific and unmixed-specific features per pipeline. NOTE: these numbers are only reflective of subject E01JH0004 and are directly related to the proportions described in Supplemental Fig. \ref{fig:bayesPrior} for alpha = beta = 1.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llllll}
+\toprule
+Pipeline & \# of features & titration-specific (TS) & TS unexplained & unmixed-specific (US) & US unexplained \\
+\midrule
+DADA2    & 3144 & 725  & 471  & 880 & 167  \\
+Mothur   & 38358  &  8824  &  44  &  9047  & 18  \\
+QIIME    & 11385  & 6386  &  3  &  3726  & 75  \\
 \bottomrule
 \end{tabular}}
 \end{table}
