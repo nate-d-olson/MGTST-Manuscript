@@ -336,19 +336,16 @@ marker-gene-surveys, is commonly used to characterize
 microbial communities. The 16S rRNA marker-gene-survey
 measurement process includes molecular and
 computational steps \cite{Goodrich2014}.
-Molecular steps are used to selectively target and sequence the 16S rRNA
+Molecular steps selectively target and sequence the 16S rRNA
 gene from prokaryotic organisms within a sample. The computational steps
-convert the raw sequence data into a matrix with feature relative abundance values
+convert the raw sequence data into a count table, matrix with feature relative abundance values
 \cite{Goodrich2014}. Both molecular and computational measurement
 processes contribute to the overall measurement bias and dispersion
-\cite{Amore2016, Goodrich2014, brooks2015truth}. Proper measurement
-process evaluation allows for the characterization of individual
-steps and determining where to focus efforts for improving the measurement. Appropriate
+\cite{Amore2016, Goodrich2014, brooks2015truth}. Appropriate
 datasets and analysis tools are needed to evaluate the 16S rRNA
 marker-gene-survey measurement process. The need for a  dataset with
 ``ground truth'' has emerged in order to properly characterize measurement accuracy.
 
-%% I still don't think this fits here but one of the reviewers said this should go in the intro
 The count tables characteristics are dependent on the computational methods, i.e. bioinformatic pipelines, used to generate them.
 For example the commonly used QIIME, Mothur, and
 DADA2 pipelines produce feature sets and count tables with different characteristics. 
@@ -359,20 +356,15 @@ sequence alignment. Quality filtered paired-end reads are merged
 into contigs, then aligned to a reference multiple
 sequence alignment, followed by the removal of uninformative positions.
 As a result the feature set representative sequences are shorter than the input amplicons. 
-The QIIME pipeline uses open-reference clustering
-where merged paired-end reads are first assigned to reference cluster
-centers \cite{Rideout2014, Caporaso2010}. Next, QIIME clusters
-unassigned reads \emph{de novo}. Unlike Mothur, the QIIME clustering
-method uses pairwise sequence distances calculated from pairwise
-sequence alignments. As a result, the QIIME pairwise distances are
-calculated using the full amplicon sequence, whereas
-Mothur pairwise distances are calculated using multiple
-sequence alignment with only informative positions.
-The DADA2 pipeline uses a probability model and
-maximization expectation algorithm for feature inference
-\cite{callahan2016dada2}. Unlike distance-based clustering methods
-employed by the Mothur and QIIME pipelines, DADA2 parameters determine
-if low abundance sequences are grouped with a higher abundance sequence.
+For the QIIME open-reference clustering pipeline merged paired-end reads are first assigned to reference cluster
+centers \cite{Rideout2014, Caporaso2010}. 
+Next, unassigned reads are clustered \emph{de novo}. 
+Unlike Mothur, the QIIME pipeline clustering method uses pairwise sequence distances calculated from pairwise sequence alignments. 
+As a result, the QIIME pairwise distances are calculated using the full amplicon sequence, 
+whereas Mothur pairwise distances are calculated using multiple sequence alignment with only informative positions.
+The DADA2 pipeline uses a probability model and maximization expectation algorithm for feature inference \cite{callahan2016dada2}. 
+Unlike distance-based clustering methods employed by the Mothur and QIIME pipelines, 
+DADA2 parameters determine if low abundance sequences are grouped with a higher abundance sequence.
 
 Numerous studies have evaluated quantitative and qualitative
 characteristics of the 16S rRNA measurement process using mock
@@ -384,10 +376,8 @@ in this fashion is that the number of features in a mock
 community is significantly higher than the expected number
 \cite{Kopylova2014}. The higher than expected number of features is
 often attributed to sequencing and PCR artifacts as well as reagent
-contaminants \cite{brooks2015truth, Huse2010}. A notable exception to
-this are count tables generated using feature inference methods,
-such as DADA2 \cite{callahan2016dada2}. Sequence
-inference methods aim to reduce the number of features from sequence artifacts.
+contaminants \cite{brooks2015truth, Huse2010}. 
+A notable exception is count tables generated using feature inference methods, such as DADA2 \cite{callahan2016dada2}. Sequence inference methods which aim to reduce the number of features from sequence artifacts by using statistical models to group sequences by both similarity and abundance .
 While mock communities have an expected number of features and
 composition, they lack the diversity and dynamic range of feature
 present in real samples \cite{bokulich2016mockrobiota}.
@@ -407,11 +397,12 @@ taxonomic specific biases
 Additionally, taxon specific biases due to sequence template properties
 such as GC content, secondary structure, and gene flanking regions have
 been observed \cite{Pinto2012, Hansen1998, Gohl2016}.
-However, due to the limited community complexity the applicability of
-these results to more complex environmental samples is unknown. Simulated count
-tables have been used to assess differential abundance methods, where specific taxa are
+However, due to limited community complexity the applicability of
+mock community assessment results to more complex environmental samples is unknown. 
+Environmental sample complexity can be modeled using simulated data. Simulated count tables have been used to assess differential abundance methods, where specific taxa are
 artificially over represented in one set of samples compared to another
-\cite{McMurdie2014}. However, using simulated data to assess log fold-change
+\cite{McMurdie2014}. 
+However, using simulated data to assess log fold-change
 estimates only evaluates computational steps of the measurement process.
 
 Quantitative and qualitative assessment can also be performed using
@@ -430,14 +421,13 @@ samples were previously used to evaluate gene expression measurements
 \cite{parsons2015using, pine2011adaptable, thompson2005use}.
 
 
-In the present study, present a framework for assessing computational methods used to
+Here we present a framework for assessing computational methods used to
 analyze 16S rRNA marker-gene-survey data. The framework is comprised of a 16S rRNA
-two-sample titration dataset along with metrics to quantitatively and qualitatively assess
-marker-gene-survey computational methods.
+two-sample titration dataset along with metrics to assess the quantitative and qualitative characteristics of count tables generated using marker-gene-survey computational methods.
 The two-sample titration dataset was generated using mixtures human stool sample DNA extracts.
 To demonstrated using the assessment framework we evaluated three bioinformatic pipelines.
-The quantitative results were similar across pipelines, but the qualitative results varied by pipeline.
-Both the dataset and metrics developed in this study publicly available and can be used to evaluate and optimize
+The quantitative assessment results were similar across pipelines, but qualitative assessment results varied by pipeline.
+Both the dataset and metrics developed in this study are publicly available and can be used to evaluate and optimize
 new and existing bioinformatic pipelines.
 
 
