@@ -1,0 +1,2316 @@
+%% BioMed_Central_Tex_Template_v1.06
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL bmc_submission.tex   Tue Apr 16 14:51:49 2019
+%DIF ADD main.tex             Tue Apr 16 15:29:52 2019
+%%                                      %
+%  bmc_article.tex            ver: 1.06 %
+%                                       %
+
+%%IMPORTANT: do not delete the first line of this template
+%%It must be present to enable the BMC Submission system to
+%%recognise this template!!
+
+%DIF 10a10-12
+ %DIF > 
+%%% Alternative Method for Adding supplemental figures %DIF > 
+% http://bytesizebio.net/2013/03/11/adding-supplementary-tables-and-figures-in-latex/ %DIF > 
+%DIF -------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                     %%
+%%  LaTeX template for BioMed Central  %%
+%%     journal article submissions     %%
+%%                                     %%
+%%          <8 June 2012>              %%
+%%                                     %%
+%%                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% For instructions on how to fill out this Tex template           %%
+%% document please refer to Readme.html and the instructions for   %%
+%DIF 25c28
+%DIF < %% authors page on the biomed central website                      %%
+%DIF -------
+%% authors page on the biomed central website                      %%https://www.overleaf.com/1872464598fyjkfhmssdhj %DIF > 
+%DIF -------
+%% http://www.biomedcentral.com/info/authors/                      %%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%% BioMed Central currently use the MikTex distribution of         %%
+%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
+%% http://www.miktex.org                                           %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% additional documentclass options:
+%  [doublespacing]
+%  [linenumbers]   - put the line numbers on margins
+
+%%% loading packages, author definitions
+
+% \documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
+%DIF 47a50
+\documentclass[linenumbers]{bmcart}
+
+%%% Load packages
+\usepackage{amsthm,amsmath}
+%\RequirePackage{natbib}
+%\RequirePackage[authoryear]{natbib}% uncomment this for author-year bibliography
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+% \usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\usepackage{lmodern}
+\usepackage{booktabs,longtable,multirow}
+\usepackage{threeparttable}
+\usepackage{pdflscape}
+\usepackage{makecell}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% Remove comments prior to re-submission %DIF > 
+\def\includegraphic{}
+\def\includegraphics{} 
+
+
+
+
+%%% Put your definitions there:
+\startlocaldefs
+\endlocaldefs
+
+
+%%% Begin ...
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+
+%%% Start of article front matter
+\begin{frontmatter}
+
+\begin{fmbox}
+\dochead{Research}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the title of your article here     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{A framework for assessing 16S marker gene survey data analysis methods using mixtures.}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors here                   %%
+%%                                          %%
+%% Specify information, if available,       %%
+%% in the form:                             %%
+%%   <key>={<id1>,<id2>}                    %%
+%%   <key>=                                 %%
+%% Comment or delete the keys which are     %%
+%% not used. Repeat \author command as much %%
+%% as required.                             %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author[
+   addressref={aff1,aff2,aff3},                   % id's of addresses, e.g. {aff1,aff2}
+   corref={aff1},                       % id of corresponding address, if any
+   % noteref={n1},                        % id's of article notes, if any
+   email={nolson@nist.gov}   % email address
+]{\inits{ND}\DIFdelbegin %DIFDELCMD < \fnm{Nathan D} %%%
+\DIFdelend \DIFaddbegin \fnm{Nathan D.} \DIFaddend \snm{Olson}}
+\author[
+   addressref={aff2,aff3},
+   email={smuthiah@umiacs.umd.edu}
+]{\inits{MS}\fnm{M. Senthil} \snm{Kumar}}
+\author[
+   addressref={aff4},
+   email={sli1@epi.umaryland.edu}
+]{\inits{S}\fnm{Shan} \snm{Li}}
+\DIFaddbegin \author[
+   addressref={aff2,aff3},
+   email={dbraccia@umd.edu}
+]{\inits{DJB}\fnm{Domenick J.} \snm{Braccia}}
+\DIFaddend \author[
+   addressref={aff5},
+   email={shao4@jhu.edu}
+]{\inits{S}\fnm{Stephanie} \snm{Hao}}
+\author[
+   addressref={aff5},
+   email={wtimp@jhu.edu}
+]{\inits{W}\fnm{Winston} \snm{Timp}}
+\author[
+   addressref={aff6},
+   email={msalit@stanford.edu}
+]{\inits{ML}\fnm{Marc L.} \snm{Salit}}
+\author[
+   addressref={aff4},
+   email={cstine@som.umaryland.edu}
+]{\inits{OC}\fnm{O. Colin} \snm{Stine}}
+\author[
+   addressref={aff2,aff3,aff7},
+   email={hcorrada@umiacs.umd.edu}
+]{\inits{H}\fnm{Hector} \snm{Corrada Bravo}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors' addresses here        %%
+%%                                          %%
+%% Repeat \address commands as much as      %%
+%% required.                                %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\address[id=aff1]{%                           % unique id
+  \orgname{Biosystems and Biomaterials Division, National Institute of Standards and Technology},
+  \street{100 Bureau Dr.},
+  \city{Gaithersburg, Maryland},
+  \postcode{20899}
+  \cny{USA}
+}
+\address[id=aff2]{%
+  \orgname{Center for Bioinformatics and Computational Biology, University of Maryland, College Park},
+  \street{8314 Paint Branch Dr.}
+  \city{College Park, Maryland},
+  \postcode{20742}
+  \cny{USA}
+}
+\address[id=aff3]{%
+  \orgname{University of Maryland Institute of Advanced Computer Studies, University of Maryland, College Park},
+  \street{8223 Paint Branch Dr.}
+  \city{College Park, Maryland},
+  \postcode{20742}
+  \cny{USA}
+}
+\address[id=aff4]{%
+  \orgname{Department of Epidemiology and Public Health, University of Maryland School of Medicine},
+  \street{655 W. Baltimore Street},
+  \city{Baltimore, Maryland},
+  \postcode{21201}
+  \cny{USA}
+}
+\address[id=aff5]{%
+  \orgname{Department of Biomedical Engineering, Johns Hopkins University},
+  \street{720 Rutland Ave.},
+  \city{Baltimore, Maryland},
+  \postcode{21205}
+  \cny{USA}
+}
+\DIFdelbegin %DIFDELCMD < \address[id=aff6]{%
+%DIFDELCMD <   \orgname{Joint Initiative for Metrology in Biology, National Institute of Standards and Technology},
+%DIFDELCMD <   \street{443 Via Ortega},
+%DIFDELCMD <   \city{Stanford, CA},
+%DIFDELCMD <   \postcode{94305}
+%DIFDELCMD <   \cny{USA}
+%DIFDELCMD < }
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \address[id=aff6]{%
+  \orgname{Joint Initiative for Metrology in Biology},
+  \street{443 Via Ortega},
+  \city{Stanford, CA},
+  \postcode{94305}
+  \cny{USA}
+}
+\DIFaddend \address[id=aff7]{%
+  \orgname{Department of Computer Science, University of Maryland, College Park},
+  \street{8223 Paint Branch Dr.}
+  \city{College Park, Maryland},
+  \postcode{20742}
+  \cny{USA}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter short notes here                   %%
+%%                                          %%
+%% Short notes will be after addresses      %%
+%% on first page.                           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{artnotes}
+%\note{Sample of title note}     % note to the article
+% \note[id=n1]{Equal contributor} % note, connected to author
+\end{artnotes}
+
+\end{fmbox}% comment this for two column layout
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Abstract begins here                 %%
+%%                                          %%
+%% Please refer to the Instructions for     %%
+%% authors on http://www.biomedcentral.com  %%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstractbox}
+
+\begin{abstract} % abstract
+
+\parttitle{Background}
+Analysis of 16S rRNA marker-gene surveys \DIFdelbegin \DIFdel{, used to characterize prokaryotic microbial communities, }\DIFdelend may be performed by \DIFdelbegin \DIFdel{numerous }\DIFdelend \DIFaddbegin \DIFadd{a variety of }\DIFaddend bioinformatic pipelines and downstream analysis methods. However, \DIFaddbegin \DIFadd{appropriate assessment datasets and statistics are needed as }\DIFaddend there is limited guidance \DIFdelbegin \DIFdel{on how }\DIFdelend to decide between \DIFdelbegin \DIFdel{methods, appropriate data sets and statistics for assessing these methods are needed.
+We developed a mixture dataset with real data complexity and an expected value for assessing }\DIFdelend \DIFaddbegin \DIFadd{available analysis methods. Mixtures of environmental samples are useful for assessment as they provide values calculated from measurements of the unmixed samples and the mixture design that can be compared to values recovered by each bioinformatic method.
+While experiments mixing complex samples have been used to assess other sequencing methods such as RNAseq, they have yet to be used to assess }\DIFaddend 16S \DIFaddbegin \DIFadd{rRNA sequencing.
+}
+
+
+\parttitle{Results}
+\DIFadd{We developed an assessment framework for 16S }\DIFaddend rRNA \DIFdelbegin \DIFdel{bioinformatic pipelines and downstream analysis methods 
+. 
+We generate an assessment dataset using }\DIFdelend \DIFaddbegin \DIFadd{sequencing analysis methods 
+based on }\DIFaddend a two-sample titration mixture \DIFdelbegin \DIFdel{design. 
+The sequencing data were processed using multiple bioinformatic pipelines , }\DIFdelend \DIFaddbegin \DIFadd{dataset and metrics to evaluate OTU count table characteristics. 
+Our qualitative assessment evaluates feature presence/absence exploiting features only present in unmixed samples or titrations by testing if random sampling can explain their observed relative abundance.
+Our quantitative assessment evaluates how well relative and differential abundance values agree with values expected from the mixture design.
+We evaluated count tables generated by three commonly used bioinformatic pipelines as demonstration:
+}\DIFaddend i) DADA2 a sequence inference method, ii) Mothur a \textit{de novo} clustering method, and iii) QIIME \DIFdelbegin \DIFdel{with }\DIFdelend \DIFaddbegin \DIFadd{which uses }\DIFaddend open-reference clustering.
+\DIFdelbegin \DIFdel{The mixture dataset was used to qualitatively and quantitatively assess count tables generated using the pipelines. 
+}%DIFDELCMD < 
+
+%DIFDELCMD < \parttitle{Results}
+%DIFDELCMD < %%%
+\DIFdel{The qualitative assessment was used to evalute features only present in unmixed samples and titrations. 
+The abundance }\DIFdelend \DIFaddbegin \DIFadd{Qualitative assessment indicated that the majority }\DIFaddend of Mothur and QIIME features specific to unmixed samples \DIFdelbegin \DIFdel{and }\DIFdelend \DIFaddbegin \DIFadd{or }\DIFaddend titrations were explained by \DIFdelbegin \DIFdel{sampling alone. 
+However, for }\DIFdelend \DIFaddbegin \DIFadd{random sampling alone but not }\DIFaddend DADA2 \DIFdelbegin \DIFdel{over a third of the unmixed sample and titration specific feature abundance could not be explained by sampling alone.
+The quantitative assessment evaluated pipeline performance by comparing observed to expected relative and differential abundance values. 
+Overall the observed relative abundance }\DIFdelend \DIFaddbegin \DIFadd{features.
+When combined with assessments of count table sparsity, these results indicate that DADA2 has a higher false negative rate whereas Mothur and QIIME have higher false positive rates.
+Quantitative assessment indicated that, overall, observed relative abundance }\DIFaddend and differential abundance values were consistent with \DIFdelbegin \DIFdel{the expected values . 
+Though outlier features were observed across all pipelines . 
+}\DIFdelend \DIFaddbegin \DIFadd{expected values for all three pipelines. We also identified subsets of features measured with high error by all pipelines evaluated. We could not identify the source of bias in these poor performing features based on previously studied sources of bias, indicating that further analysis of potentially unknown and unaccounted for biases is warranted. 
+}\DIFaddend 
+
+\parttitle{Conclusions}
+\DIFdelbegin \DIFdel{Using a novel mixture dataset and assessment methods we quantitatively and qualitatively }\DIFdelend \DIFaddbegin \DIFadd{We developed a novel framework for assessing 16S rRNA marker-gene survey analysis methods based on mixture experiments.
+To demonstrate the assessment framework we }\DIFaddend evaluated count tables generated using three bioinformatic pipelines.
+The \DIFdelbegin \DIFdel{dataset and methods }\DIFdelend \DIFaddbegin \DIFadd{assessment framework }\DIFaddend developed for this study will serve as a valuable community resource for assessing 16S rRNA marker-gene survey bioinformatic methods.
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The keywords begin here                  %%
+%%                                          %%
+%% Put each keyword in separate \kwd{}.     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{keyword}
+\kwd{16S rRNA gene}
+\kwd{assessment}
+\kwd{bioinformatic pipeline}
+\kwd{normalization}
+\kwd{differential abundance}
+\end{keyword}
+
+% MSC classifications codes, if any
+%\begin{keyword}[class=AMS]
+%\kwd[Primary ]{}
+%\kwd{}
+%\kwd[; secondary ]{}
+%\end{keyword}
+
+\end{abstractbox}
+%
+%\end{fmbox}% uncomment this for twcolumn layout
+
+\end{frontmatter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Main Body begins here                %%
+%%                                          %%
+%% Please refer to the instructions for     %%
+%% authors on:                              %%
+%% http://www.biomedcentral.com/info/authors%%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%% See the Results and Discussion section   %%
+%% for details on how to create sub-sections%%
+%%                                          %%
+%% use \cite{...} to cite references        %%
+%%  \cite{koon} and                         %%
+%%  \cite{oreg,khar,zvai,xjon,schn,pond}    %%
+%%  \nocite{smith,marg,hunn,advi,koha,mouse}%%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section*{Background}
+
+Targeted sequencing of the 16S rRNA gene \DIFdelbegin \DIFdel{, commonly known as 16S rRNA
+marker-gene-surveys, is a commonly used method for characterizing
+microbial communities, microbiomes}\DIFdelend \DIFaddbegin \DIFadd{is commonly used to characterize
+microbial communities}\DIFaddend . The 16S rRNA marker-gene-survey
+measurement process includes molecular \DIFdelbegin \DIFdel{(e.g.~PCR and sequencing) and
+computational steps (e.g., sequence clustering) \mbox{%DIFAUXCMD
+\cite{Goodrich2014}}%DIFAUXCMD
+.
+Molecular steps are used }\DIFdelend \DIFaddbegin \DIFadd{steps }\DIFaddend to selectively target and sequence the 16S rRNA
+gene from prokaryotic organisms within a sample \DIFdelbegin \DIFdel{. The computational steps }\DIFdelend \DIFaddbegin \DIFadd{and
+computational steps \mbox{%DIFAUXCMD
+\cite{Goodrich2014} }%DIFAUXCMD
+computational steps
+}\DIFaddend convert the raw sequence data into a \DIFdelbegin \DIFdel{matrix with feature (e.g.,
+operational taxonomic units) }\DIFdelend \DIFaddbegin \DIFadd{count table of feature }\DIFaddend relative abundance values
+\DIFdelbegin \DIFdel{, feature
+abundance relative to all other features, for each sample
+}\DIFdelend \cite{Goodrich2014}. Both molecular and computational measurement
+\DIFdelbegin \DIFdel{process steps }\DIFdelend \DIFaddbegin \DIFadd{processes }\DIFaddend contribute to the overall measurement bias and dispersion
+\cite{Amore2016, Goodrich2014, brooks2015truth}. \DIFdelbegin \DIFdel{Proper measurement
+method evaluation allows for }\DIFdelend \DIFaddbegin \DIFadd{The need for datasets characterizing complex microbial communities with
+some degree ``ground truth'' has emerged in order to properly characterize the accuracy of }\DIFaddend the \DIFdelbegin \DIFdel{characterization of how individual
+steps impact the measurement processes as a whole and determine where to focus efforts for improving the measurement process.
+Appropriate
+datasets and methods are needed to evaluate the }\DIFdelend 16S rRNA
+\DIFdelbegin \DIFdel{marker-gene-survey measurement process. 
+A sample or dataset with ``ground truth'' is needed to characterize measurement process accuracy.
+}\DIFdelend \DIFaddbegin \DIFadd{marker-gene-survey measurement process.
+}
+
+\DIFadd{Diverse bioinformatic pipelines used to generate count tables produce data with diverse characteristics.
+For example the commonly used QIIME, Mothur, and
+DADA2 pipelines produce feature sets and count tables with different characteristics. 
+Mothur uses }\emph{\DIFadd{de novo}} \DIFadd{clustering for feature
+inference \mbox{%DIFAUXCMD
+\cite{westcott2017opticlust, schloss2009introducing}}%DIFAUXCMD
+.
+Pairwise distances used in clustering are calculated from a multiple
+sequence alignment. Quality filtered paired-end reads are merged
+into contigs, then aligned to a reference multiple
+sequence alignment, followed by the removal of uninformative positions.
+As a result the feature set representative sequences are shorter than the input amplicons. 
+For the QIIME open-reference clustering pipeline merged paired-end reads are first assigned to reference cluster
+centers \mbox{%DIFAUXCMD
+\cite{Rideout2014, Caporaso2010}}%DIFAUXCMD
+. 
+Next, unassigned reads are clustered }\emph{\DIFadd{de novo}}\DIFadd{. 
+Unlike Mothur, the QIIME pipeline clustering method uses pairwise sequence distances calculated from pairwise sequence alignments. 
+As a result, the QIIME pairwise distances are calculated using the full amplicon sequence, 
+whereas Mothur pairwise distances are calculated using multiple sequence alignment with only informative positions.
+The DADA2 pipeline uses a probability model and maximization expectation algorithm for feature inference \mbox{%DIFAUXCMD
+\cite{callahan2016dada2}}%DIFAUXCMD
+. 
+Unlike distance-based clustering methods employed by the Mothur and QIIME pipelines, 
+DADA2 parameters determine if low abundance sequences are grouped with a higher abundance sequence.
+}
+
+\DIFaddend Numerous studies have evaluated quantitative and qualitative
+characteristics of the 16S rRNA measurement process using mock
+communities, simulated data, and environmental samples.
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{To }\DIFdelend \DIFaddbegin \DIFadd{Mock communities are commonly used to }\DIFaddend assess the qualitative
+characteristics of the 16S rRNA sequencing measurement process
+\DIFdelbegin \DIFdel{mock communities are commonly used
+\mbox{%DIFAUXCMD
+\cite{bokulich2016mockrobiota}}%DIFAUXCMD
+. As the number of organisms in the mock community is known, the total }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{bokulich2016mockrobiota}}%DIFAUXCMD
+. The use of mock communities
+in this fashion shows that surveys often result in }\DIFaddend number of features \DIFdelbegin \DIFdel{can be compared to the expected value. The number of observed features in a mock community
+is
+significantly higher than the expected number of organism
+}\DIFdelend \DIFaddbegin \DIFadd{that are significantly higher 
+than the underlying features in the mock community
+}\DIFaddend \cite{Kopylova2014}. The higher than expected number of features is
+often attributed to sequencing and PCR artifacts as well as reagent
+contaminants \cite{brooks2015truth, Huse2010}. 
+A notable exception \DIFdelbegin \DIFdel{to
+this is mock community benchmarking studies evaluating sequencing
+inference method}\DIFdelend \DIFaddbegin \DIFadd{is count tables generated using feature inference methods}\DIFaddend , such as DADA2 \cite{callahan2016dada2}. Sequence inference methods \DIFaddbegin \DIFadd{which }\DIFaddend aim to reduce the number of \DIFdelbegin \DIFdel{sequence artifact
+features . While mock communities have an expected number of features and
+composition}\DIFdelend \DIFaddbegin \DIFadd{features from sequence artifacts by using statistical models to group sequences by both similarity and abundance.
+Nonetheless, while mock communities are useful in this type of assessment }\DIFaddend , they lack the \DIFdelbegin \DIFdel{feature diversity and relative abundance
+}\DIFdelend \DIFaddbegin \DIFadd{diversity and }\DIFaddend dynamic range of \DIFaddbegin \DIFadd{feature present in }\DIFaddend real samples \cite{bokulich2016mockrobiota}.
+
+\DIFdelbegin \DIFdel{The quantitative characteristics }\DIFdelend \DIFaddbegin \DIFadd{Quantitative assessment }\DIFaddend of 16S rRNA sequence data \DIFdelbegin \DIFdel{are normally
+assessed }\DIFdelend using mock communities and
+simulated data \DIFdelbegin \DIFdel{. Mock communities of equimolar and staggered concentration are used to assess relative
+abundance estimate quantitative accuracy \mbox{%DIFAUXCMD
+\cite{Kopylova2014}}%DIFAUXCMD
+}\DIFdelend \DIFaddbegin \DIFadd{is informative but provides an
+incomplete characterization of the measurement process}\DIFaddend .
+Results from relative abundance estimates using mock communities generated from
+mixtures of single organism\DIFaddbegin \DIFadd{'s }\DIFaddend DNA have shown taxonomic specific effects
+where individual taxa are under or over represented in a sample. For
+example\DIFaddbegin \DIFadd{, }\DIFaddend Gram-negative bacteria have higher extraction efficiency
+compared to Gram-positive bacteria\DIFaddbegin \DIFadd{, and are thus likely over represented
+in count tables}\DIFaddend \cite{Costea2017, Olson2012}.
+Mismatches in the primer binding sites are also responsible for
+taxonomic specific biases
+\cite{brooks2015truth, klindworth2012evaluation, Gohl2016}.
+Additionally, taxon specific biases due to sequence template properties
+such as GC content, secondary structure, and gene flanking regions have
+been observed \cite{Pinto2012, Hansen1998, Gohl2016}.
+\DIFdelbegin \DIFdel{Simulated count
+tables }\DIFdelend \DIFaddbegin \DIFadd{However, due to limited community complexity the applicability of
+mock community assessment results to more complex environmental samples is unknown. 
+Environmental sample complexity can be modeled using simulated and }\DIFaddend have been used to assess differential abundance \DIFdelbegin \DIFdel{method (fold
+change differences in relative abundance)}\DIFdelend \DIFaddbegin \DIFadd{methods}\DIFaddend , where specific taxa are
+artificially \DIFdelbegin \DIFdel{overrepresented }\DIFdelend \DIFaddbegin \DIFadd{over represented }\DIFaddend in one set of samples compared to another
+\cite{McMurdie2014}. 
+\DIFdelbegin \DIFdel{Using }\DIFdelend \DIFaddbegin \DIFadd{However, using }\DIFaddend simulated data to assess log fold-change
+estimates only evaluates \DIFaddbegin \DIFadd{the }\DIFaddend computational steps of the measurement process.
+
+Quantitative and qualitative assessment can also be performed using
+sequence data generated from mixtures of environmental samples. While
+simulated data and mock communities are useful in evaluating and
+benchmarking new methods\DIFaddbegin \DIFadd{, }\DIFaddend one needs to consider that methods optimized
+for mock communities and simulated data are not necessarily optimized
+for the sequencing error profile and feature diversity of real samples.
+Data from \DIFdelbegin \DIFdel{environmental samples, which are real samples, are }\DIFdelend \DIFaddbegin \DIFadd{real environmental samples are }\DIFaddend often used
+to benchmark new molecular laboratory and computational methods.
+However, without \DIFdelbegin \DIFdel{an expected value to compare to}\DIFdelend \DIFaddbegin \DIFadd{expected values for use in assessment}\DIFaddend , only measurement
+precision \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{or }\DIFaddend agreement with other methods \DIFdelbegin \DIFdel{, }\DIFdelend can be evaluated. By mixing
+environmental samples, expected values are calculated using information
+from the unmixed samples and mixture design. Mixtures of environmental
+samples were previously used to evaluate gene expression measurements
+\cite{parsons2015using, pine2011adaptable, thompson2005use}.
+
+
+\DIFdelbegin \DIFdel{In the present study, we developed a mixture dataset of extracted DNA
+from human stool samples for assessing }\DIFdelend \DIFaddbegin \DIFadd{Here we present a framework for assessing computational methods used to
+analyze }\DIFaddend 16S rRNA \DIFdelbegin \DIFdel{sequencing. The mixture
+datasets were processed using three bioinformatic pipelines. We
+developed metrics for qualitative and quantitative assessment of the
+bioinformatic pipeline results.
+The quantitative results were similar
+across pipelines, but the qualitative results varied by pipeline.
+We
+have made both }\DIFdelend \DIFaddbegin \DIFadd{marker-gene-survey data. The framework is comprised of a 16S rRNA
+two-sample titration dataset,  generated using mixtures of human stool sample DNA extracts, along with metrics to assess the quantitative and qualitative characteristics of count tables generated using marker-gene-survey computational methods.
+To demonstrate usage of this assessment framework, we evaluated three bioinformatic pipelines.
+Both }\DIFaddend the dataset and metrics developed in this study \DIFdelbegin \DIFdel{publicly
+available for evaluating }\DIFdelend \DIFaddbegin \DIFadd{are publicly available and can be used to evaluate and optimize
+new and existing }\DIFaddend bioinformatic pipelines.
+
+
+\section*{Results}
+
+
+\subsection*{\DIFdelbegin \DIFdel{Two-Sample Titration Design}\DIFdelend \DIFaddbegin \DIFadd{Assessment Framework}\DIFaddend }
+\DIFaddbegin \begin{figure}
+\centering
+\includegraphics{AssessmentFramework.pdf}
+\caption{\label{fig:assessmentFramework}\DIFaddFL{Assessment Framework. A) Count tables evaluated by the assessment framework are generated from the assessment dataset using marker-gene survey bioinformatic pipelines. Count table rows are features identified by the bioinformatic pipeline and column are samples, four PCR replicates (labeled A-D) were sampled for PRE and POST and titrations, to simplify the diagram only three titrations are shown. B) Pictorial depiction of abundance values of the seven feature types observed and used in the assessment framework. C) Qualitative and quantitative assessment metrics used in the assessment framework. The artifactual feature proportion metric (AFP) is a qualitative assessment of feature presence/absence based on unmixed-specific or titration-specific artifactual features. Sparsity (SPAR) is a qualitative assessment of the proportion of observed features in each sample relative to the total observed features. Relative abundance metric (Rel) plot is a quantitative assessment of the relationship between the observed and expected relative abundance values. The difference is used to calculate the error rate ($|Obs-Exp|/Exp$) from which the bias metric ($median(error)$) and variance metric ($RCOV$) are calculated. The differential abundance (Diff) metric assesses the relationship between the expected log fold-change and estimated log fold-change is shown. Points represent the log fold-change between two titrations, point text indicates the titrations compared. A linear model is fit to the data. The model fit information is used for the differential abundance bias ($1-slope$) and variance metrics ($R^2$).}} \DIFaddFL{Each feature type in (B) is labeled with the assessments shown in (C) in which they are employed.
+}\end{figure}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{Samples collected at multiple timepoints during a Enterotoxigenic
+}\emph{\DIFdel{E. coli}} %DIFAUXCMD
+\DIFdel{(ETEC) vaccine trial \mbox{%DIFAUXCMD
+\cite{harro2011refinement} }%DIFAUXCMD
+were
+used to generate a two-sample titration dataset for assessing the }\DIFdelend \DIFaddbegin \DIFadd{Our framework assesses the qualitative and quantitative characteristics of the }\DIFaddend 16S rRNA \DIFdelbegin \DIFdel{marker-gene survey measurement process . Samples from five trial
+participants were selected for our }\DIFdelend \DIFaddbegin \DIFadd{measurement process (Fig. \ref{fig:assessmentFramework}).
+The framework evaluates count tables generated by bioinformatic pipelines from a dataset developed specifically for use in this framework.
+The qualitative assessment provides insight into how much confidence a user can have in feature  presence/absence.
+The quantitative assessment evaluates the bias and variance of relative and differential abundance estimates.
+}
+
+\begin{figure}
+\centering
+\includegraphics{experimentalDesign.pdf}
+\caption{\label{fig:countExperimentalDesign}\DIFaddFL{Sample selection and
+experimental design for the two-sample titration 16S rRNA
+marker-gene-survey assessment dataset. A) Pre- and post-exposure (PRE
+and POST) samples from five vaccine trial participants were selected
+based on }\textit{\DIFaddFL{Escherichia coli}} \DIFaddFL{abundance measured using qPCR and 454
+16S rRNA sequencing (454-NGS), data from Pop et al. \mbox{%DIFAUXCMD
+\cite{pop2016individual}}%DIFAUXCMD
+.
+Counts represent normalized relative abundance values for 454-NGS and
+copies of the heat-labile toxin gene per \(\mu L\), a marker gene for
+ETEC, for qPCR. PRE and POST samples are indicated with orange and green
+data points, respectively. Grey points are other samples from the
+vaccine trial time series. B) Proportion of DNA from PRE and POST
+samples in titration series samples. PRE samples were titrated into POST
+samples following a \(log_2\) dilution series. The NA titration factor
+represents the unmixed PRE sample. C) PRE and POST samples from the five
+vaccine trial participants, subjects, were used to generate independent
+two-sample titration series. The result was a total of 45 samples, 7
+titrations + 2 unmixed samples times 5 subjects. Four replicate PCRs
+were performed for each of the 45 samples resulting in 190 PCRs.}}
+\end{figure}
+
+\subsubsection*{\DIFadd{Assessment Dataset - Mixture Design}}
+
+\DIFadd{Using mixtures of environmental samples we generated a dataset with expected values for use in our assessment framework. 
+For mixture datasets, expected values can be obtained using information from unmixed samples and the mixture design.
+Our mixture dataset uses a }\DIFaddend two-sample \DIFdelbegin \DIFdel{titration dataset . Trial
+participants (subjects) and sampling timepoints were selected based on
+}\emph{\DIFdel{E. coli}} %DIFAUXCMD
+\DIFdel{abundance data collected using qPCR and 16S rRNA
+sequencing from Pop et al.
+\mbox{%DIFAUXCMD
+\cite{pop2016individual}}%DIFAUXCMD
+. Only individuals with no
+}\emph{\DIFdel{E. coli}} %DIFAUXCMD
+\DIFdel{detected in samples collected from trial participants
+prior to ETEC exposure (PRE) were used for our two-samples titrations.
+Post ETEC exposure (POST) samples were identified as the timepoint }\DIFdelend \DIFaddbegin \DIFadd{titration mixture design, where DNA collected from five vaccine trial participants before and
+}\DIFaddend after exposure to \DIFdelbegin \DIFdel{ETEC with the highest }\DIFdelend \DIFaddbegin \DIFadd{pathogenic }\DIFaddend \emph{\DIFdelbegin \DIFdel{E. }\DIFdelend \DIFaddbegin \DIFadd{Escherichia }\DIFaddend coli\DIFdelbegin %DIFDELCMD < } %%%
+\DIFdel{concentration for each
+subject (Fig. \ref{fig:countExperimentalDesign}A). Due to limited sample
+availability, for E01JH0016 the timepoint with the second highest
+}\emph{\DIFdel{E. coli}} %DIFAUXCMD
+\DIFdel{concentration was used as the POST sample. Independent
+titration series were generated for each subject, where POST samples
+were titrated into PRE samples with POST proportions of 1/2, 1/4, 1/8,
+1/16, 1/32, 1/1,024, and 1/32,768 }\DIFdelend \DIFaddbegin } \DIFadd{was mixed following a \(log_2\) dilution series }\DIFaddend (Fig. \ref{fig:countExperimentalDesign}\DIFdelbegin \DIFdel{B).
+Unmixed (PRE and POST) sample DNA
+concentration was measured using NanoDrop ND-1000 (Thermo Fisher
+Scientific Inc.~Waltham, MA USA). Unmixed samples were diluted to 12.5
+\(ng/\mu L\) in tris-EDTA buffer before mixing.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{).
+Each sample was sequenced in quadruplicate.
+}\DIFaddend For our two-sample titration mixture design, \DIFdelbegin \DIFdel{the }\DIFdelend expected feature
+relative abundance \DIFdelbegin \DIFdel{can be }\DIFdelend \DIFaddbegin \DIFadd{is }\DIFaddend calculated using equation \eqref{eq:mixEq},
+where \(\theta_i\), is the proportion of POST DNA in titration \(i\),
+\(q_{ij}\) is the relative abundance of feature \(j\) in titration
+\(i\), and the relative abundance of feature \(j\) in the unmixed PRE
+and POST samples is \(q_{pre,j}\) and \(q_{post,j}\).
+\DIFaddbegin \DIFadd{Throughout the rest of the manuscript, samples collected prior to and after }\emph{\DIFadd{E. coli}} \DIFadd{exposure are referred to as PRE and POST respectively.
+}\DIFaddend 
+
+\begin{equation}
+  q_{ij} = \theta_i q_{post,j} + (1 - \theta_i) q_{pre,j}
+  \label{eq:mixEq}
+\end{equation}
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{experimentalDesign.png}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:countExperimentalDesign}%%%
+%%%
+\DIFdelFL{Sample selection and
+experimental design for the two-sample titration 16S rRNA
+marker-gene-survey assessment dataset. A) Pre- and post-exposure (PRE
+and POST) samples from five vaccine trial participants were selected
+based on }\textit{\DIFdelFL{Escherichia coli}} %DIFAUXCMD
+\DIFdelFL{abundance measured using qPCR and 454
+16S rRNA sequencing (454-NGS), data from Pop et al. \mbox{%DIFAUXCMD
+\cite{pop2016individual}}%DIFAUXCMD
+.
+Counts represent normalized relative abundance values for 454-NGS and
+copies of the heat-labile toxin gene per \(\mu L\), a marker gene for
+ETEC, for qPCR. PRE and POST samples are indicated with orange and green
+data points, respectively. Grey points are other samples from the
+vaccine trial time series. B) Proportion of DNA from PRE and POST
+samples in titration series samples. PRE samples were titrated into POST
+samples following a \(log_2\) dilution series. The NA titration factor
+represents the unmixed PRE sample. C) PRE and POST samples from the five
+vaccine trial participants, subjects, were used to generate independent
+two-sample titration series. The result was a total of 45 samples, 7
+titrations + 2 unmixed samples times 5 subjects. Four replicate PCRs
+were performed for each of the 45 samples resulting in 190 PCRs.}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \subsubsection*{\DIFadd{Qualitative Assessment}}
+\DIFadd{The qualitative assessment shows how well pipelines differentiate true biological sequences from measurement process artifacts.
+Inadequate processing of artifacts results in false positive and false negative features where false positives are features in a count table that are not present in the sequenced sample and false negative features are biological sequences in a sample not represented in the count table.
+Our qualitative assessment methods characterize the artifactual feature proportion (the frequency of artifactual features in a count table) by estimating the proportion of }\emph{\DIFadd{titration-}} \DIFadd{and }\emph{\DIFadd{unmixed-specific}} \DIFadd{features (Fig. \ref{fig:assessmentFramework}B) that cannot be explained by sampling alone.
+We combine the artifactual feature proportion assessment results with sparsity estimates to hypothesize whether the artifactual features are primarily false positives or negatives.
+Sparsity is defined as the fraction of 0 valued cells in the count table (Fig. \ref{fig:assessmentFramework}C).
+}\DIFaddend 
+
+\DIFdelbegin \subsection*{\DIFdel{Dataset characteristics}}
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \subsubsection*{\DIFadd{Quantitative Assessment}}
+\DIFadd{To evaluate count table abundance values, our quantitative assessment uses error, bias, and variance metrics (Fig. \ref{fig:assessmentFramework}C).
+Error metrics measure agreement between observed and expected abundance values.
+The bias and variance metrics summarise feature-level performance. 
+Bias metrics summarise the overall agreement with expected values and the variance metric characterizes the distribution of the agreement.
+Overall, pipeline performance is evaluated by comparing count table metric distributions.
+Additionally, feature-level metrics are indicators of feature-specific biases.
+}\DIFaddend 
+
+\DIFdelbegin %DIFDELCMD < \begin{table}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \subsection*{\DIFaddFL{Assessment Dataset Characterization and Validation}}
+\DIFaddFL{To assure the mixture dataset is suitable for use in our assessment framework, we first validated the titration series and raw sequence data.
+The mixture dataset had sufficient sample coverage, reads per sample, and read quality for use in our assessment framework. 
+The number of reads per sample and distribution of base quality scores by position was consistent across subjects (Fig. S5).
+There were \(8.9548\times 10^{4}\) (152,267 - 3,195) sequences per sample, median and
+range. Average base quality score was greater than 30 over the length of the amplicon when considering both forward and reverse reads (Fig. S5B).
+}\DIFaddendFL 
+
+\DIFaddbeginFL \DIFaddFL{Additionally, we characterized subject specific differences to inform the interpretation of our assessment results.
+No subject specific differences in base quality score were observed (Fig. S5). However, average read depth was greater for E01JH004 compared to the other individuals (Fig. S5).
+Community composition differences between PRE and POST samples and individuals was characterized using alpha and beta diversity (Fig. S6). 
+Overall alpha diversity was higher for POST except for E01JH0011, 
+though differences in diversity between PRE and POST varied by individual. 
+Based on the beta diversity the community composition within individuals differed between the PRE and POST samples. Note that assessment metrics defined above and results reported below are based on within subject comparisons.
+}
+
+\DIFaddFL{To validate the two-sample titration assessment dataset,
+we evaluated two assumptions about the titrations:
+(1) The samples were mixed volumetrically in a
+\(log_2\) dilution series according to the mixture design.
+(2) The unmixed PRE and POST samples
+have the same proportion of prokaryotic DNA.
+To validate the sample volumetric mixing exogenous DNA (ERCC plasmids) were spiked into the
+unmixed samples before mixing and quantified
+using qPCR (Fig. S1B). The stool samples used to generate the mixtures have both eukaryotic (primarily human) DNA and
+prokaryotic DNA. If the proportion of prokaryotic DNA differs between
+the unmixed samples, then the amount of DNA from the unmixed samples in
+a titration targeted by 16S rRNA gene sequencing is not consistent with
+the mixture design. We quantified the proportion of prokaryotic DNA in the unmixed samples using a qPCR assay targeting the 16S rRNA gene (Fig. S1C).
+}
+
+\DIFaddFL{Our assessment dataset validation results indicated that the samples were volumetrically mixed according to the mixture design (Table S1) but prokaryotic DNA proportion varied across the titration series (Fig. S2). 
+To account for deviations from the mixture design due to differences in the proportion of prokaryotic DNA in the unmixed samples, we estimated the proportion of POST in each titration using the 16S rRNA sequencing data (Fig. S3) and 
+the estimated POST proportions were used in our assessment metric calculations. 
+See Supplemental Material for the assessment dataset validation methods and results.
+}
+
+
+\subsection*{\DIFaddFL{Count Table Assessment Demonstration}}
+\DIFaddFL{Next, we demonstrate the utility of our assessment framework on count tables generated using three different bioinformatic pipelines; DADA2, Mothur and QIIME.
+First, we provide high level summary statistics for initial insight into how the count tables differ.
+Next, we compare the assessment framework results for the three count tables.
+}
+
+\paragraph{\DIFaddFL{Count Table Characteristics}}
+\begin{table}
+\DIFaddendFL \caption{\label{tab:pipeQA}Summary statistics for the different bioinformatic pipelines.
+DADA2 is a denoising sequence inference pipeline, QIIME is an open-reference clustering
+pipeline, and Mothur  is a de-novo clustering pipeline. No template controls were excluded
+from summary statistics. Sparsity is the proportion of 0's in the count table. Features
+is the total number of OTUs (QIIME and Mothur ) or SVs (DADA2) in the count. Sample
+coverage is the median and range (minimum-maximum) per sample total abundance.
+Drop-out rate is the proportion of reads removed while processing the sequencing data for each bioinformatic pipeline.}
+\centering
+\begin{tabular}[t]{lrrll}
+\toprule
+Pipelines & Features & Sparsity & Total Abundance & Drop-out Rate\\
+\midrule
+DADA2 & 3144 & 0.93 & 68649 (1661-112058) & 0.24 (0.18-0.59)\\
+Mothur & 38358 & 0.98 & 53775 (1265-87806) & 0.4 (0.35-0.62)\\
+QIIME & 11385 & 0.94 & 25254 (517-46897) & 0.7 (0.62-0.97)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\DIFdelbegin %DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{qaPlots-1.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:qaPlots}%%%
+%%%
+\DIFdelFL{Sequence dataset characteristics. (A)
+Distribution in the number of reads per barcoded sample (Library Size)
+by individual. Boxplots summarize data distribution with horizontal bar
+as median, boxes indicating interquartile range, whiskers
+\(\pm 1.5\times IQR\), and black points outliers. The dashed horizontal
+line indicates overall median library size. Excluding one PCR replicate
+from subject E01JH0016 titration 5 that had only 3,195 reads. (B)
+Smoothing spline of the base quality score (BQS) across the amplicon by
+subject. Vertical lines indicate approximate overlap region between
+forward and reverse reads. Forward reads go from position 0 to 300 and
+reverse reads from 464 to 164.}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{readsVfeats-1.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:readsVfeats}%%%
+%%%
+\DIFdelFL{Relationship between the number of reads and
+features per sample by bioinformatic pipeline. (A) Scatter plot of
+observed features versus the number of reads per sample. (B) Observed
+feature distribution by pipeline and individual. Excluding one PCR
+replicate from subject E01JH0016 titration 5 with only 3,195 reads, and
+the Mothur E01JH0017 titration 4 (all four PCR replicates), with 1,777
+observed features.}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{pipeTaxa-1.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:pipeTaxa}%%%
+%%%
+\DIFdelFL{Comparison of dataset taxonomic composition
+across pipelines. Phylum (A) and Order (B) relative abundance by
+pipeline. Taxonomic groups with less than 1\% total relative abundance
+were grouped together and indicated as other. Pipeline genus-level
+taxonomic assignment set overlap for the all features (C) and the upper
+quartile genera by relative abundance for each pipeline (D).}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{We first characterize the number of reads per sample and base quality
+score distribution. The number of reads per sample and distribution of
+base quality scores by position was consistent across subjects (Fig.
+\ref{fig:qaPlots}). Two barcoded experimental samples had less than
+35,000 reads. The rest of the samples with less than 35,000 reads were
+no template PCR controls (NTC). Excluding one failed reaction with 2,700
+reads and NTCs, there were \(8.9548\times 10^{4}\) (3195-152267)
+sequences per sample, median and range. Forward reads had consistently
+higher base quality scores relative to the reverse reads with a narrow
+overlap region with high base quality scores for both forward and
+reverse reads (Fig. \ref{fig:qaPlots}B).
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The resulting }\DIFdelend \DIFaddbegin \DIFadd{The }\DIFaddend count tables generated using the \DIFdelbegin \DIFdel{four bioinformatic pipelines were characterized for }\DIFdelend \DIFaddbegin \DIFadd{three bioinformatic pipelines vary in
+pre-processing and feature inference methods. 
+These differences are reflected in the count table }\DIFaddend number of features, \DIFdelbegin \DIFdel{sparsity,
+and filter }\DIFdelend \DIFaddbegin \DIFadd{total abundance,
+and drop-out }\DIFaddend rate (Table \ref{tab:pipeQA}, \DIFdelbegin \DIFdel{Figs. \ref{fig:readsVfeats}B}\DIFdelend \DIFaddbegin \DIFadd{Fig. S7B}\DIFaddend ). The
+pipelines evaluated employ different approaches for handling low quality
+reads resulting in large differences in \DIFaddbegin \DIFadd{the }\DIFaddend drop-out rate\DIFdelbegin \DIFdel{and the }\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend fraction
+of raw sequences not included in the count table (Table
+\ref{tab:pipeQA}). QIIME pipeline has the highest drop-out rate and
+number of features per sample but fewer total features than Mothur. The
+targeted amplicon region has a relatively small overlap region, 136 bp
+for 300 bp paired-end reads, compared to other commonly used amplicons
+\cite{kozich2013development, Walters2016-lf}. The high drop-out rate is
+due to low basecall accuracy at the ends of the reads especially the
+reverse reads resulting in a high proportion of unsuccessfully merged
+reads pairs (Fig. \DIFdelbegin \DIFdel{\ref{fig:qaPlots}B). Furthermore, increasing the
+drop-out }\DIFdelend \DIFaddbegin \DIFadd{S5B). Further increasing the
+filter }\DIFaddend rate, QIIME excludes singletons \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend features only observed once in
+the dataset\DIFdelbegin \DIFdel{, to remove potential sequencing artifacts from the dataset.
+QIIME and DADA2 pipelines were similarly sparse (the fraction of zero
+values in count tables)despite differences in the number of features
+and drop-out rate.
+The expectation is that this mixture dataset will be
+less sparse relative to other datasets. This is due to the redundant
+nature of the samples where the 35 titration samples are derived
+directly from the 10 unmixed samples, along with four PCR replicates for
+each sample. With sparsity greater than 0.9 for the three pipelines it
+is unlikely that any of the pipelines successfully filtered out a
+majority of the sequencing artifacts.
+}\DIFdelend \DIFaddbegin \DIFadd{).
+}\DIFaddend 
+
+
+\DIFdelbegin \DIFdel{Dataset taxonomic assignments }\DIFdelend \DIFaddbegin \DIFadd{Feature taxonomic composition }\DIFaddend also varied by pipeline (Fig. \DIFdelbegin \DIFdel{\ref{fig:pipeTaxa}). 
+}\DIFdelend \DIFaddbegin \DIFadd{S8). 
+The three pipelines generated unique feature sets in terms of sequence
+length and amplicon position (see pipeline description). Therefore, we
+used feature taxonomic assignments for cross-pipeline community composition comparison.
+}\DIFaddend Phylum and order relative abundance is similar
+across pipelines (Fig. \DIFdelbegin \DIFdel{\ref{fig:pipeTaxa}A }\DIFdelend \DIFaddbegin \DIFadd{S8A }\DIFaddend \& B). The observed
+differences are attributed to different taxonomic classification methods
+and databases used by the pipelines. \DIFdelbegin \DIFdel{DADA2 and QIIME pipelines differed
+from Mothur and QIIME for Proteobacteria and Bacteriodetes. }\DIFdelend Regardless
+of the relative abundance threshold, \DIFdelbegin \DIFdel{for genus sets }\DIFdelend most genera were
+unique to individual pipelines (Fig. \DIFdelbegin \DIFdel{\ref{fig:pipeTaxa}C }\DIFdelend \DIFaddbegin \DIFadd{S8C }\DIFaddend \& D). Sets \DIFdelbegin \DIFdel{,
+}\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend shared taxa between pipelines\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{) }\DIFaddend with QIIME had the fewest genera,
+excluding the DADA2-QIIME set. QIIME was the only pipeline to use
+open-reference clustering and the Greengenes database. Mothur and DADA2
+both used the SILVA dataset. The Mothur and DADA2 pipeline use different
+\DIFdelbegin \DIFdel{implmentations }\DIFdelend \DIFaddbegin \DIFadd{implementations }\DIFaddend of the RDP naïve Bayesian classifier, which may be
+partially responsible for the Mothur, unclustered, and DADA2
+differences.
+
+\DIFdelbegin \subsection*{\DIFdel{Titration Series Validation}}
+%DIFAUXCMD
+\DIFdelend \DIFaddbegin \subsubsection*{\DIFadd{Qualitative Assessment}}
+\DIFaddend 
+
+\DIFdelbegin \DIFdel{To validate the two-sample titration dataset for use in abundance
+assessment we evaluated two assumptions about the titrations: 1. The
+samples were mixed volumetrically in a \(log_2\) dilution series
+according to the mixture design. 2. The unmixed PRE and POST samples
+have the same proportion of prokaryotic DNA. The stool samples used to
+generate the mixtures have both eukaryotic (primarily human) DNA and
+prokaryotic DNA. If the proportion of prokaryotic DNA differs between
+the unmixed samples, then the amount of DNA from the unmixed samples in
+a titration targeted by 16S rRNA gene sequencing is not consistent with
+the mixture design. To validate the sample volumetric mixing exogenous
+DNA was spiked into the unmixed samples before mixing and quantified
+using qPCR . To evaluate if the PRE and POST samples had the same
+proportion of prokaryotic DNA total prokaryotic DNA in the titrations
+samples was quantified using a qPCR assay targeting the 16S rRNA gene.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Spike-in qPCR results}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Titration series volumetric mixing was validated by quantifying ERCC
+plasmids spiked into the POST samples using qPCR. The qPCR assay
+standard curves had a high level of precision with \(R^2\) values close
+to 1 and amplification efficiencies between 0.84 and 0.9 for all
+standard curves indicating the assays were suitable for validating the
+titration series volumetric mixing (Table \ref{tab:erccTable}). For our
+\(log_2\) two-sample-titration mixture design the expected slope of the
+regression line between titration factor and Ct is 1, corresponding to a
+doubling in template DNA every PCR cycle. The qPCR assays targeting the
+ERCCs spiked into the POST samples had \(R^2\) values and slope
+estimates close to 1 (Table \ref{tab:erccTable}). Slope estimates less
+than one were attributed to assay standard curve efficiency less than 1
+(Table \ref{tab:erccTable}). ERCCs spiked into PRE samples were not used
+to validate volumetric mixing as PRE sample proportion differences were
+too small for qPCR quantification. The expected \(C_t\) difference for
+the entire range of PRE concentrations in only 1. When considering the
+quantitative limitations of the qPCR assay these results confirm that
+the unmixed samples were volumetrically mixed according to the
+two-sample titration mixture design.
+}%DIFDELCMD < 
+
+%DIFDELCMD < \begin{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{tab:erccTable}%%%
+%%%
+\DIFdelFL{ERCC Spike-in qPCR assay information and summary statistics. ERCC is the ERCC identifier for the ERCC spike-in, Assay is TaqMan assay, and Length and GC are the size and GC content of the qPCR amplicon.  The Std. $R^2$ and Efficiency (E) statistics were computed for the standard curves. $R^2$ and slope for titration qPCR results for the titration series.}}
+%DIFAUXCMD
+%DIFDELCMD < \centering
+%DIFDELCMD < \begin{tabular}[t]{lllrrrrr}
+%DIFDELCMD < \toprule
+%DIFDELCMD < %%%
+\DIFdelFL{Subject }%DIFDELCMD < & %%%
+\DIFdelFL{ERCC }%DIFDELCMD < & %%%
+\DIFdelFL{Assay }%DIFDELCMD < & %%%
+\DIFdelFL{Length }%DIFDELCMD < & %%%
+\DIFdelFL{Std. $R^2$ }%DIFDELCMD < & %%%
+\DIFdelFL{E }%DIFDELCMD < & %%%
+\DIFdelFL{$R^2$ }%DIFDELCMD < & %%%
+\DIFdelFL{Slope}%DIFDELCMD < \\
+%DIFDELCMD < \midrule
+%DIFDELCMD < %%%
+\DIFdelFL{E01JH0004 }%DIFDELCMD < & %%%
+\DIFdelFL{012 }%DIFDELCMD < & %%%
+\DIFdelFL{Ac03459877-a1 }%DIFDELCMD < & %%%
+\DIFdelFL{77 }%DIFDELCMD < & %%%
+\DIFdelFL{0.9996 }%DIFDELCMD < & %%%
+\DIFdelFL{86.19 }%DIFDELCMD < & %%%
+\DIFdelFL{0.98 }%DIFDELCMD < & %%%
+\DIFdelFL{0.92}%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{E01JH0011 }%DIFDELCMD < & %%%
+\DIFdelFL{157 }%DIFDELCMD < & %%%
+\DIFdelFL{Ac03459958-a1 }%DIFDELCMD < & %%%
+\DIFdelFL{71 }%DIFDELCMD < & %%%
+\DIFdelFL{0.9995 }%DIFDELCMD < & %%%
+\DIFdelFL{87.46 }%DIFDELCMD < & %%%
+\DIFdelFL{0.95 }%DIFDELCMD < & %%%
+\DIFdelFL{0.90}%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{E01JH0016 }%DIFDELCMD < & %%%
+\DIFdelFL{108 }%DIFDELCMD < & %%%
+\DIFdelFL{Ac03460028-a1 }%DIFDELCMD < & %%%
+\DIFdelFL{74 }%DIFDELCMD < & %%%
+\DIFdelFL{0.9991 }%DIFDELCMD < & %%%
+\DIFdelFL{87.33 }%DIFDELCMD < & %%%
+\DIFdelFL{0.95 }%DIFDELCMD < & %%%
+\DIFdelFL{0.84}%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{E01JH0017 }%DIFDELCMD < & %%%
+\DIFdelFL{002 }%DIFDELCMD < & %%%
+\DIFdelFL{Ac03459872-a1 }%DIFDELCMD < & %%%
+\DIFdelFL{69 }%DIFDELCMD < & %%%
+\DIFdelFL{0.9968 }%DIFDELCMD < & %%%
+\DIFdelFL{85.80 }%DIFDELCMD < & %%%
+\DIFdelFL{0.89 }%DIFDELCMD < & %%%
+\DIFdelFL{0.93}%DIFDELCMD < \\
+%DIFDELCMD < %%%
+\DIFdelFL{E01JH0038 }%DIFDELCMD < & %%%
+\DIFdelFL{035 }%DIFDELCMD < & %%%
+\DIFdelFL{Ac03459892-a1 }%DIFDELCMD < & %%%
+\DIFdelFL{65 }%DIFDELCMD < & %%%
+\DIFdelFL{0.9984 }%DIFDELCMD < & %%%
+\DIFdelFL{86.69 }%DIFDELCMD < & %%%
+\DIFdelFL{0.95 }%DIFDELCMD < & %%%
+\DIFdelFL{0.94}%DIFDELCMD < \\
+%DIFDELCMD < \bottomrule
+%DIFDELCMD < \end{tabular}
+%DIFDELCMD < \end{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Prokaryotic DNA Concentration}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \begin{figure}
+\centering
+\DIFdelbeginFL %DIFDELCMD < \includegraphics{bacPlot-1.pdf}
+%DIFDELCMD < %%%
+\DIFdelendFL \DIFaddbeginFL \includegraphics{qualPlot-1.pdf}
+\DIFaddendFL \caption{\DIFdelbeginFL %DIFDELCMD < %DIFDELCMD < \label{fig:bacPlot}%%%
+%%%
+\DIFdelFL{Prokaryotic DNA concentration }\DIFdelendFL \DIFaddbeginFL \label{fig:qualPlot}\DIFaddFL{Distribution of }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{ng/ul}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{A}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{across
+titrations measured using a 16S rRNA qPCR assay. Separate linear models,
+Prokaryotic DNA concentration versus \(\theta\) were fit }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{observed count values }\DIFaddendFL for
+\DIFdelbeginFL \DIFdelFL{each
+individual, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{titration-specific features }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{\(R^2\) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(B) expected count values for
+unmixed-specific features by pipeline }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{p-values were reported}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{individual}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Red lines indicate
+negative slope estimates and blue lines positive slope estimates.
+p-value }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The orange
+horizontal dashed line }\DIFaddendFL indicates \DIFdelbeginFL \DIFdelFL{significant difference from the expected slope }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a count value }\DIFaddendFL of \DIFdelbeginFL \DIFdelFL{0.
+The grey regions indicate the linear model 95\% confidence interval.
+Multiple test correction was performed using the Benjamini-Hochberg
+method. One of the E01JH0004 PCR replicates for titration 3
+}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1. }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{\(\theta=0.125\)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{C}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{was identified as an outlier, with a concentration }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Proportion }\DIFaddendFL of
+\DIFdelbeginFL \DIFdelFL{0.003, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{titration-specific features }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{was excluded from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(D) unmixed-specific features with an
+adjusted p-value \textless{} 0.05 for }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{linear model}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Bayesian hypothesis test and
+binomial test respectively}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{The linear model slope
+was still significantly different from 0 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{We failed to accept the null hypothesis }\DIFaddendFL when
+the \DIFdelbeginFL \DIFdelFL{outlier was included}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{p-value \textless{} 0.05, indicating that the discrepancy between
+the feature only being observed in the titrations or unmixed samples
+cannot be explained by sampling alone}\DIFaddendFL .}
+\end{figure}
+
+\DIFdelbegin \DIFdel{Observed changes in prokaryotic DNA concentration across titrations
+indicate the proportion of prokaryotic DNA from the unmixed PRE and POST
+samples in a titration is inconsistent with the mixture design (Fig.
+\ref{fig:bacPlot}). A qPCR assay targeting the 16S rRNA gene was used to
+quantify the concentration of prokaryotic DNA in the titrations. An
+in-house standard curve with concentrations of 20 ng/ul, 2ng/ul, and 0.2
+ng/ul was used, with efficiency 91.49, and \(R^2\) 0.999. If the
+proportion of prokaryotic DNA is the same between PRE and POST samples
+the slope of the concentration estimates across the two-sample titration
+would be 0. For subjects where the proportion of prokaryotic DNA is
+higher in the PRE samples, the slope will be negative, and positive when
+the proportion is higher for POST samples. The slope estimates are
+significantly different from 0 for all subjects excluding E01JH0011
+(Fig. \ref{fig:bacPlot}). These results indicate that the proportion of
+prokaryotic DNA is lower in POST when compared to the PRE samples for
+E01JH0004 and E01JH0017 and higher for E01JH0016 and E01JH0038.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Theta Estimates}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Human stool sample DNA extracts vary in the proportion of eukaryotic
+(primarily human) and prokaryotic DNA in the sample. To account for
+differences in the proportion of prokaryotic DNA in PRE and POST samples
+(Fig. \ref{fig:bacPlot}) we inferred the proportion of POST sample
+prokaryotic DNA in a titration, \(\theta\), using the 16S rRNA
+sequencing data (Fig. \ref{fig:thetaHat}). Overall the relationship
+between the inferred and mixture design \(\theta\) values were
+consistent across pipelines but not subject whereas the \(\theta\)
+estimate 95\% CI varied by both subject and pipeline. For study subjects
+E01JH0004, E01JH0011, and E01JH0016 the inferred and mixture design
+\(\theta\) values were in agreement, in contrast to study subjects
+E01JH0017 and E01JH0038. For E01JH0017 the inferred values were
+consistently less than the mixture design values. Whereas for E01JH0038
+the inferred values were consistently greater than the mixture design
+values. These results were consistent with the qPCR prokaryotic DNA
+concentration results with significantly positive slopes for E01JH0004
+and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
+\ref{fig:bacPlot}).
+}%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{thetaHat-1.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:thetaHat}%%%
+%%%
+\DIFdelFL{Theta estimates by titration, biological
+replicate, and bioinformatic pipeline. The points indicates mean
+estimate of 1000 bootstrap theta estimates and errorbars 95\% confidence
+interval. The black bar indicate expected theta values. Theta estimates
+below the expected theta indicate that the titrations contain less than
+expected bacterial DNA from the POST sample. Theta estimates greater
+than the expected theta indicate the titration contains more bacterial
+DNA from the PRE sample than expected.}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsection*{\DIFdel{Measurement Assessment}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Next, we assessed the qualitative and quantitative nature of 16S rRNA
+measurement process using our two-sample titration dataset.
+For the
+qualitative assessment, we analyzed the relative abundance of features
+only observed in }\DIFdelend \DIFaddbegin \DIFadd{To evaluate feature presence-absence, }\DIFaddend the \DIFaddbegin \DIFadd{framework's qualitative assessment measures
+artifactual feature proportion and count table sparsity.
+Low abundance features
+present only in }\DIFaddend unmixed samples or \DIFdelbegin \DIFdel{titrations. These features are not expected given the titration experimental design. The quantitative
+assessment evaluated relative and differential abundance estimates.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Qualitative Assessment}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < \begin{figure}
+%DIFDELCMD < \centering
+%DIFDELCMD < \includegraphics{qualPlot-1.pdf}
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{fig:qualPlot}%%%
+%%%
+\DIFdelFL{Distribution of (A) observed count values for
+titration-specific features and (B) expected count values for
+unmixed-specific features by pipeline and individual. The orange
+horizontal dashed line indicates a count value of 1. (C) Proportion of
+unmix-specific features and (D) titration-specific features with an
+adjusted p-value \textless{} 0.05 for the Bayesian hypothesis test and
+binomial test respectively. We failed to accept the null hypothesis when
+the p-value \textless{} 0.05, indicating that the discrepancy between
+the feature only being observed in the titrations or unmixed samples
+cannot be explained by sampling alone.}}
+%DIFAUXCMD
+%DIFDELCMD < \end{figure}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Unmixed- and titration-specific }\DIFdelend \DIFaddbegin \DIFadd{titration samples are expected due to random
+sampling. }\emph{\DIFadd{Unmixed-}} \DIFadd{and }\emph{\DIFadd{titration-specific}} \DIFaddend features were observed for all pipelines
+(\DIFdelbegin \DIFdel{titration-specific}\DIFdelend \DIFaddbegin \emph{\DIFadd{titration-specific}}\DIFaddend : Fig. \ref{fig:qualPlot}A, \DIFdelbegin \DIFdel{unmixed-specific}\DIFdelend \DIFaddbegin \emph{\DIFadd{unmixed-specific}}\DIFaddend : Fig.
+\ref{fig:qualPlot}B). \DIFdelbegin \DIFdel{For mixture datasets low abundance features present only in unmixed samples and mixtures are expected due to random
+sampling }\DIFdelend \DIFaddbegin \DIFadd{Overall, the DADA2 count table had the largest
+number of artifactual features (Table S3). 
+A summary of the }\emph{\DIFadd{titration-specific}} \DIFadd{artifactual features is provided in the supplementary material.
+}
+
+\DIFadd{We next assessed the proportion of these artifactual features that could be explained by sampling effects alone}\DIFaddend . For our two-sample titration dataset\DIFdelbegin \DIFdel{there were
+unmixed-specific }\DIFdelend \DIFaddbegin \DIFadd{, there were
+}\emph{\DIFadd{unmixed-specific}} \DIFaddend features with expected counts not \DIFaddbegin \DIFadd{which could not be }\DIFaddend explained by sampling
+alone for all individuals and bioinformatic pipelines (Fig.
+\ref{fig:qualPlot}C). However, the proportion of \DIFdelbegin \DIFdel{unmixed-specific
+}\DIFdelend \DIFaddbegin \emph{\DIFadd{unmixed-specific}}
+\DIFaddend features that could not be explained by sampling alone varied by
+bioinformatic pipeline. DADA2 had the highest proportion of
+\DIFdelbegin \DIFdel{unmixed-specific features not explained by sampling }\DIFdelend \DIFaddbegin \emph{\DIFadd{unmixed-specific}} \DIFadd{artifactual features }\DIFaddend whereas QIIME had
+the lowest proportion \DIFdelbegin \DIFdel{. Consistent }\DIFdelend \DIFaddbegin \DIFadd{which is consistent }\DIFaddend with the distribution
+of \DIFdelbegin \DIFdel{observed
+counts for titration-specific features more of the DADA2 features could
+not be explained by sampling alone compared to the other pipelines }\DIFdelend \DIFaddbegin \emph{\DIFadd{titration-specific}} \DIFadd{feature observed counts }\DIFaddend (Fig. \ref{fig:qualPlot}D).
+\DIFdelbegin \DIFdel{Overall, the }\DIFdelend \DIFaddbegin 
+
+
+\DIFadd{We expected this mixture dataset to be less sparse relative to other datasets due
+to the redundant nature of the samples where the 35 titration samples are derived
+directly from the 10 unmixed samples, along with four PCR replicates for
+each sample. We observed overall sparsity of 0.93 and 0.94 for }\DIFaddend DADA2 \DIFdelbegin \DIFdel{count table had the largest
+number of observed features inconsistent with the titration experiment
+design, 
+while the same phenomenon is significantly reduced in the other
+pipelines }\DIFdelend \DIFaddbegin \DIFadd{and QIIME respectively, and a higher value of 0.98 for Mothur \ref{tab:pipeQA}). 
+}
+
+\DIFadd{To account for differences in microbial community composition across the five individuals we also measured sparsity at the individual level (Table S2).
+Sparsity at the individual-level is lower than overall sparsity for all three pipelines. In this case, average sparsity across individuals for 0.70 and 0.76 for DADA2 and Mothur, while QIIME had a lower average sparsity across individuals of 0.56. Differences in alpha and beta diversity for the five individual unmixed samples are consistent with individual level sparsity and therefore reflects differences in individual microbial community composition.
+}
+
+
+\DIFadd{Based on the artifactual feature proportions and count table sparsity, 
+DADA2 artifactual features are likely due to false negative features, whereas the Mothur and QIIME high sparsity values were attributed to false positive features. 
+Based on the observed sparsity levels it is unlikely that any of the pipelines successfully filtered out a
+majority of the sequencing artifacts. Both unmixed- and titration-specific
+features that can and cannot be explained by sampling alone contribute
+to sparsity and the differences in the artifactual feature proportion
+and sparsity provide insight into how the pipelines treat sequencing artifacts}\DIFaddend .
+
+
+\subsubsection*{Quantitative Assessment}
+
+\begin{figure}
+\centering
+\includegraphics{relAbuError-1.pdf}
+\caption{\label{fig:relAbuError}Relative abundance assessment.
+(A) A linear model of the relationship between the expected and observed relative
+abundance. The dashed grey line indicates expected 1-to-1 relationship.
+The plot is split by individual and \DIFdelbeginFL \DIFdelFL{color is used to indicate the
+different }\DIFdelendFL bioinformatic \DIFdelbeginFL \DIFdelFL{pipelines}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{pipeline indicated by
+line color}\DIFaddendFL . A negative binomial model was used to
+calculate an average relative abundance estimate across \DIFdelbeginFL \DIFdelFL{the four }\DIFdelendFL PCR
+replicates. \DIFdelbeginFL \DIFdelFL{Points }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{To highlight quantitative performance for higher abundance features,
+points }\DIFaddendFL with observed and expected relative abundance values less
+than 1/median\DIFdelbeginFL \DIFdelFL{library size }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(total abundance) }\DIFaddendFL were excluded from the \DIFdelbeginFL \DIFdelFL{data used to fit
+the linear model}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{plot}\DIFaddendFL .
+(B) Relative abundance error rate \DIFaddbeginFL \DIFaddFL{(\(|expected - observed|/expected\))
+}\DIFaddendFL distribution by individual and pipeline.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{relAbuErrorMetrics-1.pdf}
+\caption{\label{fig:relAbuErrorMetrics}Comparison of pipeline relative
+abundance assessment feature-level error metrics. Distribution of
+feature-level relative abundance (A) bias metric - median error rate and
+(B) variance - robust coefficient of variation (\DIFdelbeginFL \DIFdelFL{\(RCOV=(IQR)/|median|\)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{\(RCOV=IQR/|median error rate|\)}\DIFaddendFL ) by individual and pipeline.
+\DIFaddbeginFL \DIFaddFL{For both the bias and variance metrics lower values are better.
+}\DIFaddendFL Boxplot outliers, \(1.5\times IQR\) from the median were excluded from the figure to prevent extreme metric values
+from obscuring metric value visual comparisons.}
+\end{figure}
+
+
+\DIFdelbegin %DIFDELCMD < \begin{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIFDELCMD < \caption{%
+{%DIFAUXCMD
+%DIFDELCMD < %DIFDELCMD < \label{tab:relAbuErrorTbl}%%%
+%%%
+\DIFdelFL{Maximum feature-level error rate bias (median error rate) and variance (robust COV) by pipeline and individual.}}
+%DIFAUXCMD
+%DIFDELCMD < \centering
+%DIFDELCMD < \resizebox{\linewidth}{!}{
+%DIFDELCMD < \begin{tabular}[t]{llrrrrr}
+%DIFDELCMD < \toprule
+%DIFDELCMD < Metric & Pipeline & E01JH0004 & E01JH0011 & E01JH0016 & E01JH0017 & E01JH0038\\
+%DIFDELCMD < \midrule
+%DIFDELCMD <  & DADA2 & 2.37 & 2.55 & 17.03 & 4.34 & 0.66\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD <  & Mothur & 5.30 & 6.76 & 19.24 & 4.15 & 1.93\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD <  & QIIME & 3.99 & 6.43 & 8.83 & 4.80 & 1.09\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD < \multirow{-4}{*}{\raggedright\arraybackslash Bias} & Unclustered & 6.45 & 7.24 & 16.85 & 4.37 & 1.91\\
+%DIFDELCMD < \cmidrule{1-7}
+%DIFDELCMD <  & DADA2 & 4.60 & 8.96 & 7.36 & 5.91 & 6.71\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD <  & Mothur & 4.71 & 7.35 & 3.71 & 5.70 & 8.01\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD <  & QIIME & 4.40 & 22.57 & 4.46 & 17.10 & 7.91\\
+%DIFDELCMD < \cmidrule{2-7}
+%DIFDELCMD < \multirow{-4}{*}{\raggedright\arraybackslash Variance} & Unclustered & 7.06 & 10.30 & 16.94 & 8.07 & 6.00\\
+%DIFDELCMD < \bottomrule
+%DIFDELCMD < \end{tabular}}
+%DIFDELCMD < \end{table}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{For the relative abundance assessment}\DIFdelend \DIFaddbegin \paragraph{\DIFadd{Relative Abundance Assessment}}
+\DIFadd{To assess count table feature relative abundance values}\DIFaddend , we evaluated the consistency of
+the observed and expected relative abundance estimates for a feature and
+titration as well as feature-level bias and variance.
+\DIFdelbegin \DIFdel{The PRE and POST
+estimated relative abundance and inferred \(\theta\) values were used to
+calculate titration and relative abundance error rates. Relative
+abundance error rate is defined as \(|exp - obs|/exp\), where \(exp\)
+and \(obs\) is the expected and observed relative abundance. To control
+for biases in feature inference, the three pipelines were compared to an
+unclustered dataset. The unclustered count table was generated using the
+40,000 most abundant features from Mothur's initial preprocessing (see
+Methods for details). Unclustered pipeline \(\theta\) estimates were
+used to calculate the error rates for all pipelines to prevent
+over-fitting. }\DIFdelend Only features observed in all PRE and POST PCR replicates
+and PRE and POST specific features were included in the analysis (Table \DIFdelbegin \DIFdel{\ref{tab:relAbuErrorTbl}). PRE and POST specific features were defined
+as present in all four of the PRE or POST PCR replicates, respectively,
+but none of the PCR replicates for the other unmixed samples. There is
+lower confidence in PRE or POST feature relative abundance when the
+feature is not observed all 4 PCR replicates, therefore these features
+were not included in the analysis. }\DIFdelend \DIFaddbegin \DIFadd{S3). }\DIFaddend Overall, agreement between inferred
+and observed relative abundance was high for all individuals and
+bioinformatic pipelines (Fig. \ref{fig:relAbuError}A). The error rate
+distribution was similarly consistent across pipelines, including long
+tails (Fig. \ref{fig:relAbuError}B)\DIFaddbegin \DIFadd{.
+}\DIFaddend 
+
+To assess quantitative accuracy \DIFaddbegin \DIFadd{across pipelines}\DIFaddend , we compared the feature-level relative
+abundance error rate bias \DIFdelbegin \DIFdel{(median error rate, Fig.
+\ref{fig:relAbuErrorMetrics}A) and variance
+(\(RCOV=(IQR)/|median|\)
+Fig. \ref{fig:relAbuErrorMetrics}B) across pipelines and individuals
+}\DIFdelend \DIFaddbegin \DIFadd{and variance
+}\DIFaddend using mixed effects models. \DIFaddbegin \DIFadd{To control for subject specific differences, 
+subject was included in the model as a random effect.
+}\DIFaddend Large bias and variance metric values were
+observed for all pipelines (Table \DIFdelbegin \DIFdel{\ref{tab:relAbuErrorTbl}).
+Features
+with large bias and variance metrics, \(1.5\times IQR\) from the median ,
+were deemed outliers.
+To prevent these outlier features from biasing the
+comparison they were not used to fit the mixed effects model. Multiple
+comparisons test (Tukey) was used to test for significant differences in
+feature-level bias and variance between pipelines.
+A one-sided
+alternative hypothesis was used to determine which pipelines had smaller
+feature-level error rate}\DIFdelend \DIFaddbegin \DIFadd{S3).
+Feature-level relative abundance error rate bias (median error rate, Fig.
+\ref{fig:relAbuErrorMetrics}A) was significantly different between
+pipeline, but no statistically significant differences were observed
+for the variance metric, (\(RCOV=(IQR)/|median|\), Fig.
+\ref{fig:relAbuErrorMetrics}B) across pipeline}\DIFaddend . The Mothur, DADA2,
+and QIIME feature-level \DIFdelbegin \DIFdel{bias }\DIFdelend \DIFaddbegin \DIFadd{biases }\DIFaddend were all significantly different from
+each other (\(p < 1\times 10^{-8}\)). DADA2 had the lowest mean
+feature-level bias (0.2), followed by Mothur (0.28), with QIIME having the highest bias
+(0.33) (\ref{fig:relAbuErrorMetrics}B). Large variance metric values
+were observed for all individuals and pipelines (Table \DIFdelbegin \DIFdel{\ref{tab:relAbuErrorTbl}}\DIFdelend \DIFaddbegin \DIFadd{S3}\DIFaddend ). The feature-level variance was not
+significantly different between pipelines\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{: }\DIFaddend Mothur = 0.83, QIIME = 0.71
+and DADA2 = 1 (Fig. \ref{fig:relAbuErrorMetrics}B).
+\DIFdelbegin \DIFdel{We evaluated whether
+poor feature-level relative abundance metrics can be attributed to
+specific taxonomic groups or phylogenetic clades. While a significant
+overall phylogenetic signal was detected for both the bias and variance
+metric, no specific taxonomic groups or phylogenetic clades were
+identified with exceptionally poor performance in our assessment.
+}\DIFdelend 
+
+\DIFaddbegin \paragraph{\DIFadd{Differential Abundance Assessment}}
+\DIFaddend \begin{figure}
+\centering
+\includegraphics{logFCerror-1.pdf}
+\caption{\label{fig:logFCerror} \DIFaddbeginFL \DIFaddFL{Differential abundance quantitative assessment. }\DIFaddendFL (A) Linear model \DIFdelbeginFL \DIFdelFL{or }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{of }\DIFaddendFL the relationship between
+\DIFdelbeginFL \DIFdelFL{log fold-change estimates }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{estimated }\DIFaddendFL and expected \DIFdelbeginFL \DIFdelFL{values }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{log fold-change relative abundance between titrations }\DIFaddendFL for PRE-specific and
+PRE-dominant features by pipeline and individual, line color indicates
+pipelines. Dashed grey line indicates expected 1-to-1 relationship
+between the estimated and expected log fold-change. (B) Log fold-change
+error (\textbar{}exp-est\textbar{}) distribution by pipeline and
+individual.}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{logFcErrorMetrics-1.pdf}
+\caption{\label{fig:logFcErrorMetrics}Feature-level \DIFdelbeginFL \DIFdelFL{log-fold }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{differential abundance assessment.Log-fold }\DIFaddendFL change error
+bias (A) and variance (B) metric distribution by subject and pipeline.
+The bias (\(1 - slope\)) and variance (\(R^2\)) metrics are derived from
+the linear model fit to the estimated and expected log fold-change
+values for individual features. Boxplot outliers, \(1.5\times IQR\) from
+the median were excluded from the figure to prevent extreme metric
+values from obscuring metric value visual comparisons.}
+\end{figure}
+
+%DIF > % Move to discussion?
+The agreement between log-fold change estimates and expected values were
+individual specific and consistent across pipelines (Fig.
+\ref{fig:logFCerror}A). The individual specific effect was attributed to
+the fact that unlike relative abundance assessment\DIFaddbegin \DIFadd{, }\DIFaddend the inferred
+\(\theta\) values were not used to calculate expected values. Inferred
+\(\theta\) values were not used to calculate the expected values because
+all of the titrations and the \(\theta\) estimates for the higher
+titrations were \DIFdelbegin \DIFdel{included and they were }\DIFdelend not monotonically decreasing\DIFdelbegin \DIFdel{and
+therefore }\DIFdelend \DIFaddbegin \DIFadd{.
+Using the inferred \(\theta\) }\DIFaddend resulted in unrealistic expected log fold-change values, e.g.,
+negative log-fold changes for PRE specific features. The log-fold change
+estimates and expected values were consistent across pipelines with one
+notable exception\DIFdelbegin \DIFdel{. For }\DIFdelend \DIFaddbegin \DIFadd{: for subject }\DIFaddend E01JH0011\DIFaddbegin \DIFadd{, }\DIFaddend the Mothur log fold-change estimates
+were more consistent with expected values than the other pipelines.
+However, as \(\theta\) was not corrected for differences in the
+proportion of prokaryotic DNA between the unmixed PRE and POST samples\DIFaddbegin \DIFadd{,
+}\DIFaddend it cannot be said whether Mothur's performance was better than the other
+pipelines.
+
+
+The log fold-change error distribution was consistent across pipelines
+(Fig. \ref{fig:logFCerror}B). There was a long tail of high error
+features in the error distribution for all pipelines and individuals.
+The log fold-change estimates responsible for the long tail could not be
+attributed to specific titration comparisons. Additionally, we compared
+\DIFdelbegin \DIFdel{log-fold change }\DIFdelend error distributions for log-fold change estimates using
+different normalization methods. Error rate distributions, including the
+long tails, were consistent across normalization methods. \DIFdelbegin \DIFdel{Furthermore,
+}\DIFdelend \DIFaddbegin \DIFadd{Seeing
+}\DIFaddend as the long tail was observed for the unclustered data as well, the
+log-fold change estimates contributing to the long tail are likely due
+to a bias associated with the molecular \DIFdelbegin \DIFdel{laboratory }\DIFdelend portion of the
+measurement process and not the \DIFdelbegin \DIFdel{bioinformatic pipelines}\DIFdelend \DIFaddbegin \DIFadd{computational portion}\DIFaddend . Exploratory
+analysis of the relationship between the log fold-change estimates and
+expected values for individual features indicated that the long tails
+were attributed to feature specific performance.
+
+Feature-level log fold-change bias and variance metrics were used to
+compare pipeline performance (Fig. \ref{fig:logFCerror}). Similar to
+relative abundance\DIFaddbegin \DIFadd{, }\DIFaddend feature-level bias and variance metrics are defined
+as the \(1 - slope\) and \(R^2\) for linear models of the estimated and
+expected log fold-change for individual features and all titration
+comparisons. For the bias metric, \(1 - slope\), the desired value is 0
+(i.e., log fold-change estimate = log fold-change expected), with
+negative values indicating the log-fold change was consistently
+underestimated and positive values consistently overestimated. The
+linear model \(R^2\) value was used to characterize the feature-level
+log fold-change variance as it indicates consistency between log
+fold-change estimates and expected values across titration comparisons.
+To compare bias and variance metrics across pipelines\DIFaddbegin \DIFadd{, }\DIFaddend mixed-effects
+models were used. The log fold-change bias and variance metrics were not
+significantly different between pipelines (Bias: F = 0, 2.51, p = 0.99,
+0.08, \ref{fig:logFCerror}B, Variance: F = 47.39, 0.23, p = 0, 0.8, Fig.
+\ref{fig:logFCerror}C).
+\DIFdelbegin \DIFdel{We also evaluated whether poor feature-level
+metrics could be attributed to specific clades for taxonomic groups.
+Similar to the relative abundance estimate, while a phylogenetic signal
+was detected for both the bias and variance metrics, no specific
+taxonomic groups or phylogenetic clades that performed poorly were
+identified. }\DIFdelend 
+
+
+\section*{Discussion}
+\DIFaddbegin \DIFadd{Mixtures of environmental samples have been used to assess
+RNAseq and microarray gene expression measurements \mbox{%DIFAUXCMD
+\cite{parsons2015using, pine2011adaptable, thompson2005use}}%DIFAUXCMD
+.
+However, this is the first time mixtures have been used to assess microbiome measurement
+methods. We developed a novel assessment framework utilizing a mixture dataset
+for evaluating marker-gene-survey computational methods (Fig. \ref{fig:assessmentFramework}).
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{We assessed the quantitative and qualitative characteristics of count
+tables generated using different bioinformatic pipelines and 16S rRNA
+marker-gene survey mixture dataset.
+The mixture dataset followed }\DIFdelend \DIFaddbegin \DIFadd{Using mixtures of environmental samples, expected values for use in assessment
+can be obtained using information from unmixed samples and how the samples were mixed.
+Our assessment dataset follows }\DIFaddend a two-sample titration mixture design, where DNA collected \DIFaddbegin \DIFadd{from five vaccine trial participants }\DIFaddend before and
+after exposure to pathogenic \emph{Escherichia coli}  \DIFdelbegin \DIFdel{from five vaccine
+trial participants (subjects) were }\DIFdelend \DIFaddbegin \DIFadd{was }\DIFaddend mixed following a \(log_2\) dilution
+series (Fig. \ref{fig:countExperimentalDesign}).
+\DIFdelbegin \DIFdel{Qualitative count table }\DIFdelend \DIFaddbegin \DIFadd{Count table qualitative }\DIFaddend characteristics were assessed using relative abundance information for
+features observed only in titrations \DIFaddbegin \DIFadd{(titration-specific) }\DIFaddend and unmixed samples \DIFdelbegin \DIFdel{. We
+quantitatively assed count tables by comparing feature relative and
+differential abundance }\DIFdelend \DIFaddbegin \DIFadd{(unmixed-specific) (Fig. \ref{fig:assessmentFramework}B).
+Statistical tests were used to determine if the absence of unmixed-specific features from titrations or absence of titration-specific features from unmixed samples could be explained by random sampling.
+Count tables were quantitatively assessed by comparing observed feature relative abundance and feature differential abundance estimates }\DIFaddend to expected values.
+\DIFaddbegin \DIFadd{Quantitative performance was characterized using error rate, along with feature-level bias variance metrics we developed (Fig. \ref{fig:assessmentFramework}C).
+}\DIFaddend 
+
+
+\subsubsection*{Count Table Assessment Demonstration}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend We demonstrated our \DIFdelbegin \DIFdel{novel assessment approach by evaluating }\DIFdelend \DIFaddbegin \DIFadd{assessment framework on }\DIFaddend count tables generated \DIFdelbegin \DIFdel{using different }\DIFdelend \DIFaddbegin \DIFadd{by three commonly used }\DIFaddend bioinformatic pipelines, QIIME, Mothur, and DADA2.
+The \DIFdelbegin \DIFdel{Mothur pipeline uses }\emph{\DIFdel{de novo}} %DIFAUXCMD
+\DIFdel{clustering for feature
+inference \mbox{%DIFAUXCMD
+\cite{westcott2017opticlust, schloss2009introducing}}%DIFAUXCMD
+.
+Pairwise distances used in clustering are calculated using a multiple
+sequence alignment.
+The quality filtered paired-end reads are merged
+into contigs.
+The pipeline then aligns contigs to a reference multiple
+sequence alignment and removes uninformative positions in the multiple
+sequence alignment. 
+The QIIME pipeline uses open-reference clustering
+where merged paired-end reads are first assigned to reference cluster
+centers \mbox{%DIFAUXCMD
+\cite{Rideout2014, Caporaso2010}}%DIFAUXCMD
+. Next QIIME clusters
+unassigned reads }\emph{\DIFdel{de novo}}%DIFAUXCMD
+\DIFdel{. Unlike Mothur, the QIIME clustering
+method uses pairwise sequence distances calculated from pairwise
+sequence alignments. 
+As a result, the QIIME pairwise distances are
+calculated using the full \textasciitilde{}436 bp sequences whereas
+Mothur pairwise distances were calculated using a 270 bp multiple
+sequence alignment.
+The }\DIFdelend \DIFaddbegin \DIFadd{objective of any pipeline is to differentiate true biological sequences from measurement process artifacts along with accurate abundance estimates.
+Our qualitative assessment results, when combined with sparsity information provides a
+new method for evaluating how well bioinformatic pipelines account for sequencing artifacts without loss of true biological sequences.
+Additionally, our quantitative assessment results identified previously unknown feature specific biases in abundance estimates.
+}
+
+\DIFadd{The qualitative assessment evaluates if titration- and unmixed-specific features can be explained by random sampling alone (Fig. \ref{fig:assessmentFramework}B).
+Titration- and unmixed-specific features not explained by sampling are artifacts of the measurement process.
+These artifacts can be viewed as false-positives, not representative of actual sequences in a sample,
+or false-negatives, actual sequences in a sample not represented by count table features. 
+Artifacts can be PCR errors such as chimeras, reads with high sequencing error rates, or cross sample contamination \mbox{%DIFAUXCMD
+\cite{edgar2011uchime}}%DIFAUXCMD
+\mbox{%DIFAUXCMD
+\cite{Edgar2018-ss}}%DIFAUXCMD
+\mbox{%DIFAUXCMD
+\cite{damore2016}}%DIFAUXCMD
+. 
+Count table sparsity information (the proportion of zero-valued cells) provides
+additional insight into the qualitative assessment results.
+}
+
+\DIFadd{A high false negative rate provides an explanation for }\DIFaddend DADA2\DIFdelbegin \DIFdel{pipeline uses a probability model and maximization expectation algorithm for feature inference
+\mbox{%DIFAUXCMD
+\cite{callahan2016dada2}}%DIFAUXCMD
+. Unlike distance-based clustering methods
+employed by the Mothur and QIIME pipelines , }\DIFdelend \DIFaddbegin \DIFadd{'s high proportion
+of artifact titration- and unmixed-specific features and count table having
+comparable sparsity to the other pipelines despite having significantly fewer
+features (Fig. S5 and Table \ref{tab:pipeQA}).
+The }\DIFaddend DADA2 \DIFdelbegin \DIFdel{parameters determine
+if low abundance }\DIFdelend \DIFaddbegin \DIFadd{feature inference algorithm may be aggressively grouping
+lower abundance true sequences with higher abundance }\DIFaddend sequences\DIFdelbegin \DIFdel{are grouped with a higher abundance sequence}\DIFdelend .
+As a \DIFdelbegin \DIFdel{control, we compared our quantitative assessment results for the three pipelines to a count table of unclustered features.
+The
+unclustered features were generated using the Mothur pipeline
+preprocessing methods }\DIFdelend \DIFaddbegin \DIFadd{result, the low abundance sequences are not present in samples
+leading to increased sparsity and high abundance unmixed- and titration-specific features.
+This aggressive grouping of sequences is a design choice made by the algorithm developers.
+The DADA2 documentation states that the default setting for }\texttt{\DIFadd{OMEGA\_A}}
+\DIFadd{is conservative to prevent false positives at the cost of increasing false negatives \mbox{%DIFAUXCMD
+\cite{callahan2016dada2}}%DIFAUXCMD
+.
+Using the qualitative assessment methods described here, a user can
+adjust the }\texttt{\DIFadd{OMEGA\_A}} \DIFadd{parameter to obtain a false-negative rate appropriate for their study}\DIFaddend . 
+
+
+\DIFdelbegin \paragraph*{\DIFdel{Quantitative Assessment}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend While the relative abundance bias metric was significantly different
+between pipelines\DIFaddbegin \DIFadd{, }\DIFaddend overall, pipeline choice had minimal impact on the
+quantitative assessment results when accounting for subject-specific \DIFdelbegin \DIFdel{effects}\DIFdelend \DIFaddbegin \DIFadd{deviations
+in the proportion of prokaryotic DNA from PRE and POST samples in a
+titration from the mixture design}\DIFaddend . Outlier features \DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{(}\DIFaddend those with extreme \DIFdelbegin \DIFdel{quantitative analysis }\DIFdelend bias
+and variance metrics\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{) }\DIFaddend were observed for all pipelines and both \DIFdelbegin \DIFdel{relative
+and differential }\DIFdelend abundance assessments.
+\DIFdelbegin \DIFdel{Outlier features are not likely
+a pipeline artifact }\DIFdelend \DIFaddbegin 
+
+\DIFadd{Outlier features could not be attributed to bioinformatic pipelines
+and are likely due to biases in the molecular biology part of the measurement process.
+Outlier features are unlikely pipeline artifacts }\DIFaddend as they were observed in count tables generated
+using the unclustered pipeline as well as standard bioinformatic
+pipelines. \DIFdelbegin \DIFdel{We }\DIFdelend \DIFaddbegin \DIFadd{Additionally, we }\DIFaddend were unable to attribute outlier features to relative
+abundance values, log fold-change between unmixed samples, and sequence
+GC content. \DIFdelbegin \DIFdel{Features }\DIFdelend \DIFaddbegin \DIFadd{Furthermore, features }\DIFaddend with extreme metric values were not limited to any
+specific taxonomic group or phylogenetic clade. \DIFdelbegin \DIFdel{Outlier features could
+not be attributed to bioinformatic pipelines and are likely due to
+biases in the molecular biology part of the measurement process. PCR amplification
+is }\DIFdelend \DIFaddbegin \DIFadd{PCR amplification
+bias (}\DIFaddend a well-known \DIFaddbegin \DIFadd{source of }\DIFaddend bias in the molecular biology part of the
+measurement process\DIFaddbegin \DIFadd{) is one possible explanation for the outlier features \mbox{%DIFAUXCMD
+\cite{Sze565598}}%DIFAUXCMD
+}\DIFaddend .
+Mismatches in the primer binding regions impact PCR efficiency
+and are a potential cause for poor feature-specific
+performance \cite{wright2014exploiting}. Additional research is
+needed before outlier features \DIFdelbegin \DIFdel{are }\DIFdelend \DIFaddbegin \DIFadd{can be }\DIFaddend attributed to mismatches in the primer binding regions.
+
+\DIFdelbegin \paragraph*{\DIFdel{Qualitative Assessment}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The qualitative assessment evaluated whether features only observed in
+unmixed samples or titrations could be explained by sampling alone.Features present only in titrations or unmixed samples not due to random
+sampling are bioinformatic pipeline artifacts.These artifacts can be
+categorized as false negative or false positive features. A false
+negative occurs when a lower abundance sequence representing an organism
+within the sample is clustered with a higher abundance sequence from a
+different organism.
+False positives are sequencing or PCR artifacts not
+appropriately filtered or assigned to an appropriate feature by the
+bioinformatic pipeline.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Count table sparsity, the proportion of zero-valued cells, provides
+additional insight into the qualitative assessmentresults. A high rate
+of false negative features is a potential explanation for }\DIFdelend \DIFaddbegin \DIFadd{Based on our assessment results, we suggest using }\DIFaddend DADA2 \DIFdelbegin \DIFdel{count
+table's poor performance in the qualitative assessment and comparable
+sparsity }\DIFdelend \DIFaddbegin \DIFadd{for
+feature-level abundance analysis, e.g.~differential abundance testing.
+While DADA2 performed poorly in our qualitative assessment,
+the pipeline performed better in the quantitative assessment compared }\DIFaddend to the other pipelines\DIFdelbegin \DIFdel{despite having significantly fewer
+features (Fig.
+\ref{fig:qualPlot} and Table \ref{tab:pipeQA}). The }\DIFdelend \DIFaddbegin \DIFadd{.
+Additionally, the }\DIFaddend DADA2 \DIFdelbegin \DIFdel{feature inference algorithm may be aggressively grouping lower abundance
+true sequences with higher abundance sequences. As a result, the low
+abundance sequences are not present in samples leading to increased
+sparsity and higher abundance unmixed- and titration-specific features.
+Adjusting the }\DIFdelend \DIFaddbegin \DIFadd{poor qualitative assessment results due to
+false-negative features are unlikely to negatively impact feature-level abundance analysis.
+When determining which pipeline to use for a study, users should consider
+whether minimizing false positives (}\DIFaddend DADA2\DIFdelbegin \DIFdel{parameters, specifically the }\texttt{\DIFdel{OMEGA\_A}}
+%DIFAUXCMD
+\DIFdel{parameter in }\texttt{\DIFdel{setDadaOpt}}%DIFAUXCMD
+\DIFdel{. Along these lines, the DADA2
+documentation states that the default setting for }\texttt{\DIFdel{OMEGA\_A}} %DIFAUXCMD
+\DIFdel{is
+conservative to prevent false positives at the cost of increasing false negatives \mbox{%DIFAUXCMD
+\cite{callahan2016dada2}}%DIFAUXCMD
+.
+}\DIFdelend \DIFaddbegin \DIFadd{) or false negatives (Mothur)
+is more appropriate for their study objectives.
+Based on our findings we find that users of DADA2 can be more
+confident that an observed feature represents a member of the
+microbial community and not a measurement artifact, but careful examination of sequences assigned to features of interest should still be performed.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{False positive features provide an explanation for Mothur and QIIME
+pipelines having lower proportion of unmixed- and titration-specific
+features not explained by sampling but high sparsity (Fig.
+\ref{fig:qualPlot} and Table \ref{tab:pipeQA}). The statistical tests
+used to determine if the specific features could be explained by
+sampling alone only considers feature abundance. Therefore, the
+statistical test is not able to distinguish between true low abundance
+unmixed- and titration-specific features and low abundance sequence
+artifacts. Mothurand QIIME count tables have ten times and three times
+more features compared to DADA2, respectively (Table \ref{tab:pipeQA})
+.
+While microbial abundance distributions are known to have long tails, it
+is likely that the observed sparsity is an artifact of the 16S rRNA
+sequencing measurement process. Similarly, significantly more features
+than expected are commonly observed for mock community benchmarking
+studies evaluating the QIIME and Mothur pipelines
+\mbox{%DIFAUXCMD
+\cite{kozich2013development}}%DIFAUXCMD
+.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{False positive features can be reduced, but not eliminated, using
+smaller amplicon and prevalence filtering. The 16S rRNA region sequenced
+in the study is larger than the region the }\emph{\DIFdel{de-novo}}%DIFAUXCMD
+\DIFdel{, and open
+clustering pipelines were developed for, potentially explaining the
+higher than expected sparsity \mbox{%DIFAUXCMD
+\cite{kozich2013development}}%DIFAUXCMD
+. Kozich et
+al. \mbox{%DIFAUXCMD
+\cite{kozich2013development} }%DIFAUXCMD
+reduced the sequence error rate from
+0.29\% to 0.06\% by using paired-end reads that completely overlap. The
+larger region used in this study has a smaller overlap between the
+forward and reverse reads. As a result, merging the forward and reverse
+reads did not allow for sequence error correction that occurs when a smaller amplicon is used. However, even when targeting smaller regions
+of the 16S rRNA gene both the }\emph{\DIFdel{de-novo}} %DIFAUXCMD
+\DIFdel{(Mothur) and open-reference
+clustering (QIIME) pipelines produced count tables with significantly
+more features than expected in evaluation studies using mock
+communities. Prevalence filtering is used to exclude low abundance
+features, predominantly measurement artifacts \mbox{%DIFAUXCMD
+\cite{callahan2016}}%DIFAUXCMD
+. For
+example, a study exploring the microbial ecology of the Red-necked stint
+}\emph{\DIFdel{Calidris ruficollis}}%DIFAUXCMD
+\DIFdel{, a migratory shorebird, used a hard filter to validate their study conclusions are not biases by false positive
+features . The study authors compared results with and without prevalence
+filter ensuring that the study conclusions were not biased by using the
+arbitrary filter or including the low abundant features
+\mbox{%DIFAUXCMD
+\cite{risely2017gut}}%DIFAUXCMD
+.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Using Mixtures to Assess 16S rRNA Sequencing}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Mixtures of environmental samples have previously been used to assess
+RNAseq and microarray gene expression measurements.
+However, this is the
+first time mixtures have been used to assess microbiome measurement
+methods. Using our mixture dataset we developed novel methods for
+assessing marker-gene-survey computational methods. Our quantitative
+assessment allowed for the characterization of relative abundance values
+using a dataset with a larger number of features and dynamic range
+compared to mock community assessments. As a result, we identified
+previously unknown feature specific biases. Based on our
+subject-specific results observation, we recommend that studies using
+stool samples seeking inferences in a longitudinal series of multiple
+subjects carefully estimate bacterial DNA proportions and adjust
+inferences accordingly. Additionally, our qualitative assessment
+results, when combined with sparsity information provide a new method
+for evaluating how well bioinformatic pipelines account for sequencing
+artifacts without loss of true biological sequences.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{There were also }\DIFdelend \DIFaddbegin \subsubsection*{\DIFadd{Using Mixtures to Assess 16S rRNA Sequencing - Lessons Learned}}
+
+\DIFadd{There are }\DIFaddend limitations using our \DIFdelbegin \DIFdel{mixture dataset. These limitations
+included:
+}\DIFdelend \DIFaddbegin \DIFadd{assessment dataset, these include:
+(1) }\DIFaddend Lack of agreement between the proportion of \DIFdelbegin \DIFdel{unmixed samples
+}\DIFdelend \DIFaddbegin \DIFadd{prokaryotic DNA from the
+unmixed samples in the }\DIFaddend titrations and the mixture design.
+\DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \DIFadd{(2) The mixture design resulted in a limited }\DIFaddend number of features \DIFdelbegin \DIFdel{used in the
+different analysis}\DIFdelend \DIFaddbegin \DIFadd{and range of expected log-fold changes}\DIFaddend .
+These limitations are described below along with
+recommendations for addressing them in future studies.
+
+Differences in the proportion of prokaryotic DNA in the samples used to
+generate the two-sample titrations series resulted in differences
+between the true mixture proportions and mixture design. We attempted to
+account for differences in mixture proportion from mixture design by
+\DIFdelbegin \DIFdel{estimating mixture proportions }\DIFdelend using sequence data \DIFdelbegin \DIFdel{. Similar to how the
+proportion of mRNA
+}\DIFdelend \DIFaddbegin \DIFadd{to estimate mixture proportions similar to how mRNA
+proportions }\DIFaddend in RNA samples \DIFdelbegin \DIFdel{was }\DIFdelend \DIFaddbegin \DIFadd{were }\DIFaddend used in a previous mixture study
+\cite{parsons2015using}. We used an assay targeting the 16S rRNA gene
+to detect changes in the concentration of prokaryotic DNA across
+titrations, but were unable to quantify the proportion of prokaryotic
+DNA in the unmixed samples using qPCR data. Using the 16S \DIFdelbegin \DIFdel{sequencing
+data }\DIFdelend \DIFaddbegin \DIFadd{rRNA sequencing
+data, }\DIFaddend we inferred the proportion of prokaryotic DNA from the POST sample
+in each titration. However, the uncertainty and accuracy of the
+inference method are not known\DIFaddbegin \DIFadd{, }\DIFaddend resulting in an unaccounted for \DIFdelbegin \DIFdel{error
+source }\DIFdelend \DIFaddbegin \DIFadd{source of error}\DIFaddend .
+
+A better method for quantifying sample prokaryotic DNA proportion or
+using samples with consistent proportions would increase confidence in
+the expected value and\DIFaddbegin \DIFadd{, }\DIFaddend in-turn\DIFaddbegin \DIFadd{, }\DIFaddend error metric accuracy. Limitations in the
+prokaryotic DNA qPCR assay's concentration precision limits the
+assay'\DIFdelbegin \DIFdel{ssuitability }\DIFdelend \DIFaddbegin \DIFadd{s suitability }\DIFaddend for use in mixture studies. Digital PCR provides a
+more precise alternative to qPCR and is, therefore, a more appropriate
+method. Alternatively using samples where the majority of the DNA is
+prokaryotic would minimize this issue. Mixtures of environmental samples
+can also be used to assess shotgun metagenomic methods as well. As
+shotgun metagenomics is not a targeted approach, differences in the
+proportion of prokaryotic DNA in a sample would not impact the
+assessment results in the same way as 16S rRNA marker-gene-surveys.
+
+Using samples from a vaccine trial allowed for the use of a specific
+marker with an expected response, \emph{E. coli}, during methods
+development. However, the high level of similarity between the \DIFaddbegin \DIFadd{PRE and POST }\DIFaddend unmixed
+samples resulted in a limited number of features that could be used in
+the quantitative assessment results. Using more diverse samples to
+generate mixtures would address this issue.
+\DIFaddbegin \DIFadd{Alternatively, instead of mixing PRE and POST samples from the same individual,
+mixing PRE and POST samples from different individuals would
+have resulted in additional features for use in our quantitative assessment.
+While unmixed sample similarity impacts the number of features
+that can be used in the quantitative assessment, the qualitative
+assessment is not impacted by unmixed sample similarity.
+Finally, a symmetric mixture design, for example one with unmixed
+PRE and POST ratios of 1:4, 1:2, 1:1, 2:1, and 4:1, would provide a larger
+dynamic range of abundance values for assessing both PRE and POST specific features.
+}\DIFaddend 
+
+
+\section*{Conclusions}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Our two-sample-titration dataset and assessment methods }\DIFdelend \DIFaddbegin \DIFadd{Our assessment framework }\DIFaddend can be used to evaluate and characterize \DIFdelbegin \DIFdel{bioinformatic pipelines and clustering
+methods. The sequence dataset presented in this study can be processed
+with }\DIFdelend \DIFaddbegin \DIFadd{16S rRNA marker-gene survey analysis methods, in particular count tables produced by }\DIFaddend any 16S rRNA bioinformatic pipeline.
+\DIFdelbegin \DIFdel{Our quantitative and
+qualitative assessment can then be performed on the count table and the
+results compared to those obtained using the pipelines presented here.
+The three pipelines we evaluated produced sets of features varying in
+total feature abundance, number of featuresper samples, and total
+features.
+The objective of any pipeline is to differentiate true
+biological sequences from measurement process artifacts. In general,
+based on our evaluation results we suggest using }\DIFdelend \DIFaddbegin \DIFadd{We demonstrated our assessment framework with three commonly used bioinformatic pipelines.
+Our qualitative assessment results indicated that the QIIME and Mothur pipelines produced count table with more false-positive features whereas the }\DIFaddend DADA2 \DIFdelbegin \DIFdel{for }\DIFdelend \DIFaddbegin \DIFadd{count table had more false-negative features.
+Overall the three pipelines performed well in our quantitative assessment. 
+However, }\DIFaddend feature-level \DIFdelbegin \DIFdel{abundance analysis, e.g.~differential abundance testing. While DADA2
+performed poorly in our qualitative assessment, the pipeline performed better in the quantitative assessmentcompared to the other pipelines. 
+Additionally, }\DIFdelend \DIFaddbegin \DIFadd{analysis identified poorly performing features and }\DIFaddend the \DIFdelbegin \DIFdel{DADA2 poor qualitative assessment results due to
+false-negative features are unlikely to negatively impact }\DIFdelend \DIFaddbegin \DIFadd{sources of  
+bias responsible for this poor }\DIFaddend feature-level \DIFdelbegin \DIFdel{abundance analysis . When determining which pipeline to use for a study,
+users should consider whether minimizing false positives (DADA2) or
+false negatives (Mothur) is more appropriate for their study objectives.
+When a sequencing dataset is processed using DADA2, the user can be more
+confident that an observed feature represents a member of the microbial
+community and not a measurement artifact. Pipeline parameter
+optimization could address DADA2 false-negative issue. For the Mothur
+and QIIME pipelines, prevalence filtering will reduce the number of  
+false-positive features. 
+Feature-level }\DIFdelend \DIFaddbegin \DIFadd{quantitative performance are unknown. 
+Therefore, feature-level }\DIFaddend results for any 16S rRNA marker-gene survey should be interpreted with care\DIFdelbegin \DIFdel{, as the biases
+responsible for poor quantitative assessment are unknown}\DIFdelend . 
+Addressing both of these issues requires advances in both the molecular biology and
+computational components of the measurement process.
+
+
+\section*{Methods}
+
+\DIFdelbegin \subsubsection*{\DIFdel{Titration Validation}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{qPCR was used to validate volumetric mixing and check for  differences in
+the proportion of prokaryotic DNA across titrations.
+To ensure the
+}\DIFdelend \DIFaddbegin \subsection*{\DIFadd{Assessment Framework}}
+\DIFadd{To assess the qualitative and quantitative performance of marker-gene survey analysis methods we developed a framework utilizing our }\DIFaddend two-sample \DIFdelbegin \DIFdel{titrations were
+volumetrically mixed according to the mixture
+design, independent ERCC plasmids were spiked into the unmixed PRE and POST samples \mbox{%DIFAUXCMD
+\cite{baker2005external} }%DIFAUXCMD
+(NIST SRM SRM 2374) (Table
+\ref{tab:erccTable}) . The ERCC plasmids were resuspended in 100
+\(\mu L\) tris-EDTA buffer and 2 \(\mu L\) of resuspended plasmids was spiked into the appropriate unmixed sample. Plasmids were spiked into unmixed samples after unmixed sample concentration was normalized to
+12.5 \(ng/\mu L\). POST sample ERCC plasmid abundance was quantified
+using TaqMan gene expression assays (FAM-MGB, Catalog \# 4448892, ThermoFisher) specific to each ERCC plasmid and TaqMan Universal
+MasterMix II (Catalog \# 4440040,
+ThermoFisher Waltham, MA USA). }\DIFdelend \DIFaddbegin \DIFadd{titration dataset(Fig. \ref{fig:assessmentFramework}).
+Qualitative assessment evaluates feature presence-absence.
+The quantitative assessment evaluates the relative and differential abundance estimates.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{To check for differences in the proportion of bacterial DNA in the }\DIFdelend \DIFaddbegin \subsubsection*{\DIFadd{Assessment Dataset - Mixture Design}}
+\DIFadd{To provide a dataset with real-world complexity and expected values for  qualitative and quantiative assessment we used mixtures of environmental samples.
+Samples collected at multiple timepoints during a Enterotoxigenic
+}\emph{\DIFadd{E. coli}} \DIFadd{(ETEC) vaccine trial \mbox{%DIFAUXCMD
+\cite{harro2011refinement} }%DIFAUXCMD
+were
+used to generate a two-sample titration dataset (Fig.
+\ref{fig:countExperimentalDesign}). Samples from five trial
+participants were selected for our two-sample titration dataset. Trial
+participants (subjects) and sampling timepoints were selected based on
+}\emph{\DIFadd{E. coli}} \DIFadd{abundance data collected using qPCR and 16S rRNA
+sequencing from Pop et al. \mbox{%DIFAUXCMD
+\cite{pop2016individual}}%DIFAUXCMD
+. Only individuals with no
+}\emph{\DIFadd{E. coli}} \DIFadd{detected in samples collected from trial participants
+prior to ETEC exposure (PRE) were used for our two-samples titrations.
+Post ETEC exposure (POST) samples were identified as the timepoint after
+exposure to ETEC with the highest }\emph{\DIFadd{E. coli}} \DIFadd{concentration for each
+subject (Fig. \ref{fig:countExperimentalDesign}A). Due to limited sample
+availability, for E01JH0016 the timepoint with the second highest
+}\emph{\DIFadd{E. coli}} \DIFadd{concentration was used as the POST sample. Independent
+titration series were generated for each subject. POST samples
+were titrated into PRE samples with POST proportions of 1/2, 1/4, 1/8,
+1/16, 1/32, 1/1,024, and 1/32,768 (Fig.
+\ref{fig:countExperimentalDesign}B). Unmixed (}\DIFaddend PRE and POST\DIFdelbegin \DIFdel{samples, titration bacterial }\DIFdelend \DIFaddbegin \DIFadd{) sample }\DIFaddend DNA
+concentration was \DIFdelbegin \DIFdel{quantified
+using the Femto Bacterial DNA quantification kit (Zymo Research, Irvine
+CA). All samples were run in triplicate along with an in-house }\emph{\DIFdel{E.
+coli}} %DIFAUXCMD
+\DIFdel{DNA \(log_{10}\) dilution standard curve. qPCR assays were
+performed using the QuantStudio Real-Time qPCR (ThermoFisher).
+Amplification data and Ct values were exported as tsv files using
+QuantStudio™ Design and Analysis Software v1.4.1. Statistical analysis
+was performed on the exported data using custom scripts in R \mbox{%DIFAUXCMD
+\cite{R}}%DIFAUXCMD
+.
+The qPCR data and scripts used to analyze the data are available at
+}%DIFDELCMD < \url{https://github.com/nate-d-olson/mgtst_pub}%%%
+\DIFdel{.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\subsubsection*{\DIFdel{Sequencing}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \DIFadd{measured using NanoDrop ND-1000 (Thermo Fisher
+Scientific Inc.~Waltham, MA USA). Unmixed samples were diluted to 12.5
+\(ng/\mu L\) in tris-EDTA buffer before mixing. }\DIFaddend The \DIFaddbegin \DIFadd{resulting titration series
+was composed of }\DIFaddend 45 samples\DIFdelbegin \DIFdel{(}\DIFdelend \DIFaddbegin \DIFadd{, }\DIFaddend seven titrations and two unmixed samples for each
+of \DIFdelbegin \DIFdel{five subjects) }\DIFdelend \DIFaddbegin \DIFadd{the five subjects.
+}
+
+\DIFadd{The 45 samples }\DIFaddend were processed using the Illumina 16S library protocol
+(16S Metagenomic Sequencing Library Preparation, posted date 11/27/2013,
+downloaded from \url{https://support.illumina.com}). This protocol
+specifies an initial \DIFaddbegin \DIFadd{PCR of the }\DIFaddend 16S rRNA gene\DIFdelbegin \DIFdel{PCR}\DIFdelend , followed by a sample indexing
+PCR, \DIFaddbegin \DIFadd{sample concentration }\DIFaddend normalization, and sequencing.
+
+A total of 192 16S rRNA PCR assays were \DIFdelbegin \DIFdel{run including four }\DIFdelend \DIFaddbegin \DIFadd{sequenced across two 96-well plates including four PCR }\DIFaddend replicates
+per sample and 12 no-template controls\DIFdelbegin \DIFdel{, using Kapa HiFi HotStart
+ReadyMix reagents (KAPA Biosystems, Inc. ~Wilmington, MA). }\DIFdelend \DIFaddbegin \DIFadd{. }\DIFaddend The initial
+PCR assay targeted the V3-V5 region of the 16S rRNA gene, Bakt\_341F and
+Bakt\_806R \cite{klindworth2012evaluation}. The V3-V5 region is 464
+base pairs (bp) long, with forward and reverse reads overlapping by 136
+bp, using 2 X 300 bp paired-end sequencing \cite{yang2016sensitivity} (
+\url{http://probebase.csb.univie.ac.at}). Primer sequences include
+overhang adapter sequences for library preparation (forward primer 5'-
+TCG TCG GCA GCG TCA GAT GTG TAT AAG AGA CAG CCT ACG GGN GGC WGC AG - 3'
+and reverse primer 5'- GTC TCG TGG GCT CGG AGA TGT GTA TAA GAG ACA GGA
+CTA CHV GGG TAT CTA ATC C - 3'). \DIFdelbegin \DIFdel{For quality control, the PCR product
+}\DIFdelend \DIFaddbegin \DIFadd{Kapa HiFi HotStart
+ReadyMix reagents (KAPA Biosystems, Inc.~Wilmington, MA) was used to PCR the 16S rRNA gene. The PCR product amplicon size
+}\DIFaddend was verified using agarose gel electrophoresis\DIFdelbegin \DIFdel{to check amplicon size}\DIFdelend .
+Concentration measurements were made after the initial 16S rRNA PCR, the
+indexing PCR, and normalization steps. DNA concentration was measured
+using the QuantIT Picogreen dsDNA Kit (Cat \# P7589, ThermoFisher
+Scientific) and fluorescent measurements were made with a Synergy2
+Multi-Detection MicroPlate Reader (BioTek Instruments, Inc, Winooski,
+VT).
+
+
+Initial PCR products were purified using 0.8X AMPure XP beads (Beckman
+Coulter Genomics, Danvers, MA) following the manufacturer's protocol.
+After purification, the 192 samples were indexed using the Illumina
+Nextera XT index kits A and D (Illumina Inc., San Diego CA) and then
+purified using 1.12X AMPure XP beads. Prior to pooling purified sample
+concentration was normalized using SequalPrep Normalization Plate Kit
+(Catalog n. A10510-01, Invitrogen Corp., Carlsbad, CA), according to the
+manufacturer's protocol. Pooled library concentration was checked using
+the Qubit dsDNA HS Assay Kit (Part\# Q32851, Lot\# 1735902,
+ThermoFisher, Waltham, MA USA). Due to the low pooled amplicon library
+DNA concentration, a modified protocol for low concentration libraries
+was used. The library was run on an Illumina MiSeq, and base calls were
+made using Illumina Real Time Analysis Software version 1.18.54.
+\DIFaddbegin \DIFadd{The sequence data was deposited in the NCBI SRA archive under Bioproject
+PRJNA480312. Individual SRA run accession numbers and metadata in Supplemental Table.
+}\DIFaddend Sequencing data quality control metrics for the 384 fastq sequence files
+(192 samples with forward and reverse reads) were computed using the
+Bioconductor \texttt{Rqc} package \cite{Rqc, Bioconductor}.
+\DIFdelbegin \DIFdel{The
+sequence data was deposited in the NCBI SRA archive under Bioproject
+PRJNA480312. Individual SRA run accession numbers and metadata in Supplemental Table.
+}\DIFdelend 
+
+
+\DIFdelbegin \subsubsection*{\DIFdel{Sequence Processing}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend Sequence data were processed using four bioinformatic pipelines: a
+\emph{de-novo} clustering method - Mothur
+\cite{schloss2009introducing}, an open-reference clustering method -
+QIIME \cite{Caporaso2010}, and a sequence inference method - DADA2
+\cite{callahan2016dada2}, and unclustered sequences as a control. The
+code used to run the bioinformatic pipelines is available at
+\url{https://github.com/nate-d-olson/mgtst_pipelines}.
+
+The Mothur pipeline follows the developer's MiSeq SOP
+\cite{schloss2009introducing, kozich2013development}. The pipeline was
+run using Mothur version 1.37 (\url{http://www.mothur.org/}). We
+sequenced a larger 16S rRNA region, with smaller overlap between the
+forward and reverse reads, than the 16S rRNA region the SOP was
+designed. Pipeline parameters modified to account for difference in
+overlap are noted for individual steps below. The Makefile and scripts
+used to run the Mothur pipeline are available
+\url{https://github.com/nate-d-olson/mgtst_pipelines/blob/master/code/mothur}.
+The Mothur pipeline includes an initial preprocessing step where the
+forward and reverse reads are trimmed and filtered using base quality
+scores and were merged into single contigs for each read pair. The
+following parameters were used for the initial contig filtering, no
+ambiguous bases, max contig length of 500 bp, and max homopolymer length
+of 8 bases. For the initial read filtering and merging step, low-quality
+reads were identified and filtered from the dataset based on the
+presence of ambiguous bases, failure to align to the SILVA reference
+database (V119, \url{https://www.arb-silva.de/}) \cite{quast2012silva},
+and identification as chimeras. Prior to alignment, the SILVA reference
+multiple sequence alignment was trimmed to the V3-V5 region, positions
+6,388 and 25,316. Chimera filtering was performed using UChime (version
+v4.2.40) without a reference database \cite{edgar2011uchime}. OTU
+clustering was performed using the OptiClust algorithm with a clustering
+threshold of 0.97 \cite{westcott2017opticlust}. The RDP classifier
+implemented in Mothur was used for taxonomic classification against the
+Mothur provided version of the RDP v9 training set
+\cite{wang2007naive}.
+
+The QIIME open-reference clustering pipeline for paired-end Illumina
+data was performed according to the online tutorial (Illumina Overview
+Tutorial (an IPython Notebook): open reference OTU picking and core
+diversity analyses, \url{http://qiime.org/tutorials/}) using QIIME
+version 1.9.1 \cite{Caporaso2010}. Briefly, the QIIME pipeline uses
+fastq-join (version 1.3.1) to merge paired-end reads
+\cite{aronesty2011ea} and the Usearch algorithm \cite{edgar2010search}
+with Greengenes database version 13.8 with a 97\% similarity threshold
+\cite{desantis2006greengenes} was used for open-reference clustering.
+
+DADA2, an R native pipeline was also used to process the sequencing data
+\cite{callahan2016dada2}. The pipeline includes a sequence inference
+step and taxonomic classification using the DADA2 implementation of the
+RDP naïve Bayesian classifier \cite{wang2007naive} and the SILVA
+database V123 provided by the DADA2 developers
+\cite[\url{https://benjjneb.github.io/dada2/training.html}]{quast2012silva}.
+
+The unclustered pipeline was based on the Mothur \emph{de-novo}
+clustering pipeline, where the paired-end reads were merged, filtered,
+and then dereplicated. Reads were aligned to the reference Silva
+alignment (V119, \url{https://www.arb-silva.de/}), and reads failing
+alignment were excluded from the dataset. Taxonomic classification of
+the unclustered sequences was performed using the same RDP classifier
+implemented in Mothur used for the \emph{de-novo} pipeline. To limit the
+size of the dataset the most abundant 40,000 OTUs (comparable to the
+Mothur dataset), across all samples, were used as the unclustered
+dataset.
+
+
+\DIFdelbegin \subsubsection*{\DIFdel{Titration Proportion Estimates}}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{The following linear model }%DIFDELCMD < \eqref{eq:thetaInf} %%%
+\DIFdel{was used to infer the
+proportion of prokaryotic DNA, \(\theta\), in each titration. Where
+\(\textbf{Q}_{i}\) is a vector of titration \(i\) feature relative
+abundance estimates and \(\textbf{Q}_{pre}\) and \(\textbf{Q}_{post}\)
+are vectors of feature relative abundance estimates for the unmixed PRE
+and POST samples. Feature relative abundance estimates were calculated
+using a negative binomial model.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\begin{displaymath}
+  \DIFdel{\textbf{Q}_{i} = \theta_i (\textbf{Q}_{post} -\textbf{Q}_{pre}) + \textbf{Q}_{pre}
+  %DIFDELCMD < \label{eq:thetaInf}%%%
+}\end{displaymath}
+%DIFAUXCMD
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{To fit the model and prevent uninformative and low abundance features
+from biasing \(\theta\) estimates, only features meeting the following
+criteria were used. Features included in the model were observed in at
+least 14 of the 28 total titration PCR replicates (4 replicates per 7
+titrations), demonstrated greater than 2-fold difference in relative
+abundance between the PRE and POST samples, and were present in either
+all four or none of the PRE and POST PCR replicates.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{16S rRNA sequencing count data is known to have a non-normal
+mean-variance relationship resulting in poor model fit for standard
+linear regression \mbox{%DIFAUXCMD
+\cite{McMurdie2014}}%DIFAUXCMD
+. Generalized linear models
+provide an alternative to standard least-squares regression. The above
+model is additive and therefore \(\theta_i\) cannot be directly inferred
+in log-space. To address this issue, we fit the model using a standard
+least-squares regression then obtained non-parametric 95 \% confidence
+intervals for the \(\theta\) estimates by bootstrapping with 1000
+replicates.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \subsubsection*{Qualitative Assessment}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{Our qualitative measurement }\DIFdelend \DIFaddbegin \paragraph*{\DIFadd{Artifactual Feature Proportion}}
+\DIFadd{Our qualitative }\DIFaddend assessment evaluated features only observed in unmixed samples (PRE or POST) \DIFdelbegin \DIFdel{, }\emph{\DIFdel{unmixed-specific}}%DIFAUXCMD
+\DIFdel{, or titrations, }\emph{\DIFdel{titration-specific}}%DIFAUXCMD
+\DIFdel{.
+}\emph{\DIFdel{Unmixed-}} %DIFAUXCMD
+\DIFdelend or \DIFaddbegin \DIFadd{only in titrations.
+The former we will refer to as unmixed-specific features and the latter we will refer to as titration-specific features (Fig. \ref{fig:assessmentFramework}B).
+}\emph{\DIFadd{Unmixed-}} \DIFadd{and }\DIFaddend \emph{titration-specific} features \DIFdelbegin \DIFdel{are }\DIFdelend \DIFaddbegin \DIFadd{can arise from errors in the PCR/sequencing, feature inference processes, or }\DIFaddend due to differences in sampling depth\DIFdelbegin \DIFdel{(number of sequences)between the unmixed samples and titrations,
+artifacts of the feature inference process, or PCR/sequencing artifacts.
+Measurement process artifacts should be considered false positives or
+negatives. }\DIFdelend \DIFaddbegin \DIFadd{. 
+To provide context for the artifactual feature proportion results count table sparsity was used (Fig. \ref{fig:assessmentFramework}C).
+Sparsity is defined as the proportion of 0 valued cells in a matrix.
+}
+
+\DIFaddend Hypothesis tests were used to determine if \DIFdelbegin \DIFdel{differences in
+sampling depth }\DIFdelend \DIFaddbegin \DIFadd{random sampling alone, here sequencing depth, }\DIFaddend could account for \emph{\DIFdelbegin \DIFdel{unmixed-specific}\DIFdelend \DIFaddbegin \DIFadd{unmixed-}\DIFaddend } and \emph{titration-specific} features.
+p-values were adjusted for multiple comparisons using the Benjamini \& Hochberg method \cite{benjamini1995controlling}.
+For \emph{unmixed-specific} features, \DIFdelbegin \DIFdel{the }\DIFdelend \DIFaddbegin \DIFadd{a }\DIFaddend binomial test was used to evaluate if true feature relative abundance is less than the expected relative abundance.
+\DIFdelbegin \DIFdel{A binomial test could not be used to evaluate }\DIFdelend \DIFaddbegin \DIFadd{The binomial test was infeasible for }\DIFaddend \emph{titration-specific} features\DIFdelbegin \DIFdel{, as the
+hypothesis would be formulated as such.
+Given observed counts and the titration total feature abundance , the true feature relative abundance
+}\DIFdelend \DIFaddbegin \DIFadd{.
+Because the count table abundance values for these features was 0 in the unmixed samples,
+their estimated probability of occurrence $\pi_{min}$ }\DIFaddend is equal to \DIFdelbegin \DIFdel{0. As non-zero counts were observed the true feature
+proportion is non-zero,
+and the test always }\DIFdelend \DIFaddbegin \DIFadd{0,
+and thus, the binomial test }\DIFaddend fails.
+Therefore, we formulated a Bayesian hypothesis test for \emph{titration-specific} features \DIFdelbegin \DIFdel{.
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdel{A Bayesian hypothesis test }\DIFdelend \DIFaddbegin \DIFadd{detailed by equation }\eqref{eq:bht}\DIFadd{.
+This Bayesian approach }\DIFaddend was used to  evaluate if the true feature proportion is less than the minimum detected proportion.
+\DIFdelbegin \DIFdel{The Bayesian
+hypothesis test was formulated using equation }%DIFDELCMD < \eqref{eq:bht}%%%
+\DIFdel{. Which }\DIFdelend \DIFaddbegin \DIFadd{Note that }\DIFaddend when assuming equal priors, \DIFdelbegin \DIFdel{\(P(\pi < \pi_{min}) = P(\pi \geq \pi_{min})\),
+}\DIFdelend \DIFaddbegin \DIFadd{$P(\pi < \pi_{min}) = P(\pi > \pi_{min})$,
+}\eqref{eq:bht} \DIFaddend reduces to \eqref{eq:bht2}.
+\DIFdelbegin \DIFdel{For equations }%DIFDELCMD < \eqref{eq:bht} %%%
+\DIFdel{and }%DIFDELCMD < \eqref{eq:bht2}
+%DIFDELCMD < %%%
+\DIFdel{\(\pi\) is }\DIFdelend \DIFaddbegin \DIFadd{We define $\pi$ as }\DIFaddend the true feature proportion, \DIFdelbegin \DIFdel{\(\pi_{min}\) is }\DIFdelend \DIFaddbegin \DIFadd{$\pi_{min}$ }\DIFaddend the minimum detected proportion,
+\DIFdelbegin \DIFdel{\(C\) is }\DIFdelend \DIFaddbegin \DIFadd{$C$ }\DIFaddend the expected feature counts, and \DIFdelbegin \DIFdel{\(C_{obs}\) is }\DIFdelend \DIFaddbegin \DIFadd{$C_{obs}$ }\DIFaddend the observed feature counts.
+\DIFdelbegin \DIFdel{Simulation was used to
+generate possible values of \(C\), assuming \(C\) has a binomial
+distribution given the observed sample total feature abundance, and a
+uniform probability distribution for \(\pi\) between 0 and 1.
+\(\pi_{min}\) }\DIFdelend \DIFaddbegin \DIFadd{Count values for $C$ were simulated using a beta prior (with varying alpha and beta values) for $\pi > \pi_{min}$ and a uniform distribution for $\pi < \pi_{min}$.
+Higher values of alpha and beta will skew the prior right and left respectively. Our Bayesian hypothesis tests (Eg. }\eqref{eq:bht2}\DIFadd{) results were largely unaffected by beta distribution parameterization (Fig. S4).
+$\pi_{min}$ }\DIFaddend was calculated using the mixture equation \eqref{eq:mixEq} where \DIFdelbegin \DIFdel{\(q_{pre,j}\) and \(q_{post,j}\) are \(min(\textbf{Q}_{pre})\) and \(min(\textbf{Q}_{post})\) }\DIFdelend \DIFaddbegin \DIFadd{$q_{pre,j}$ and $q_{post,j}$ are $min(\textbf{Q}_{pre})$ and $min(\textbf{Q}_{post})$ }\DIFaddend across all features for a subject and pipeline.
+Our assumption is that \DIFdelbegin \DIFdel{\(\pi\) }\DIFdelend \DIFaddbegin \DIFadd{$\pi$ }\DIFaddend is less than \DIFdelbegin \DIFdel{\(\pi_{min}\) }\DIFdelend \DIFaddbegin \DIFadd{$\pi_{min}$ }\DIFaddend for features not observed in unmixed samples\DIFdelbegin \DIFdel{due to random sampling.
+}\DIFdelend \DIFaddbegin \DIFadd{.
+Artifacts not explained by sequencing alone are likely errors in the sequence measurement and inference processes, and thus, false positives or negatives.
+}\DIFaddend 
+
+
+\begin{equation}
+  \begin{split}
+    p & = P(\pi < \pi_{min} | C \geq C_{obs}) \\
+      & = \frac{P(C \geq C_{obs}| \pi < \pi_{min})P(\pi < \pi_{min})}{P(C \geq C_{obs}| \pi < \pi_{exp})P(\pi < \pi_{min}) + P(C \geq C_{obs}| \pi \geq \pi_{min})P(\pi \geq \pi_{min})} \\
+  \end{split}
+  \label{eq:bht}
+\end{equation}
+
+\begin{equation}
+    p = \frac{P(C \geq C_{obs}| \pi < \pi_{min})}{P(C \geq C_{obs})}
+  \label{eq:bht2}
+\end{equation}
+
+
+
+\subsubsection*{Quantitative Assessment}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend For quantitative assessment, we compared observed relative abundance and
+log fold-changes to expected values derived from the titration
+experimental design.
+Feature average relative abundance across PCR
+replicates was calculated using a negative binomial model, and used as
+observed relative abundance values (\(obs\)) for the relative abundance
+assessment. Average relative abundance values were used to reduce PCR
+replicate outliers from biasing the assessment results. Equation
+\eqref{eq:mixEq} and inferred \(\theta\) values were used to calculate the
+expected relative abundance values (\(exp\)). Relative abundance error
+rate is defined as \(|exp - obs|/exp\).
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend We developed bias and variance metrics to assess feature performance.
+The feature-level bias and variance metrics were defined as the median
+error rate and robust coefficient of variation (\(RCOV=IQR/median\))
+respectively.
+\DIFdelbegin \DIFdel{Mixed-effects models were used to compare feature-level
+error rate bias and variance metrics across pipelines with subject as a
+random effect. Extreme feature-level error rate bias and variance metric
+outliers were observed, these outliers were excluded from the mixed
+effects model to minimize biases due to poor model fit and were
+characterized independently.
+}\DIFdelend 
+
+Log fold-change between samples in the titration series including PRE
+and POST were compared to the expected log fold-change values to assess
+differential abundance log fold-change estimates. Log fold-change
+estimates were calculated using EdgeR
+\cite{Robinson2010, McCarthy2012}. Expected log fold-change for feature
+\(j\) between titrations \(l\) and \(m\) is calculated using equation
+\eqref{eq:expLogFC}, where \(\theta\) is the proportion of POST bacterial
+DNA in a titration, and \(q\) is feature relative abundance. For
+features only present in PRE samples\DIFaddbegin \DIFadd{, }\DIFaddend the expected log fold-change is
+independent of the observed counts for the unmixed samples and is
+calculated using \eqref{eq:expPreLogFC}. Features only observed in POST
+samples, \emph{POST-specific}, expected log fold-change values can be
+calculated in a similar manner. However, \emph{POST-specific} features
+were rarely observed in more than one titration and therefore were not
+suitable for use in our assessment. Due to a limited number of
+\emph{PRE-specific} features, both \emph{PRE-specific} and
+\emph{PRE-dominant} features were used in the differential abundance
+assessment. \emph{PRE-specific} features were defined as features
+observed in all four PRE PCR replicates and not observed in any of the
+POST PCR replicates and \emph{PRE-dominant} features were also observed
+in all four PRE PCR replicates and observed in one or more of the POST
+PCR replicates with a log fold-change between PRE and POST samples
+greater than 5.
+
+\begin{equation}
+      logFC_{lm,j} = \log_2\left(\frac{\theta_l q_{post,j} + (1 - \theta_l) q_{pre,i}}{\theta_m q_{post,j} + (1 - \theta_m) q_{pre,j}}\right)
+  \label{eq:expLogFC}
+\end{equation}
+
+\begin{equation}
+      logFC_{lm,i} = log_2\left(\frac{1-\theta_l}{1-\theta_m}\right)
+  \label{eq:expPreLogFC}
+\end{equation}
+
+
+\DIFaddbegin \subsection*{\DIFadd{Count Table Assessment Demonstration}}
+\DIFadd{Demonstrate framework by comparing the qualitative and quantitative assessment results across the three pipelines.
+We first characterized overall differences in the count tables produced by the three pipelines.
+This characterization included calculating the number of features, total abundance by sample, dropout-rate, and taxonomic composition.
+}
+
+\subsubsection*{\DIFadd{Qualitative Assessment}}
+\DIFadd{For the qualitative assessment we compare the proportion of artifactual features.
+The artifactual feature proportion was defined as the proportion of }\emph{\DIFadd{unmixed-}} \DIFadd{and }\emph{\DIFadd{titration-specific}} \DIFadd{features with abundance values that could not be explained by sampling alone.
+These are PCR replicates with p-values less than 0.05 after multiple hypothesis test correction for the binomial and bayesian hypothesis tests described in the assessment framework methods section.
+We additionally used the count table sparsity values to draw conclusions regarding the mechanism responsible for different artifactual feature proportions.
+}
+
+\subsubsection*{\DIFadd{Quantitative Assessment}}
+\DIFadd{Mixed-effects models were used to compare feature-level
+error rate bias and variance metrics across pipelines with subject as a
+random effect. Extreme feature-level error rate bias and variance metric
+outliers were excluded from this analysis to minimize biases due to poor model fit. 
+Features with large bias and variance metrics, \(1.5\times IQR\) from the median, were deemed outliers. 
+These outlier features were characterized independently in a separate analysis. 
+}
+
+\DIFadd{We fit the following mixed effect model to test for differences in measurement bias across pipelines
+}
+
+$$
+\DIFadd{e_{ijk} = b + b_i + z_j + \epsilon_{ijk}
+}$$
+
+\DIFadd{where $e_{ijk}$ is the observed error across features and tritations $k$ for pipeline $i$ on individual $j$. $b_i$ is a fixed term modeling the pipeline effect, $z_j$ is a random effect (normally distributed with mean 0) capturing overall bias differences across individuals. We fit a similar model for differences in error variance across pipelines.
+}
+
+\DIFadd{We used estimated terms $\hat{b}_i$ from the mixed effects model to test for pair-wise differences across pipelines.
+These multiple comparisons were performed with Tukey's HSD test. A one-sided
+alternative hypothesis was used to determine which pipelines had smaller
+feature-level error rate.
+}
+
+\DIFaddend %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Backmatter begins here                   %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{backmatter}
+
+\section*{Declarations}
+
+\subsection*{Ethics approval and consent to participate}
+Not applicable.
+
+\subsection*{Consent for publication}
+Not applicable.
+
+\subsection*{Availability of data and material}
+Sequence data was deposited in the NCBI SRA archive under Bioproject
+PRJNA480312.
+Individual SRA run accession numbers and metadata in Supplemental Table.
+The code used to run the bioinformatic pipelines is available at
+\url{https://github.com/nate-d-olson/mgtst_pipelines}.
+Scripts used to analyze the data are available at
+\url{https://github.com/nate-d-olson/mgtst_pub}.
+
+\subsection*{Competing interests}
+The authors declare that they have no competing interests.
+
+\subsection*{Funding}
+This work was partially supported by National Institutes of Health (NIH)
+{[}NIH R01HG005220 to H.C.B.{]}
+
+\subsection*{Authors' contributions}
+NDO, HCB, OCS, MS, and WT designed the experiment, SL and SH performed the laboratory work.
+NDO, HCB\DIFdelbegin \DIFdel{and MS}\DIFdelend \DIFaddbegin \DIFadd{, MS, and DJB }\DIFaddend analyzed the data.
+NDO\DIFaddbegin \DIFadd{, DJB, }\DIFaddend and HCB wrote the manuscript.
+All authors provided feedback on manuscript drafts and approved the final manuscript.
+
+
+\subsection*{Acknowledgements}
+ The authors would like to thank \DIFaddbegin \DIFadd{the two anonymous reviewers, }\DIFaddend Mihai
+Pop, Scott Pine, Scott Jackson, Justin Zook, \DIFaddbegin \DIFadd{Nathan Swenson, }\DIFaddend and Prachi Kulkarni for
+feedback on manuscript drafts. \DIFaddbegin \DIFadd{Joseph Paulson and Justin Wagner provided
+helpful insight during the development of the project.
+}\DIFaddend Opinions expressed in this paper are the
+authors and do not necessarily reflect the policies and views of NIST,
+or affiliated venues. Certain commercial equipment, instruments, or
+materials are identified in this paper in order to specify the
+experimental procedure adequately. Such identification is not intended
+to imply recommendations or endorsement by NIST, nor is it intended to
+imply that the materials or equipment identified are necessarily the
+best available for the purpose. Official contribution of NIST; not
+subject to copyrights in USA.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  The Bibliography                       %%
+%%                                                         %%
+%%  Bmc_mathpys.bst  will be used to                       %%
+%%  create a .BBL file for submission.                     %%
+%%  After submission of the .TEX file,                     %%
+%%  you will be prompted to submit your .BBL file.         %%
+%%                                                         %%
+%%                                                         %%
+%%  Note that the displayed Bibliography will not          %%
+%%  necessarily be rendered by Latex exactly as specified  %%
+%%  in the online Instructions for Authors.                %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DIF <  if your bibliography is in bibtex format, use those commands:
+\bibliographystyle{bmc-mathphys}
+%DIF <  Style BST file (bmc-mathphys, vancouver, spbasic).
+\bibliography{abundanceAssessment}
+%DIF <  Bibliography file (usually '*.bib' )
+%DIF <  for author-year bibliography (bmc-mathphys or spbasic)
+%DIF <  a) write to bib file (bmc-mathphys only)
+%DIF <  @settings{label, options="nameyear"}
+%DIF <  b) uncomment next line
+%DIF < \nocite{label}
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF <  or include bibliography directly:
+%DIF <  \begin{thebibliography}
+%DIF <  \bibitem{b1}
+%DIF <  \end{thebibliography}
+\DIFdelend 
+
+
+
+\end{backmatter}
+\end{document}
