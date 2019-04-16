@@ -14,7 +14,7 @@
 \begin{document}
 \maketitle
 
-\section*{Titration Series Validation and Correction}
+\section*{Titration Series Validation}
 \subsection*{Methods}
 To increase confidence in the expected values used in our assessment framework we validated the proportion of unmixed samples measured by the 16S rRNA marker-gene sequencing assay.
 To correct for observed deviation from our mixture design we estimated the proportion of unmixed POST in the titrations using the 16S rRNA sequencing data.
@@ -29,8 +29,8 @@ independent ERCC plasmids were spiked into the unmixed PRE and
 POST samples \cite{baker2005external} (NIST SRM SRM 2374) (Table
 \ref{tab:erccTable}). The ERCC plasmids were resuspended in 100
 \(\mu L\) tris-EDTA buffer and 2 \(\mu L\) of resuspended plasmids was
-spiked into the appropriate unmixed sample. Plasmids were spiked into
-unmixed PRE and POST samples with normalized DNA concentration of
+spiked into the appropriate unmixed sample, with a final concentration of approximately \(2.5X10^10 copies/\mu L\). Plasmids were spiked into
+100 \(\mu L\) unmixed PRE and POST samples with normalized DNA concentration of
 12.5 \(ng/\mu L\). POST sample ERCC plasmid abundance was quantified
 using TaqMan gene expression assays (FAM-MGB, Catalog \# 4448892,
 ThermoFisher) specific to each ERCC plasmid and TaqMan Universal
@@ -41,7 +41,7 @@ samples but were not used to validate volumetric mixing as PRE sample
 proportion differences were too small for qPCR quantification.
 The expected difference for the entire range of PRE concentrations
 is 1 \(C_t\).
-
+%% https://cels.uri.edu/gsc/cndna.html
 
 To check for differences in the proportion of bacterial DNA in the PRE
 and POST samples, bacterial DNA concentration in the titrations was quantified
@@ -218,11 +218,11 @@ and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{bayes_beta.png}
-\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indcates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error (respectively).}
+\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indicates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error (respectively). NOTE: ~380 features detected by the DADA2 pipeline obtained a p-value of 0 following the bayesian hypothesis test and subsequent p-value adjustment via BH method. This means that a log10 value could not be calculated for these features, and thus, they could not be included in the box plot.}
 \end{figure}
 
-\section*{Bayesian Hypothesis Test - beta priors}
-To test whether our choice of uniform prior was misrepresenting the distribution of feature abundance simulated from, we ran the Bayesian hypothesis test given in equations (3) and (4) using a beta prior distribution under various parameterizations of shape parameters alpha and beta (Fig. \ref{fig:bayesPrior}). By weighting the (beta) parameter higher, the sampling distribution simulated will skew left, with a higher chance of simulating a low or null count, as is customary in microbiome data. If the alpha parameter is weighted higher, then the sampling distribution is skewed right, towards higher abundant features and a long tail of lower abundant features. We found that no matter the choice of beta prior, the results of the hypothesis tests were consistent: DADA2 finds far more titration specific features that cannot be explained by sampling error alone and are likely the effects of clustering errors.
+\section*{Qualitative Assessment of Titration-Specific Features using Beta Distribution Prior}
+To test whether our choice of uniform prior was misrepresenting the distribution of feature abundance simulated from, we ran the Bayesian hypothesis test given in equations (3) and (4) using a beta prior distribution under various parameterizations of shape parameters alpha and beta (Fig. \ref{fig:bayesPrior}). By weighting the beta parameter higher, the sampling distribution simulated will skew left, with a higher chance of simulating a low or null count, as is customary in microbiome data. If the alpha parameter is weighted higher, then the sampling distribution is skewed right, towards higher abundant features and a long tail of lower abundant features. We found that no matter the choice of beta prior, the results of the hypothesis tests were consistent: DADA2 finds far more titration specific features that cannot be explained by sampling error alone and are likely due to the conservative nature of this pipeline when it comes to binning reads into different features.
 
 \cleardoublepage
 
