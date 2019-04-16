@@ -8,8 +8,8 @@
 \usepackage{multirow}
 \usepackage{makecell}
 
-\title{Supplemental Material - Assessing 16S marker gene survey data analysis methods using mixtures of human stool sample DNA extracts.}
-\author{ND Olson et. al}
+\title{Supplemental Material - A framework for assessing 16S marker gene survey data analysis methods using mixtures.}
+\author{Olson et al}
 
 \begin{document}
 \maketitle
@@ -41,7 +41,8 @@ samples but were not used to validate volumetric mixing as PRE sample
 proportion differences were too small for qPCR quantification.
 The expected difference for the entire range of PRE concentrations
 is 1 \(C_t\).
-%% https://cels.uri.edu/gsc/cndna.html
+%% plasmid copies/ul calculated using https://cels.uri.edu/gsc/cndna.html 
+%% assuming 10ug per vial and plasmid size of 3700bp
 
 To check for differences in the proportion of bacterial DNA in the PRE
 and POST samples, bacterial DNA concentration in the titrations was quantified
@@ -173,13 +174,7 @@ E01JH0004 and E01JH0017 and higher for E01JH0016 and E01JH0038.
 
 
 \paragraph*{Correcting for Deviations from Mixture Design}
-%% Incorporate into text - only present unclustered
-% The unclustered count table was generated using the
-% 40,000 most abundant features from Mothur's initial pre-processing (see
-% Methods for details).
-% Unclustered pipeline \(\theta\) estimates were
-% used to calculate the error rates for all pipelines to prevent
-% over-fitting.
+
 
 \begin{figure}
 \centering
@@ -199,8 +194,8 @@ Therefore our expected values used in measurement assessment need to account
 for differences in the proportion of prokaryotic DNA from unmixed samples.
 To account for differences in prokaryotic DNA proportion we inferred
 the proportion of POST sample prokaryotic DNA in a titration, \(\theta\), using
-the 16S rRNA sequencing data (Fig. \ref{fig:thetaHat}). Overall the relationship
-between the inferred and mixture design \(\theta\) values were
+the 16S rRNA sequencing data (Fig. \ref{fig:thetaHat}). 
+Overall the relationship between the inferred and mixture design \(\theta\) values were
 consistent across pipelines but not subject whereas the \(\theta\)
 estimate 95\% CI varied by both subject and pipeline. For study subjects
 E01JH0004, E01JH0011, and E01JH0016 the inferred and mixture design
@@ -218,10 +213,10 @@ and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{bayes_beta.png}
-\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indicates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error (respectively). NOTE: ~380 features detected by the DADA2 pipeline obtained a p-value of 0 following the bayesian hypothesis test and subsequent p-value adjustment via BH method. This means that a log10 value could not be calculated for these features, and thus, they could not be included in the box plot.}
+\caption{\label{fig:bayesPrior} The x-axis of the plots above are -log10(adjusted p-value) for each titration-specific feature as calculated from equation (4) and the dotted black line indicates the value for -log10(0.05), our determined threshold for significance. Should a feature receive a p-value $<$ 0.05 (to the right of the dotted black line), then its detection as a titration-specific feature could not be explained due to sampling alone, and thus is an error of the computational pipeline. DADA2 is the only computational pipeline for which a large proportion of the titration-specific features could not be explained by sampling alone. The black text immediately to the left and right of the dotted black line are the proportions of titration-specific features which could and could not be explained by sampling error (respectively). NOTE: ~380 features detected by the DADA2 pipeline obtained a p-value of 0 following the bayesian hypothesis test and subsequent p-value adjustment via BH method. This means that a log10 value could not be calculated for these features, and thus, they were not be included in the box plot.}
 \end{figure}
 
-\section*{Qualitative Assessment of Titration-Specific Features using Beta Distribution Prior}
+\section*{Qualitative Assessment of \emph{Titration-Specific} Features using Beta Distribution Prior}
 To test whether our choice of uniform prior was misrepresenting the distribution of feature abundance simulated from, we ran the Bayesian hypothesis test given in equations (3) and (4) using a beta prior distribution under various parameterizations of shape parameters alpha and beta (Fig. \ref{fig:bayesPrior}). By weighting the beta parameter higher, the sampling distribution simulated will skew left, with a higher chance of simulating a low or null count, as is customary in microbiome data. If the alpha parameter is weighted higher, then the sampling distribution is skewed right, towards higher abundant features and a long tail of lower abundant features. We found that no matter the choice of beta prior, the results of the hypothesis tests were consistent: DADA2 finds far more titration specific features that cannot be explained by sampling error alone and are likely due to the conservative nature of this pipeline when it comes to binning reads into different features.
 
 \cleardoublepage
@@ -280,12 +275,12 @@ Metric & Pipeline & E01JH0004 & E01JH0011 & E01JH0016 & E01JH0017 & E01JH0038\\
 \end{table}
 
 \begin{table}
-\caption{\label{tab:TAandUSsummary}Summary of abundance of titration-specific and unmixed-specific features per pipeline. NOTE: these numbers are only reflective of subject E01JH0004 and are directly related to the proportions described in Supplemental Fig. \ref{fig:bayesPrior} for alpha = beta = 1.}
+\caption{\label{tab:TAandUSsummary}Summary of abundance of titration-specific and unmixed-specific features per pipeline. These numbers are only for E01JH0004 and are directly related to the proportions described in Supplemental Fig. \ref{fig:bayesPrior} for alpha = beta = 1.}
 \centering
 \resizebox{\linewidth}{!}{
 \begin{tabular}[t]{llllll}
 \toprule
-Pipeline & \# of features & titration-specific (TS) & TS unexplained & unmixed-specific (US) & US unexplained \\
+Pipeline & \# of features & \emph{Titration-Specific} (TS) & Artifactual TS & \emph{Unmixed-Specific} (US) & Artifactual US \\
 \midrule
 DADA2    & 3144 & 725  & 471  & 880 & 167  \\
 Mothur   & 38358  &  8824  &  44  &  9047  & 18  \\
