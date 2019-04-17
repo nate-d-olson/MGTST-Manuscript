@@ -1,7 +1,7 @@
 %% BioMed_Central_Tex_Template_v1.06
 %DIF LATEXDIFF DIFFERENCE FILE
-%DIF DEL bmc_submission.tex   Tue Apr 16 14:51:49 2019
-%DIF ADD main.tex             Tue Apr 16 15:29:52 2019
+%DIF DEL bmc_submission.tex   Tue Apr 16 20:21:14 2019
+%DIF ADD main.tex             Tue Apr 16 21:07:04 2019
 %%                                      %
 %  bmc_article.tex            ver: 1.06 %
 %                                       %
@@ -56,10 +56,11 @@
 %%% loading packages, author definitions
 
 % \documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
-%DIF 47a50
-% \documentclass[linenumbers]{bmcart} %DIF > 
+%DIF 47c50
+%DIF < \documentclass{bmcart}
 %DIF -------
-\documentclass{bmcart}
+\documentclass[linenumbers]{bmcart} %DIF > 
+%DIF -------
 
 %%% Load packages
 \usepackage{amsthm,amsmath}
@@ -90,15 +91,13 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%DIF 78-80c82-84
+%DIF 78c81
 %DIF < 
-%DIF < \def\includegraphic{}
-%DIF < \def\includegraphics{}
 %DIF -------
 %%%% Remove comments prior to re-submission %DIF > 
-% \def\includegraphic{} %DIF > 
-% \def\includegraphics{} %DIF > 
 %DIF -------
+\def\includegraphic{}
+\def\includegraphics{}
 
 
 
@@ -147,7 +146,7 @@
 %%                                          %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{A framework for assessing 16S marker gene survey data analysis methods using mixtures.}
+\title{A framework for assessing 16S rRNA marker-gene survey data analysis methods using mixtures.}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                                          %%
@@ -550,8 +549,8 @@ new and existing }\DIFaddend bioinformatic pipelines.
 \DIFaddbegin \begin{figure}
 \centering
 \includegraphics{AssessmentFramework.pdf}
-\caption{\label{fig:assessmentFramework}\DIFaddFL{Assessment Framework. A) Count tables evaluated by the assessment framework are generated from the assessment dataset using marker-gene survey bioinformatic pipelines. Count table rows are features identified by the bioinformatic pipeline and column are samples, four PCR replicates (labeled A-D) were sampled for PRE and POST and titrations, to simplify the diagram only three titrations are shown. B) Pictorial depiction of abundance values of the seven feature types observed and used in the assessment framework. C) Qualitative and quantitative assessment metrics used in the assessment framework. The artifactual feature proportion metric (AFP) is a qualitative assessment of feature presence/absence based on unmixed-specific or titration-specific artifactual features. Sparsity (SPAR) is a qualitative assessment of the proportion of observed features in each sample relative to the total observed features. Relative abundance metric (Rel) plot is a quantitative assessment of the relationship between the observed and expected relative abundance values. The difference is used to calculate the error rate ($|Obs-Exp|/Exp$) from which the bias metric ($median(error)$) and variance metric ($RCOV$) are calculated. The differential abundance (Diff) metric assesses the relationship between the expected log fold-change and estimated log fold-change is shown. Points represent the log fold-change between two titrations, point text indicates the titrations compared. A linear model is fit to the data. The model fit information is used for the differential abundance bias ($1-slope$) and variance metrics ($R^2$).}} \DIFaddFL{Each feature type in (B) is labeled with the assessments shown in (C) in which they are employed.
-}\end{figure}
+\caption{\label{fig:assessmentFramework}\DIFaddFL{Assessment Framework. A) Count tables evaluated by the assessment framework are generated from the assessment dataset using marker-gene survey bioinformatic pipelines. Count table rows are features identified by the bioinformatic pipeline and column are samples, four PCR replicates (labeled A-D) were sampled for PRE and POST and titrations, to simplify the diagram only three titrations are shown. B) Pictorial depiction of abundance values of the seven feature types observed and used in the assessment framework. C) Qualitative and quantitative assessment metrics used in the assessment framework. The artifactual feature proportion metric (AFP) is a qualitative assessment of feature presence/absence based on unmixed-specific or titration-specific artifactual features. Sparsity (SPAR) is a qualitative assessment of the proportion of observed features in each sample relative to the total observed features. Relative abundance metric (Rel) plot is a quantitative assessment of the relationship between the observed and expected relative abundance values. The difference is used to calculate the error rate ($|Obs-Exp|/Exp$) from which the bias metric ($median(error)$) and variance metric ($RCOV$) are calculated. The differential abundance (Diff) metric assesses the relationship between the expected log fold-change and estimated log fold-change is shown. Points represent the log fold-change between two titrations, point text indicates the titrations compared. A linear model is fit to the data. The model fit information is used for the differential abundance bias ($1-slope$) and variance metrics ($R^2$). Each feature type in (B) is labeled with the assessments shown in (C) in which they are employed.}}
+\end{figure}
 \DIFaddend 
 
 \DIFdelbegin \DIFdel{Samples collected at multiple timepoints during a Enterotoxigenic
@@ -1023,16 +1022,16 @@ two-sample titration mixture design.
 titrations measured using a 16S rRNA qPCR assay. Separate linear models,
 Prokaryotic DNA concentration versus \(\theta\) were fit }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{observed count values }\DIFaddendFL for
 \DIFdelbeginFL \DIFdelFL{each
-individual, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{titration-specific features }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{\(R^2\) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(B) expected count values for
-unmixed-specific features by pipeline }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{p-values were reported}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{individual}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Red lines indicate
+individual, }\DIFdelendFL \DIFaddbeginFL \emph{\DIFaddFL{titration-specific}} \DIFaddFL{(TS) features }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{\(R^2\) }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(B) expected count values for
+}\emph{\DIFaddFL{unmixed-specific}} \DIFaddFL{(US) features by pipeline }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{p-values were reported}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{individual}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Red lines indicate
 negative slope estimates and blue lines positive slope estimates.
 p-value }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{The orange
 horizontal dashed line }\DIFaddendFL indicates \DIFdelbeginFL \DIFdelFL{significant difference from the expected slope }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{a count value }\DIFaddendFL of \DIFdelbeginFL \DIFdelFL{0.
-The grey regions indicate the linear model 95\% confidence interval.
-Multiple test correction was performed using the Benjamini-Hochberg
-method. One of the E01JH0004 PCR replicates for titration 3
-}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1. }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{\(\theta=0.125\)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{C}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{was identified as an outlier, with a concentration }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Proportion }\DIFaddendFL of
-\DIFdelbeginFL \DIFdelFL{0.003, }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{titration-specific features }\DIFaddendFL and \DIFdelbeginFL \DIFdelFL{was excluded from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{(D) unmixed-specific features with an
+The grey regions indicate the linear model 95\% confidence interval}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{1. (C) Artifactual feature proportion (Art}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{Multiple test correction was performed using the Benjamini-Hochberg
+method}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Feat}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{One of the E01JH0004 PCR replicates }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Prop.) }\DIFaddendFL for
+\DIFdelbeginFL \DIFdelFL{titration 3
+}\DIFdelendFL \DIFaddbeginFL \emph{\DIFaddFL{titration-specific}} \DIFaddFL{and }\DIFaddendFL (\DIFdelbeginFL \DIFdelFL{\(\theta=0.125\)}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{D}\DIFaddendFL ) \DIFdelbeginFL \DIFdelFL{was identified as an outlier, }\DIFdelendFL \DIFaddbeginFL \emph{\DIFaddFL{unmixed-specific}} \DIFaddFL{features }\DIFaddendFL with \DIFdelbeginFL \DIFdelFL{a concentration of
+0.003, and was excluded from }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{an
 adjusted p-value \textless{} 0.05 for }\DIFaddendFL the \DIFdelbeginFL \DIFdelFL{linear model}\DIFdelendFL \DIFaddbeginFL \DIFaddFL{Bayesian hypothesis test and
 binomial test respectively}\DIFaddendFL . \DIFdelbeginFL \DIFdelFL{The linear model slope
 was still significantly different from 0 }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{We failed to accept the null hypothesis }\DIFaddendFL when
@@ -1336,8 +1335,8 @@ metric, no specific taxonomic groups or phylogenetic clades were
 identified with exceptionally poor performance in our assessment.
 }\DIFdelend 
 
-\DIFaddbegin \paragraph{\DIFadd{Differential Abundance Assessment}}
-\DIFaddend \begin{figure}
+
+\begin{figure}
 \centering
 \includegraphics{logFCerror-1.pdf}
 \caption{\label{fig:logFCerror} \DIFaddbeginFL \DIFaddFL{Differential abundance quantitative assessment. }\DIFaddendFL (A) Linear model \DIFdelbeginFL \DIFdelFL{or }\DIFdelendFL \DIFaddbeginFL \DIFaddFL{of }\DIFaddendFL the relationship between
@@ -1348,6 +1347,7 @@ between the estimated and expected log fold-change. (B) Log fold-change
 error (\textbar{}exp-est\textbar{}) distribution by pipeline and
 individual.}
 \end{figure}
+
 
 \begin{figure}
 \centering
@@ -1361,8 +1361,8 @@ the median were excluded from the figure to prevent extreme metric
 values from obscuring metric value visual comparisons.}
 \end{figure}
 
-%DIF > % Move to discussion?
-The agreement between log-fold change estimates and expected values were
+\DIFaddbegin \paragraph{\DIFadd{Differential Abundance Assessment}}
+\DIFaddend The agreement between log-fold change estimates and expected values were
 individual specific and consistent across pipelines (Fig.
 \ref{fig:logFCerror}A). The individual specific effect was attributed to
 the fact that unlike relative abundance assessment\DIFaddbegin \DIFadd{, }\DIFaddend the inferred
@@ -1494,11 +1494,7 @@ Titration- and unmixed-specific features not explained by sampling are artifacts
 These artifacts can be viewed as false-positives, not representative of actual sequences in a sample,
 or false-negatives, actual sequences in a sample not represented by count table features. 
 Artifacts can be PCR errors such as chimeras, reads with high sequencing error rates, or cross sample contamination \mbox{%DIFAUXCMD
-\cite{edgar2011uchime}}%DIFAUXCMD
-\mbox{%DIFAUXCMD
-\cite{Edgar2018-ss}}%DIFAUXCMD
-\mbox{%DIFAUXCMD
-\cite{damore2016}}%DIFAUXCMD
+\cite{edgar2011uchime, Edgar2018-ss, damore2016}}%DIFAUXCMD
 . 
 Count table sparsity information (the proportion of zero-valued cells) provides
 additional insight into the qualitative assessment results.
