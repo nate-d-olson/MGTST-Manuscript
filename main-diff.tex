@@ -57,7 +57,9 @@
 
 % \documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
 %DIF 47a50
-\documentclass[linenumbers]{bmcart}
+% \documentclass[linenumbers]{bmcart} %DIF > 
+%DIF -------
+\documentclass{bmcart}
 
 %%% Load packages
 \usepackage{amsthm,amsmath}
@@ -88,10 +90,15 @@
 %%                                             %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%DIF 78-80c82-84
+%DIF < 
+%DIF < \def\includegraphic{}
+%DIF < \def\includegraphics{}
+%DIF -------
 %%%% Remove comments prior to re-submission %DIF > 
-\def\includegraphic{}
-\def\includegraphics{} 
-
+% \def\includegraphic{} %DIF > 
+% \def\includegraphics{} %DIF > 
+%DIF -------
 
 
 
