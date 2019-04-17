@@ -47,8 +47,7 @@
 %%% loading packages, author definitions
 
 % \documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
-% \documentclass[linenumbers]{bmcart}
-\documentclass{bmcart}
+\documentclass[linenumbers]{bmcart}
 
 %%% Load packages
 \usepackage{amsthm,amsmath}
@@ -80,8 +79,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%% Remove comments prior to re-submission
-% \def\includegraphic{}
-% \def\includegraphics{}
+\def\includegraphic{}
+\def\includegraphics{}
 
 
 
@@ -426,7 +425,7 @@ new and existing bioinformatic pipelines.
 \begin{figure}
 \centering
 \includegraphics{AssessmentFramework.pdf}
-\caption{\label{fig:assessmentFramework}Assessment Framework. A) Count tables evaluated by the assessment framework are generated from the assessment dataset using marker-gene survey bioinformatic pipelines. Count table rows are features identified by the bioinformatic pipeline and column are samples, four PCR replicates (labeled A-D) were sampled for PRE and POST and titrations, to simplify the diagram only three titrations are shown. B) Pictorial depiction of abundance values of the seven feature types observed and used in the assessment framework. C) Qualitative and quantitative assessment metrics used in the assessment framework. The artifactual feature proportion metric (AFP) is a qualitative assessment of feature presence/absence based on unmixed-specific or titration-specific artifactual features. Sparsity (SPAR) is a qualitative assessment of the proportion of observed features in each sample relative to the total observed features. Relative abundance metric (Rel) plot is a quantitative assessment of the relationship between the observed and expected relative abundance values. The difference is used to calculate the error rate ($|Obs-Exp|/Exp$) from which the bias metric ($median(error)$) and variance metric ($RCOV$) are calculated. The differential abundance (Diff) metric assesses the relationship between the expected log fold-change and estimated log fold-change is shown. Points represent the log fold-change between two titrations, point text indicates the titrations compared. A linear model is fit to the data. The model fit information is used for the differential abundance bias ($1-slope$) and variance metrics ($R^2$).} Each feature type in (B) is labeled with the assessments shown in (C) in which they are employed.
+\caption{\label{fig:assessmentFramework}Assessment Framework. A) Count tables evaluated by the assessment framework are generated from the assessment dataset using marker-gene survey bioinformatic pipelines. Count table rows are features identified by the bioinformatic pipeline and column are samples, four PCR replicates (labeled A-D) were sampled for PRE and POST and titrations, to simplify the diagram only three titrations are shown. B) Pictorial depiction of abundance values of the seven feature types observed and used in the assessment framework. C) Qualitative and quantitative assessment metrics used in the assessment framework. The artifactual feature proportion metric (AFP) is a qualitative assessment of feature presence/absence based on unmixed-specific or titration-specific artifactual features. Sparsity (SPAR) is a qualitative assessment of the proportion of observed features in each sample relative to the total observed features. Relative abundance metric (Rel) plot is a quantitative assessment of the relationship between the observed and expected relative abundance values. The difference is used to calculate the error rate ($|Obs-Exp|/Exp$) from which the bias metric ($median(error)$) and variance metric ($RCOV$) are calculated. The differential abundance (Diff) metric assesses the relationship between the expected log fold-change and estimated log fold-change is shown. Points represent the log fold-change between two titrations, point text indicates the titrations compared. A linear model is fit to the data. The model fit information is used for the differential abundance bias ($1-slope$) and variance metrics ($R^2$). Each feature type in (B) is labeled with the assessments shown in (C) in which they are employed.}
 \end{figure}
 
 Our framework assesses the qualitative and quantitative characteristics of the 16S rRNA measurement process (Fig. \ref{fig:assessmentFramework}).
@@ -594,10 +593,10 @@ differences.
 \centering
 \includegraphics{qualPlot-1.pdf}
 \caption{\label{fig:qualPlot}Distribution of (A) observed count values for
-titration-specific features and (B) expected count values for
-unmixed-specific features by pipeline and individual. The orange
-horizontal dashed line indicates a count value of 1. (C) Proportion of
-titration-specific features and (D) unmixed-specific features with an
+\emph{titration-specific} (TS) features and (B) expected count values for
+\emph{unmixed-specific} (US) features by pipeline and individual. The orange
+horizontal dashed line indicates a count value of 1. (C) Artifactual feature proportion (Art. Feat. Prop.) for
+\emph{titration-specific} and (D) \emph{unmixed-specific} features with an
 adjusted p-value \textless{} 0.05 for the Bayesian hypothesis test and
 binomial test respectively. We failed to accept the null hypothesis when
 the p-value \textless{} 0.05, indicating that the discrepancy between
