@@ -216,11 +216,11 @@ and E01JH0016 and significantly negative slope for E01JH0038 (Fig.
 \begin{figure}
 \centering
 \includegraphics[width=0.9\linewidth]{beta_bayes_barplots_withprops.png}
-\caption{\label{fig:bayesPrior} Proportion of titration-specific features which could not be explained by sampling error per pipeline and choice of beta prior distribution. The proportions shown above are only for subject E01JH0004. The titles of each plot indicate the shape of the beta prior used in the bayesian hypothesis test detailed in equations (3) \& (4) in the main text. The text printed above each bar is the y-axis value. }
+\caption{\label{fig:bayesPrior} \emph{Titration-specific} artifactual feature proportion. Artifactual features are those which could not be explained by sampling alone by pipeline and beta prior. Only artifactual feature proportions for subject E01JH0004 are shown. Plot titles indicate beta distribution parameters used in the bayesian hypothesis test detailed in equations (3) \& (4) in the main text. Artifactual feature proportion values shown above each bar. }
 \end{figure}
 
 \section*{Qualitative Assessment of \emph{Titration-Specific} Features using Beta Distribution Prior}
-To test whether our choice of uniform prior was misrepresenting the distribution of feature abundance simulated from, we ran the Bayesian hypothesis test given in equations (3) and (4) using a beta prior distribution under various parameterizations of shape parameters alpha and beta (Fig. \ref{fig:bayesPrior}). By weighting the beta parameter higher, the sampling distribution simulated will skew left, with a higher chance of simulating a low or null count, as is customary in microbiome data. If the alpha parameter is weighted higher, then the sampling distribution is skewed right, towards higher abundant features and a long tail of lower abundant features. We found that no matter the choice of beta prior, the results of the hypothesis tests were consistent: DADA2 finds far more titration specific features that cannot be explained by sampling error alone and are likely due to the conservative nature of this pipeline when it comes to binning reads into different OTUs.
+To test whether our choice of uniform prior was misrepresenting the distribution of feature abundance simulated from, we ran the Bayesian hypothesis test given in equations (3) and (4) using a beta prior distribution under various parameterizations of shape parameters alpha and beta (Fig. \ref{fig:bayesPrior}). By weighting the beta parameter higher, the sampling distribution simulated will skew left, with a higher chance of simulating a low or null count, as is customary in microbiome data. If the alpha parameter is weighted higher, then the sampling distribution is skewed right, towards higher abundant features and a long tail of lower abundant features. We found that no matter the choice of beta prior, the results of the hypothesis tests were consistent: DADA2 finds far more titration specific features that cannot be explained by sampling error alone and are likely due to the conservative nature of this pipeline when it comes to binning reads into different features.
 
 \cleardoublepage
 
@@ -233,11 +233,11 @@ To test whether our choice of uniform prior was misrepresenting the distribution
 \clearpage
 
 \begin{table}
-\caption{\label{tab:sparsity}Sparsity levels for the three pipelines examined across all subjects (PRE and POST) and overall.}
+\caption{\label{tab:sparsity}Sparsity levels for the three pipelines examined across individuals (PRE and POST) and overall.}
 \centering
 \begin{tabular}[t]{lrrr}
 \toprule
-Subject   & DADA2 & Mothur & QIIME \\
+Individual   & DADA2 & Mothur & QIIME \\
 \midrule
 E01JH0004 & 0.69  & 0.74   & 0.50  \\
 E01JH0011 & 0.74  & 0.78   & 0.60  \\
